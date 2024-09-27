@@ -10,9 +10,6 @@ main .row {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px 90px;
 }
-main .row .left-picture {
-  overflow: hidden;
-}
 main .row .left-picture .picture {
   width: 100%;
   height: 100%;
@@ -40,7 +37,7 @@ main .row .right-text .text .author {
 
 @media (max-width: 1230px) {
   main .row {
-    width: 75%;
+    width: 90%;
     grid-template-columns: 1fr;
   }
 }

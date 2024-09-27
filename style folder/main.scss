@@ -11,9 +11,9 @@ main{
         grid-gap: 50px 90px;
     }
     
-    .row .left-picture{
-        overflow: hidden;
-    }
+    // .row .left-picture{
+    //     overflow: hidden;
+    // }
 
     .row .left-picture .picture{
         width: 100%;
@@ -51,7 +51,7 @@ main{
 @media (max-width: 1230px) {
     main{ 
         .row{
-            width: 75%;
+            width: 90%;
             grid-template-columns: 1fr;
         }
     }
