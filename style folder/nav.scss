@@ -1,0 +1,182 @@
+@import url('https://fonts.cdnfonts.com/css/blanka');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+// Variables
+$Baskerville-font: "Libre Baskerville", serif;
+$Abhaya-font: "Abhaya Libre", serif;
+$Caslon-font-1: "Libre Calson Text", serif;
+$Caslon-font-2: "Libre Caslon Display", system-ui;
+$Blanka-font: "Blanka", sans-serif;
+$Cinzel-font: "Cinzel", serif;
+
+// #F5BF41
+// #F5B92D
+// #ffca62
+// #fcc944
+// #ffc936
+$Color-text-1: #ffc936;
+$Color-text-2: #000;
+$Color-icon: #000;
+
+$Text-size: 13px;
+$Icon-size: 15px;
+
+$Left-margin-text: 15px;
+$Right-margin-text: 15px;
+$Left-margin-icon: 25px;
+
+// Inheritance
+%Text-font{
+    font-family: $Baskerville-font;
+    font-weight: 400;
+    font-style: normal;
+}
+
+%btn-hover{
+    background-color: white;
+    border-radius: 5px;
+    color: $Color-text-2;
+    padding: 3.5px;
+    transition: 0.1s;
+}
+
+// Navbar
+nav{
+    @extend %Text-font;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 35px 5%;
+
+    .name{
+        // width: 200px;
+        // height: 50%;
+        font-size: 27px;
+        color: $Color-text-2;
+        letter-spacing: 2.5px;
+        cursor: pointer;
+    }
+
+    // link nav
+    .navlist{
+        display: flex;
+    }
+    // nav button
+    .navlist .nav-btn{
+        color: $Color-text-2;
+        font-size: $Text-size;
+        margin-left: $Left-margin-text;
+        margin-right: $Right-margin-text;
+    }
+    // icon button
+    .navlist .icon-btn{
+        color: $Color-icon;
+        font-size: $Icon-size;
+        margin-left: $Left-margin-icon;
+    }
+
+    // menu button
+    .menu-btn{
+        display: none;
+        color: $Color-text-2;
+        font-size: 25px;
+        z-index: 10001;
+        cursor: pointer;
+    }
+
+    // drop menu
+    .drop-menu{
+        display: none;
+        position: absolute;
+        right: 2rem;
+        top: 60px;
+        height: 0;
+        width: 100px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: height .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .drop-menu li{
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .drop-menu .nav-btn,
+    .drop-menu .icon-btn{
+        color: #fff;
+    }
+
+    .drop-menu.open{
+        padding-top: 5px;
+        height: 310px;
+        margin-top: 10px;
+    }
+
+    .drop-menu .nav-btn:hover{
+        @extend %btn-hover;
+    }
+
+    .drop-menu .icon-btn:hover{
+        @extend %btn-hover;
+    }
+}
+
+// Responsive
+@media (max-width: 992px) {
+    nav{
+        .navlist .nav-btn,
+        .navlist .icon-btn{
+            display: none;
+        }
+
+        .menu-btn{
+            display: block;
+        }
+
+        .drop-menu{
+            display: block;
+        }
+    }
+
+    @media (max-width: 310px){
+        nav{
+            .drop-menu{
+                position: absolute;
+                top: 100px;
+            }
+        }
+
+        @media (max-width: 170px){
+            nav{
+                .drop-menu{
+                position: absolute;
+                    top: 125px;
+                }
+            }
+        }
+    }
+}
