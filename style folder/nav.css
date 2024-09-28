@@ -89,7 +89,13 @@ nav .drop-menu.open {
   height: 310px;
   margin-top: 10px;
 }
-@media (max-width: 992px) {
+@media (max-width: 799px) {
+  nav .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
   nav .navlist .nav-btn,
   nav .navlist .icon-btn {
     display: none;
@@ -99,18 +105,6 @@ nav .drop-menu.open {
   }
   nav .drop-menu {
     display: block;
-  }
-}
-@media (max-width: 992px) and (max-width: 310px) {
-  nav .drop-menu {
-    position: absolute;
-    top: 100px;
-  }
-}
-@media (max-width: 992px) and (max-width: 310px) and (max-width: 170px) {
-  nav .drop-menu {
-    position: absolute;
-    top: 125px;
   }
 }
 

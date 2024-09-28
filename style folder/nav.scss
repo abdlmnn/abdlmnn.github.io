@@ -146,8 +146,51 @@ nav{
 }
 
 // Responsive
-@media (max-width: 992px) {
+// @media (max-width: 992px) {
+//     nav{
+//         .navlist .nav-btn,
+//         .navlist .icon-btn{
+//             display: none;
+//         }
+
+//         .menu-btn{
+//             display: block;
+//         }
+
+//         .drop-menu{
+//             display: block;
+//         }
+//     }
+
+//     @media (max-width: 310px){
+//         nav{
+//             .drop-menu{
+//                 position: absolute;
+//                 top: 100px;
+//             }
+//         }
+
+//         @media (max-width: 170px){
+//             nav{
+//                 .drop-menu{
+//                 position: absolute;
+//                     top: 125px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+@media (max-width: 799px){
     nav{
+
+        .name{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+        }
+
         .navlist .nav-btn,
         .navlist .icon-btn{
             display: none;
@@ -160,23 +203,6 @@ nav{
         .drop-menu{
             display: block;
         }
-    }
 
-    @media (max-width: 310px){
-        nav{
-            .drop-menu{
-                position: absolute;
-                top: 100px;
-            }
-        }
-
-        @media (max-width: 170px){
-            nav{
-                .drop-menu{
-                position: absolute;
-                    top: 125px;
-                }
-            }
-        }
     }
 }
