@@ -9,11 +9,15 @@ main{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 50px 90px;
+        // align-items: start;
 
         .left-picture .picture{
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
+            position: static;
+            min-width: 300px;
+            min-height: 200px;
         }
 
         .right-text{
@@ -24,23 +28,105 @@ main{
                 padding-left: 25px;
 
                 .habit{
-                    font-size: 20px;
+                    font-size: 1.5rem;
                     padding-bottom: 15px;
                 }
 
                 .qoute{
-                    font-size: 50px;
+                    font-size: 3rem;
                     line-height: 85px;
                 }
 
                 .author{
-                    font-size: 15px;
+                    font-size: 1rem;
                     margin-top: 10px;
                 }
             }
         }
     }
 }
+
+    
+
+// Responsive
+@media (max-width: 1230px) {
+    main{ 
+        .row{
+            width: 90%;
+
+            .right-text{
+                .text{
+                    padding-left: 0px;
+                    padding-right: 0px;
+
+                    .habit{
+                        font-size: 1.5rem;
+                        padding-bottom: 15px;
+                    }
+
+                    .qoute{
+                        font-size: 3rem;
+                        line-height: 70px;
+                    }
+
+                    .author{
+                        font-size: 1rem;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 500px){
+    main{
+        .row{
+            grid-template-columns: 1fr;
+            text-align: center;
+
+            .right-text{
+                justify-content: center;
+
+                .text{
+                    padding-left: 0;
+
+                    .qoute{
+                        font-size: 25px;
+                        line-height: 40px;
+                    }
+
+                    .habit{
+                        font-size: 15px;
+                        margin-top: -10%;
+                    }
+
+                    .author{
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .left-picture{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+// @media (min-width: 361px) and (max-width: 599px) {
+//     main{
+//         .row{
+//             grid-template-columns: 1fr;
+//             text-align: center;
+//         }
+//     }
+// }
+
+
+
     // .row .left-picture{
     //     overflow: hidden;
     // }
@@ -75,14 +161,3 @@ main{
     //     margin-top: 10px;
     // }
 // }
-    
-
-// Responsive
-@media (max-width: 1230px) {
-    main{ 
-        .row{
-            width: 90%;
-            grid-template-columns: 1fr;
-        }
-    }
-}
