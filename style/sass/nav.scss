@@ -1,0 +1,140 @@
+// Variables
+$Baskerville-font: "Libre Baskerville", serif;
+$Abhaya-font: "Abhaya Libre", serif;
+$Caslon-font-1: "Libre Calson Text", serif;
+$Caslon-font-2: "Libre Caslon Display", system-ui;
+$Blanka-font: "Blanka", sans-serif;
+$Cinzel-font: "Cinzel", serif;
+
+// #F5BF41
+// #F5B92D
+// #ffca62
+// #fcc944
+// #ffc936
+$Color-text-1: #ffc936;
+$Color-text-2: #000;
+$Color-icon: #000;
+
+$Text-size: 12px;
+$Icon-size: 15px;
+$NameLogo-size: 20px;
+
+$Left-margin-text: 15px;
+$Right-margin-text: 15px;
+$Left-margin-icon: 25px;
+
+// Inheritance
+%Text-font{
+    font-family: $Baskerville-font;
+    font-weight: 400;
+    font-style: normal;
+}
+
+%btn-hover{
+    background-color: white;
+    border-radius: 5px;
+    color: $Color-text-2;
+    padding: 3.5px;
+    transition: 0.1s;
+}
+
+$border: 1px solid red;
+
+nav{
+    // border: $border;
+    @extend%Text-font;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 35px 5%;
+
+    .name-logo{
+        font-size: $NameLogo-size;
+        color: $Color-text-2;
+        letter-spacing: 2.5px;
+        cursor: pointer;
+    }
+    .navlist ul{
+        display: flex;
+        gap: 20px;
+        
+        li{
+            .nav-btn{
+                font-size: $Text-size;
+                color: $Color-text-2;
+            }
+            .icon-btn{
+                font-size: $Icon-size;
+                color: $Color-icon;
+            }
+        }
+    }
+    .menu-btn{
+        display: none;
+        color: $Color-text-2;
+        font-size: 15px;
+        z-index: 1000;
+        cursor: pointer;
+    }
+    
+}
+.drop-menu{
+    // border: $border;
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+
+    ul{
+        display: flex;
+        padding: 1.5rem;
+        gap: 25px;
+
+        a{
+            color: #fff;
+        }
+        .nav-btn{
+            font-size: $Text-size;
+        }
+        .icon-btn{
+            font-size: $Icon-size;
+        }
+    }
+}
+.drop-menu.open{
+    display: flex;
+    justify-content: center;
+}
+// .drop-menu .nav-btn:hover{
+//     @extend %btn-hover;
+// }
+// .drop-menu .icon-btn:hover{
+//     @extend %btn-hover;
+// }
+
+@media (max-width: 630px) {
+    nav{
+        justify-content: center;
+        gap: 7px;
+
+        .name-logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navlist li{
+            display: none; 
+        }
+        .menu-btn{
+            display: block;
+        }
+    }
+    .drop-menu{
+        display: none;
+    }
+}

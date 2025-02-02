@@ -1,0 +1,89 @@
+nav {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 35px 5%;
+}
+nav .name-logo {
+  font-size: 20px;
+  color: #000;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+}
+nav .navlist ul {
+  display: flex;
+  gap: 20px;
+}
+nav .navlist ul li .nav-btn {
+  font-size: 12px;
+  color: #000;
+}
+nav .navlist ul li .icon-btn {
+  font-size: 15px;
+  color: #000;
+}
+nav .menu-btn {
+  display: none;
+  color: #000;
+  font-size: 15px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+.drop-menu ul {
+  display: flex;
+  padding: 1.5rem;
+  gap: 25px;
+}
+.drop-menu ul a {
+  color: #fff;
+}
+.drop-menu ul .nav-btn {
+  font-size: 12px;
+}
+.drop-menu ul .icon-btn {
+  font-size: 15px;
+}
+
+.drop-menu.open {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 630px) {
+  nav {
+    justify-content: center;
+    gap: 7px;
+  }
+  nav .name-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .navlist li {
+    display: none;
+  }
+  nav .menu-btn {
+    display: block;
+  }
+  .drop-menu {
+    display: none;
+  }
+}/*# sourceMappingURL=nav.css.map */

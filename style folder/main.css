@@ -12,8 +12,12 @@ main .row {
 }
 main .row .left-picture .picture {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: static;
+  min-width: 300px;
+  min-height: 200px;
 }
 main .row .right-text {
   display: flex;
@@ -23,23 +27,62 @@ main .row .right-text .text {
   padding-left: 25px;
 }
 main .row .right-text .text .habit {
-  font-size: 20px;
+  font-size: 1.5rem;
   padding-bottom: 15px;
 }
 main .row .right-text .text .qoute {
-  font-size: 50px;
+  font-size: 3rem;
   line-height: 85px;
 }
 main .row .right-text .text .author {
-  font-size: 15px;
+  font-size: 1rem;
   margin-top: 10px;
 }
 
 @media (max-width: 1230px) {
   main .row {
     width: 90%;
-    grid-template-columns: 1fr;
+  }
+  main .row .right-text .text {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  main .row .right-text .text .habit {
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+  }
+  main .row .right-text .text .qoute {
+    font-size: 3rem;
+    line-height: 70px;
+  }
+  main .row .right-text .text .author {
+    font-size: 1rem;
+    margin-top: 10px;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
+@media (max-width: 500px) {
+  main .row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  main .row .right-text {
+    justify-content: center;
+  }
+  main .row .right-text .text {
+    padding-left: 0;
+  }
+  main .row .right-text .text .qoute {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  main .row .right-text .text .habit {
+    font-size: 15px;
+    margin-top: -10%;
+  }
+  main .row .right-text .text .author {
+    font-size: 10px;
+  }
+  main .row .left-picture {
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=main.css.map */
