@@ -108,12 +108,8 @@
     justify-content: flex-end;
     align-items: center;
     gap: 12px;
-    width: 100%;
+    /* width: 100%; */
     margin: 0 0 0 8px;
-    border: 1px solid rebeccapurple;
-
-    /* @media (max-width: 320px) {
-    } */
   }
 }
 
@@ -122,14 +118,14 @@
     display: flex;
     /* justify-content: center; */
     /* align-items: center; */
-    /* border-radius: 50%; */
+    border-radius: 50%;
     border: 1.5px solid var(--border-color);
     background-color: transparent;
     cursor: pointer;
   }
 
   .image-container img {
-    /* border-radius: 50%; */
+    border-radius: 50%;
     /* object-fit: cover; */
     object-fit: fill;
   }
@@ -176,7 +172,6 @@
     padding: 6px;
     border-radius: 3px;
     color: var(--txt-gray-color);
-    margin: 0 10px 0 0;
 
     &:hover {
       background-color: var(--hover-button-color);
@@ -184,6 +179,7 @@
 
     @media (max-width: 320px) {
       display: flex;
+      margin: 0 8px 0 0;
     }
   }
 
