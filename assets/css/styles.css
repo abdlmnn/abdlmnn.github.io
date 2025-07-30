@@ -84,11 +84,11 @@
   }
 
   .overlay-content {
-    max-width: 700px;
+    max-width: 800px;
     padding: 20px;
 
     @media (max-width: 478px) {
-      max-width: 200px;
+      max-width: 400px;
     }
   }
 
