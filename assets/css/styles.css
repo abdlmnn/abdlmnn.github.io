@@ -60,7 +60,9 @@
   }
 
   main {
-    margin-top: 62.5px;
+    @media (max-width: 478px) {
+      margin-top: 56px;
+    }
   }
 }
 
@@ -168,6 +170,12 @@
     justify-content: center;
     align-items: center;
     padding: 16px 16px 8px;
+
+    @media (max-width: 478px) {
+      position: fixed;
+      top: 0;
+      border-bottom: 1.5px solid var(--border-color);
+    }
   }
 
   .icon-logo {
@@ -177,13 +185,13 @@
     gap: 4px;
     width: 100%;
 
-    @media (max-width: 320px) {
+    @media (max-width: 478px) {
       justify-content: center;
     }
   }
 
   .icon-logo a {
-    @media (max-width: 320px) {
+    @media (max-width: 478px) {
       display: none;
     }
   }
@@ -254,10 +262,7 @@
     gap: 10px;
 
     @media (max-width: 478px) {
-      justify-content: center;
-    }
-
-    @media (max-width: 320px) {
+      /* justify-content: center; */
       display: none;
     }
   }
@@ -302,7 +307,7 @@
       background-color: var(--hover-button-color);
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 478px) {
       display: flex;
       margin: 0 8px 0 0;
     }
@@ -330,7 +335,7 @@
     width: 100%;
     max-width: 200px;
     position: fixed;
-    top: 54px;
+    top: 56px;
     left: 0;
     z-index: 1;
     transition: 0.5s;
@@ -343,8 +348,11 @@
       max-width: 100%;
       border-right: none;
       text-align: center;
-      top: 55px;
     }
+  }
+
+  .sidenav.dark {
+    background-color: var(--bg-darkest-color);
   }
 
   .sidenav .a-link {
@@ -376,5 +384,26 @@
 
   .link i {
     font-size: 24px;
+  }
+}
+
+@layer darksidenav {
+  .sidenav-backdrop {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 56px);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .sidenav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
   }
 }
