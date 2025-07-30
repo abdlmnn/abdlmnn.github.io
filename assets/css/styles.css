@@ -86,6 +86,10 @@
   .overlay-content {
     max-width: 700px;
     padding: 20px;
+
+    @media (max-width: 478px) {
+      max-width: 200px;
+    }
   }
 
   .overlay-content h1 {
@@ -129,7 +133,7 @@
   .tooltip::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 125%;
+    bottom: 118%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--bg-lightdark-color);
