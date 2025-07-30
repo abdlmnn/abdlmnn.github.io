@@ -31,3 +31,27 @@ window.addEventListener("resize", () => {
     closeBtn.style.display = "none";
   }
 });
+
+// Welcome Page
+const welcomeOverlay = document.getElementById("welcomeOverlay");
+const mainContent = document.getElementById("mainContent");
+const hasVisited = localStorage.getItem("hasVisited");
+
+if (hasVisited) {
+  welcomeOverlay.style.display = "none";
+  mainContent.style.display = "block";
+} else {
+  welcomeOverlay.style.display = "flex";
+  mainContent.style.display = "none";
+}
+
+function enterSite() {
+  welcomeOverlay.classList.add("hidden");
+
+  setTimeout(() => {
+    welcomeOverlay.style.display = "none";
+    mainContent.style.display = "block";
+
+    localStorage.setItem("hasVisited", "true");
+  }, 600);
+}
