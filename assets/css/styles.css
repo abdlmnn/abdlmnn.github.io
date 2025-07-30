@@ -84,17 +84,21 @@
   }
 
   .overlay-content {
-    max-width: 800px;
+    max-width: 600px;
     padding: 20px;
-
-    @media (max-width: 478px) {
-      max-width: 400px;
-    }
   }
 
   .overlay-content h1 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width: 478px) {
+      flex-direction: column;
+    }
   }
 
   .overlay-content p {
@@ -108,7 +112,6 @@
     padding: 10px 20px;
     background-color: var(--hover-button-color, #333);
     color: var(--txt-lightgray-color);
-    border: none;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 6px;
@@ -128,28 +131,32 @@
   .tooltip {
     position: relative;
     cursor: help;
-  }
 
-  .tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 118%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-lightdark-color);
-    color: var(--txt-lightgray-color);
-    padding: 6px 10px;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    border-radius: 4px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-    z-index: 1000;
-  }
+    &::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 118%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-lightdark-color);
+      color: var(--txt-lightgray-color);
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 1000;
+    }
 
-  .tooltip:hover::after {
-    opacity: 1;
+    &:hover::after {
+      opacity: 1;
+
+      @media (max-width: 478px) {
+        bottom: 9px;
+      }
+    }
   }
 }
 

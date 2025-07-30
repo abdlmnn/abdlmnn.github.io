@@ -53,5 +53,5 @@ function enterSite() {
     mainContent.style.display = "block";
 
     localStorage.setItem("hasVisited", "true");
-  }, 600);
+  }, 500);
 }
