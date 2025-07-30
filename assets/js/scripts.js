@@ -20,7 +20,7 @@ function closeNav() {
 }
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 500) {
+  if (window.innerWidth > 320) {
     menuBtn.style.display = "none";
     closeBtn.style.display = "none";
   } else {
