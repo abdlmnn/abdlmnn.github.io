@@ -681,7 +681,7 @@
   }
 
   .right-side-container p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-top: 2rem;
   }
@@ -689,6 +689,25 @@
   @media screen and (max-width: 786px) {
     .first-container {
       flex-direction: column;
+    }
+
+    .right-side-container {
+      padding: 0;
+      border-top: 1px solid #585859;
+      border-radius: 0;
+      padding: 10px 0;
+    }
+
+    .right-header-text h1 {
+      font-size: 1.7rem;
+    }
+
+    .right-header-text h2 {
+      font-size: 1.2rem;
+    }
+
+    .right-side-container p {
+      font-size: 1rem;
     }
   }
 
