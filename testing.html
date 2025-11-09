@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* ===================================== */
+      /* CSS for Project Slider
+/* ===================================== */
+
+      .second-container {
+        padding: 4rem 2rem;
+        background-color: #1c2128; /* Slightly darker background */
+        border-top: 1px solid var(--border-color);
+      }
+
+      .txt-header {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1rem;
+        color: var(--txt-gray-color);
+        margin-bottom: 3rem;
+      }
+
+      /* --- Slider --- */
+      .project-slider-container {
+        position: relative;
+        max-width: 1100px; /* Max width of the content */
+        margin: 0 auto;
+        overflow: hidden; /* This hides the other slides */
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background-color: #2a313c;
+      }
+
+      .project-slider-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        /* Width will be set by JS, e.g., 200% for 2 slides */
+      }
+
+      .project-slide {
+        min-width: 100%;
+        box-sizing: border-box; /* Important for 100% width */
+        display: flex;
+        flex-direction: column; /* On mobile: stack image on top */
+      }
+
+      /* --- Slide Content --- */
+      .project-slide-image {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .project-slide-image img {
+        width: 100%;
+        height: 300px; /* Fixed height for image area */
+        object-fit: cover;
+        display: block;
+      }
+
+      .project-slide-info {
+        padding: 2rem;
+      }
+
+      .project-date {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--txt-gray2-color);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-slide-info h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .project-description {
+        font-size: 0.95rem;
+        color: var(--txt-gray2-color);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .project-tech-stack span {
+        background-color: #383e47;
+        color: #c5c5c5;
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+      }
+
+      /* --- Project Links (Buttons) --- */
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .btn-link {
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        border: 1px solid #585859;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background-color 0.2s ease;
+      }
+
+      .btn-link.btn-github {
+        background-color: #383e47;
+        color: var(--txt-white-color);
+      }
+      .btn-link.btn-github:hover {
+        background-color: #4a515c;
+      }
+
+      .btn-link.btn-live {
+        background-color: transparent;
+        color: var(--txt-gray-color);
+      }
+      .btn-link.btn-live:hover {
+        background-color: #383e47;
+      }
+
+      /* --- Slider Buttons --- */
+      .slider-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-color);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease;
+      }
+      .slider-button:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      .slider-button.prev {
+        left: 1rem;
+      }
+      .slider-button.next {
+        right: 1rem;
+      }
+
+      /* --- Media Query for Desktop --- */
+      /* On larger screens, show image on left, text on right */
+      @media (min-width: 768px) {
+        .project-slide {
+          flex-direction: row; /* Side-by-side */
+        }
+        .project-slide-image {
+          flex: 1; /* Take 50% width */
+          border-right: 1px solid var(--border-color);
+          border-bottom: 0;
+        }
+        .project-slide-image img {
+          height: 100%; /* Fill the container height */
+          min-height: 450px; /* Give it a good min height */
+        }
+        .project-slide-info {
+          flex: 1; /* Take 50% width */
+          padding: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="second-container" id="projects">
+      <h1 class="txt-header">Featured Work</h1>
+      <p class="section-subtitle">
+        A selection of my projects. Use the arrows to navigate.
+      </p>
+
+      <div class="project-slider-container">
+        <div class="project-slider-track">
+          <div class="project-slide">
+            <div class="project-slide-image">
+              <img
+                src="assets/images/projects/knowmyface-1.png"
+                alt="Pharmago Project"
+              />
+            </div>
+            <div class="project-slide-info">
+              <span class="project-date">Oct 2025</span>
+              <h3>Pharmago: On-Demand Medicine</h3>
+              <p class="project-description">
+                A full-stack web and mobile platform for ordering from multiple
+                pharmacies with real-time delivery tracking.
+              </p>
+              <div class="project-tech-stack">
+                <span>React Native</span>
+                <span>Expo</span>
+                <span>Python</span>
+                <span>Django</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-link btn-github">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="#" class="btn-link btn-live">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                  Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-slide">
+            <div class="project-slide-image">
+              <img
+                src="assets/images/projects/portfolio.png"
+                alt="Portfolio Project"
+              />
+            </div>
+            <div class="project-slide-info">
+              <span class="project-date">Nov 2025</span>
+              <h3>Personal Portfolio Website</h3>
+              <p class="project-description">
+                My personal portfolio website, built from scratch to showcase my
+                skills in design and development.
+              </p>
+              <div class="project-tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-link btn-github">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="slider-button prev" id="slide-prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="slider-button next" id="slide-next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <script>
+      // Wait for the DOM to be fully loaded before running script
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select all the necessary elements
+        const sliderTrack = document.querySelector(".project-slider-track");
+        // Check if sliderTrack exists on the page
+        if (sliderTrack) {
+          const slides = Array.from(sliderTrack.children);
+          const nextButton = document.getElementById("slide-next");
+          const prevButton = document.getElementById("slide-prev");
+          const slideWidth = slides[0].getBoundingClientRect().width;
+
+          // Set the width of the track to fit all slides
+          sliderTrack.style.width = `${slideWidth * slides.length}px`;
+
+          let currentIndex = 0;
+
+          // Function to move to a specific slide
+          const moveToSlide = (index) => {
+            // Use 100% for responsive movement
+            sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+            currentIndex = index;
+          };
+
+          // Event listener for the "Next" button
+          nextButton.addEventListener("click", () => {
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= slides.length) {
+              nextIndex = 0; // Loop back to the first slide
+            }
+            moveToSlide(nextIndex);
+          });
+
+          // Event listener for the "Previous" button
+          prevButton.addEventListener("click", () => {
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) {
+              prevIndex = slides.length - 1; // Loop to the last slide
+            }
+            moveToSlide(prevIndex);
+          });
+
+          // --- Optional: Update slide width on window resize ---
+          // This makes it more robust if the window size changes
+          window.addEventListener("resize", () => {
+            // Recalculate based on 100% width, no need to get width again
+            moveToSlide(currentIndex);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

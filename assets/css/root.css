@@ -1,0 +1,46 @@
+:root {
+  --font-sans: var(
+    --fontStack-sansSerif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji"
+  );
+
+  /* --github-bg-color-content: #24292f; */
+  /* --github-border-b-color: #57606a; */
+
+  /* USE THIS */
+  --github-bg-color-content: hsl(212, 19%, 16%);
+  --github-text-color-primary: hsl(216, 19%, 85%);
+  --github-text-color-secondary: hsl(214, 8%, 60%);
+  --github-border-color: hsl(214, 12%, 27%);
+  --github-hover-bg-color-primary: hsl(212, 19%, 16%);
+  --github-footer-text-color: #9198a1;
+  --github-text-color-blue: #478be6;
+  /* USE THIS */
+
+  --bg-darkest-color: #0d1117;
+  --bg-light-color: #2a313c;
+  --bg-dark-color: hsl(214, 25%, 11%);
+  --bg-lightdark-color: hsl(212, 19%, 16%);
+
+  --txt-lightgray-color: hsl(216, 19%, 85%);
+  --txt-gray-color: hsl(214, 8%, 60%);
+  --txt-gray2-color: hsl(215, 20%, 65%);
+  --txt-lightgray-secondary-color: #8b949e;
+
+  --hover-button-color: hsla(217, 18%, 20%, 0.686);
+
+  --border-color: hsl(214, 12%, 27%);
+
+  --line-color: hsl(11, 79%, 64%);
+
+  --fs-12: 12px;
+  --fs-14: 14px;
+}

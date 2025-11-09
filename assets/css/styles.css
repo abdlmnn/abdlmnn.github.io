@@ -13,6 +13,9 @@
       "Segoe UI Emoji"
     );
 
+    --github-bg-color: #24292f;
+    --github-border-b-color: #57606a;
+
     --bg-darkest-color: #0d1117;
     --bg-light-color: #2a313c;
     --bg-dark-color: hsl(214, 25%, 11%);
@@ -31,6 +34,13 @@
 
     --fs-12: 12px;
     --fs-14: 14px;
+
+    /* USE THIS */
+    --github-bg-color-content: hsl(212, 19%, 16%);
+    --github-text-color-primary: hsl(216, 19%, 85%);
+    --github-text-color-secondary: hsl(214, 8%, 60%);
+    --github-border-color: hsl(214, 12%, 27%);
+    /* USE THIS */
   }
 }
 
@@ -44,7 +54,8 @@
   body {
     min-height: 100vh;
     font-family: var(--font-sans);
-    background-color: var(--bg-dark-color);
+    /* background-color: var(--bg-dark-color); */
+    background-color: var(--github-bg-color-content);
     color: var(--txt-lightgray-color);
   }
 
@@ -522,37 +533,6 @@
   }
 }
 
-@layer hero {
-  .hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* gap: 10px; */
-  }
-
-  .hero-text {
-    flex: 1;
-  }
-
-  .hero-text h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero-text p {
-    font-size: 1.25rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .hero-img img {
-    height: 280px;
-    width: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--border-color);
-  }
-}
-
 @layer first-section {
   .first-container {
     /* border: 1px solid red; */
@@ -723,5 +703,34 @@
       height: 200px;
       width: 200px;
     }
+  }
+}
+
+@layer second-section {
+  .second-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem; */
+    border: 1px solid red;
+
+    /* border: 1.5px solid var(--border-color); */
+  }
+
+  .top-second-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .project-container {
+    /* border: 1px solid red; */
+    padding: 10px;
+  }
+
+  .top-second-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 }
