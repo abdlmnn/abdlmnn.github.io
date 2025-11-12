@@ -17,10 +17,17 @@
 
   /* USE THIS */
   --github-bg-color-content: hsl(212, 19%, 16%);
+
   --github-text-color-primary: hsl(216, 19%, 85%);
   --github-text-color-secondary: hsl(214, 8%, 60%);
+
+  --github-button-bg-color: #2a313c;
+
   --github-border-color: hsl(214, 12%, 27%);
+  --github-border-color-secondary: #585859;
+
   --github-hover-bg-color-primary: hsl(212, 19%, 16%);
+
   --github-footer-text-color: #9198a1;
   --github-text-color-blue: #478be6;
   /* USE THIS */

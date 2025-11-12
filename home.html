@@ -107,11 +107,43 @@
       </ul>
     </nav>
 
-    <main class="min-h-[100vh] max-w-7xl mx-auto">
-      <div class="">
-        <div class="">
-          <img src="assets/images/myprofile.jpg" alt="My Profile" class="h-[300px] w-[300px] object-cover rounded-full border-[2px] border-[var(--github-border-color)]" />
+    <main class="flex min-h-[100vh] max-w-7xl mx-auto py-10">
+      <div class="px-6 flex flex-col gap-2 w-[350px] hidden md:block">
+        <div class="flex items-center justify-center md:shrink-0">
+          <img src="assets/images/myprofile.jpg" alt="My Profile" class="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] object-cover rounded-full border-[2px] border-[var(--github-border-color)]" />
         </div>
+
+        <div class="flex items-center flex-col gap-3 mt-[0.5rem]">
+          <h1 class="text-[1.5rem] font-[600] text-[var(--github-text-color-primary)]">Mohammad Abdulmanan</h1>
+
+          <button type="button" class="border border-[var(--github-border-color)] h-8 w-full rounded-[5px] flex items-center justify-center bg-[var(--github-button-bg-color)] text-[var(--github-text-color-primary)] text-[0.9rem] font-[600] cursor-pointer">Download CV</button>
+
+          <div class="w-full flex flex-col mt-[8px] gap-[12px]">
+            <div class="flex items-start flex-start gap-2">
+              <i class="fa-solid fa-location-dot text-[1rem] text-[var(--github-text-color-secondary)] mt-[6px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)]">Philippines, Northern Mindanao, Lanao Del Norte</p>
+            </div>
+
+            <a href="https://wakatime.com/@abdlmnn" target="_blank" class="flex items-center gap-1.5 cursor-default">
+              <i class="fa-regular fa-circle-check text-[1rem] text-[var(--github-text-color-secondary)] mt-[4px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)] hover:underline hover:text-[var(--github-text-color-blue)] hover:cursor-pointer">wakatime/@abdlmnn</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/abdlmnn/" target="_blank" class="flex items-center gap-1.5 cursor-default">
+              <i class="fa-brands fa-square-linkedin text-[1rem] text-[var(--github-text-color-secondary)] mt-[4px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)] hover:underline hover:text-[var(--github-text-color-blue)] hover:cursor-pointer">in/abdlmnn</p>
+            </a>
+
+            <a href="https://www.instagram.com/slhbmnn" target="_blank" class="flex items-center gap-1.5 cursor-default">
+              <i class="fa-brands fa-instagram text-[1rem] text-[var(--github-text-color-secondary)] mt-[4px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)] hover:underline hover:text-[var(--github-text-color-blue)] hover:cursor-pointer">ig/abdlmnn</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border flex-1">
+        <h1>Content</h1>
       </div>
     </main>
 
@@ -147,7 +179,11 @@
 
     <script>
       function index() {
-        window.location.href = "index.html";
+        window.location.href = "/";
+      }
+
+      function openNav() {
+        console.log("Open Nav");
       }
     </script>
   </body>
