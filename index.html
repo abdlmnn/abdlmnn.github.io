@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>abdlmnn</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -11,33 +13,181 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/assets/css/styles.css?v=1.5" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="/assets/css/root.css?v=1.1" />
   </head>
-  <body>
-    <div class="overlay">
-      <div class="overlay-content">
-        <h1>
-          <span class="tooltip" data-tooltip="You turn ideas into code."
-            >Code.</span
+  <body
+    class="bg-[var(--github-bg-color-content)] text-[var(--github-text-color-primary)] font-[var(--font-sans)]"
+  >
+    <header
+      class="w-full bg-[var(--bg-dark-color)] md:border-none border-b-[1.5px] border-[var(--github-border-color)]"
+    >
+      <div class="h-16 px-4 flex items-center justify-between">
+        <button
+          type="button"
+          class="md:hidden mr-3 px-[6px] py-[8px] border border-[var(--github-border-color)] cursor-pointer text-[var(--github-text-color-secondary)] flex items-center rounded-md hover:bg-[var(--github-bg-color-content)] hover:text-[var(--github-text-color-secondary)] transition-all duration-100"
+          onclick="openNav()"
+          id="menuBtn"
+        >
+          <i class="fa-solid fa-bars text-[14px]"></i>
+        </button>
+
+        <button
+          type="button"
+          class="hidden px-[6px] py-[8px] border border-[var(--github-border-color)] cursor-pointer text-[var(--github-text-color-secondary)] flex items-center rounded-md hover:bg-[var(--github-bg-color-content)] hover:text-[var(--github-text-color-secondary)] transition-all duration-100"
+          onclick="closeNav()"
+          id="closeBtn"
+        >
+          <i class="fa-solid fa-xmark text-[14px]"></i>
+        </button>
+
+        <div class="flex items-center justify-start gap-1.5">
+          <a href="https://github.com/abdlmnn" target="_blank" class="md:block hidden">
+            <i
+              class="fa-brands fa-github text-[30px] hover:text-[var(--github-text-color-secondary)] transition-colors duration-100"
+            ></i>
+          </a>
+          <p
+            class="font-medium p-1 text-[14px] cursor-pointer hover:bg-[var(--github-hover-bg-color-primary)] rounded-[6px]"
+            onclick="index()"
           >
-          <span class="tooltip" data-tooltip="You guide the interaction."
-            >Design.</span
+            abdlmnn
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            class="px-[6px] py-[8px] border border-[var(--github-border-color)] cursor-pointer text-[var(--github-text-color-secondary)] flex items-center rounded-md hover:bg-[var(--github-bg-color-content)] hover:text-[var(--github-text-color-secondary)] transition-all duration-100"
+            onclick="openNav()"
+            id="menuBtn"
           >
-          <span class="tooltip" data-tooltip="You code toward a goal."
-            >Purpose.</span
-          >
-        </h1>
-        <p>
-          Explore the work of
-          <abbr title="Abdulmanan" style="text-decoration: none">Abdlmnn</abbr>.
-        </p>
-        <button onclick="enterSite()">Explore</button>
+            <i class="fa-solid fa-circle-half-stroke text-[14px]"></i>
+
+            <!-- <i class="fa-regular fa-moon text-[14px]"></i> -->
+
+            <!-- <i class="fa-regular fa-sun text-[14px]"></i> -->
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
+
+    <nav
+      class="hidden md:block h-10 w-full bg-[var(--bg-dark-color)] border-b-[1.5px] border-[var(--github-border-color)]"
+    >
+      <ul class="pb-4 px-4 flex items-center justify-start gap-2">
+        <li class="relative flex items-center justify-center">
+          <a
+            href="home.html"
+            class="text-[14px] font-medium px-[10px] py-[6px] rounded-md hover:bg-[var(--github-bg-color-content)] transition-all duration-100 after:content-[''] after:absolute after:left-0 after:-bottom-[7px] after:w-full after:h-[1.5px] after:rounded-[5px] after:bg-[var(--line-color)]"
+            >Home</a
+          >
+        </li class="relative">
+        <li>
+          <a
+            href=""
+            class="text-[14px] px-[10px] py-[6px] rounded-md hover:bg-[var(--github-bg-color-content)] transition-all duration-100"
+            >Projects</a
+          >
+        </li>
+        <li class="relative">
+          <a
+            href=""
+            class="text-[14px] px-[10px] py-[6px] rounded-md hover:bg-[var(--github-bg-color-content)] transition-all duration-100"
+            >About</a
+          >
+        </li>
+        <li class="relative">
+          <a
+            href=""
+            class="text-[14px] px-[10px] py-[6px] rounded-md hover:bg-[var(--github-bg-color-content)] transition-all duration-100"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <p>Hi</p>
+
+    <main class="flex min-h-[100vh] max-w-7xl mx-auto py-10">
+      <div class="px-6 flex flex-col gap-2 w-[350px] hidden md:block">
+        <div class="flex items-center justify-center md:shrink-0">
+          <img src="assets/images/myprofile.jpg" alt="My Profile" class="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] object-cover rounded-full border-[2px] border-[var(--github-border-color)]" />
+        </div>
+
+        <div class="flex items-center flex-col gap-3 mt-[0.5rem]">
+          <h1 class="text-[1.5rem] font-[600] text-[var(--github-text-color-primary)]">Mohammad Abdulmanan</h1>
+
+          <button type="button" class="border border-[var(--github-border-color)] h-8 w-full rounded-[5px] flex items-center justify-center bg-[var(--github-button-bg-color)] text-[var(--github-text-color-primary)] text-[0.9rem] font-[600] cursor-pointer">Download CV</button>
+
+          <div class="w-full flex flex-col mt-[8px] gap-[12px]">
+            <div class="flex items-start flex-start gap-2">
+              <i class="fa-solid fa-location-dot text-[1rem] text-[var(--github-text-color-secondary)] mt-[6px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)]">Philippines, Northern Mindanao, Lanao Del Norte</p>
+            </div>
+
+            <a href="https://wakatime.com/@abdlmnn" target="_blank" class="flex items-center gap-1.5 cursor-default">
+              <i class="fa-regular fa-circle-check text-[1rem] text-[var(--github-text-color-secondary)] mt-[4px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)] hover:underline hover:text-[var(--github-text-color-blue)] hover:cursor-pointer">wakatime/@abdlmnn</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/abdlmnn/" target="_blank" class="flex items-center gap-1.5 cursor-default">
+              <i class="fa-brands fa-square-linkedin text-[1rem] text-[var(--github-text-color-secondary)] mt-[4px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)] hover:underline hover:text-[var(--github-text-color-blue)] hover:cursor-pointer">in/abdlmnn</p>
+            </a>
+
+            <a href="https://www.instagram.com/slhbmnn" target="_blank" class="flex items-center gap-1.5 cursor-default">
+              <i class="fa-brands fa-instagram text-[1rem] text-[var(--github-text-color-secondary)] mt-[4px]"></i>
+              <p class="text-[0.9rem] text-[var(--github-text-color-primary)] hover:underline hover:text-[var(--github-text-color-blue)] hover:cursor-pointer">ig/abdlmnn</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border flex-1">
+        <h1>Content</h1>
+      </div>
+    </main>
+
+    <footer class="w-full">
+      <div class="h-16 flex items-center justify-center gap-4 px-4">
+        <div class="flex items-center justify-center gap-2">
+          <a href="https://github.com/abdlmnn" target="_blank" class="flex item-center justify-center">
+              <i
+                class="fa-brands fa-github text-[24px] text-[var(--github-footer-text-color)] hover:text-[var(--github-text-color-secondary)] transition-colors duration-100"
+              ></i>
+          </a>
+          <p class="text-[12px] text-[var(--github-footer-text-color)] hover:text-[var(--github-text-color-secondary)]">
+            © 2025 Abdulmanan.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-center flex-wrap gap-4">
+          <a href="home.html" class="text-[12px] flex item-center justify-center text-[var(--github-footer-text-color)] hover:text-[var(--github-text-color-blue)] hover:underline transition-colors duration-100">
+              Home
+          </a>
+          <a href="" class="text-[12px] flex item-center justify-center text-[var(--github-footer-text-color)] hover:text-[var(--github-text-color-blue)] hover:underline transition-colors duration-100">
+              Projects
+          </a>
+          <a href="" class="text-[12px] flex item-center justify-center text-[var(--github-footer-text-color)] hover:text-[var(--github-text-color-blue)] hover:underline transition-colors duration-100">
+              About
+          </a>
+          <a href="" class="text-[12px] flex item-center justify-center text-[var(--github-footer-text-color)] hover:text-[var(--github-text-color-blue)] hover:underline transition-colors duration-100">
+              Contact
+          </a>
+        </div>
+      </div>
+    </footer>
 
     <script>
-      function enterSite() {
-        window.location.href = "home.html";
+      function index() {
+        window.location.href = "/";
+      }
+
+      function openNav() {
+        console.log("Open Nav");
       }
     </script>
   </body>
