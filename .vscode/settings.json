@@ -1,7 +1,0 @@
-{
-	"geminicodeassist.enable": false,
-	"geminicodeassist.inlineSuggestions.enableAuto": false,
-	"vs-code-prettier-eslint.prettierLast": true,
-	"codeium.enableCodeLens": false,
-	"editor.defaultFormatter": "vscode.html-language-features"
-}
