@@ -262,6 +262,7 @@ a {
 
 .hero-split-image .image:hover {
   opacity: 1;
+  transform: scale(1.5);
 }
 
 .hero-split-image .image-top {
@@ -270,12 +271,6 @@ a {
 
 .hero-split-image .image-bottom {
   bottom: 0;
-}
-
-.hero-split-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .hero-split-image .image-top:hover {
