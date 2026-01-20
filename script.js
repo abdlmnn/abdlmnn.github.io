@@ -1,21 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.header-container');
-  const nav = document.querySelector('.nav-container');
-  const dropdown_links = document.querySelector('.nav-links-dropdown');
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".header-container");
+  const nav = document.querySelector(".nav-container");
+  const dropdown_links = document.querySelector(".nav-links-dropdown");
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
-      header.classList.add('scrolled');
-      nav.classList.add('scrolled');
+      header.classList.add("scrolled");
+      nav.classList.add("scrolled");
     } else {
-      header.classList.remove('scrolled');
-      nav.classList.remove('scrolled');
+      header.classList.remove("scrolled");
+      nav.classList.remove("scrolled");
     }
   });
 
-  const logoAnimate = document.querySelector('.logo-animate');
-  const words = ['Mohammad', 'Abdulmanan'];
-  const defaultText = 'M/A';
+  const logoAnimate = document.querySelector(".logo-animate");
+  const words = ["Mohammad", "Abdulmanan"];
+  const defaultText = "M/A";
 
   let wordIndex = 0;
   let charIndex = 0;
@@ -31,8 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function deleteText(currentText, callback) {
     if (currentText.length > 0) {
-      logoAnimate.textContent = currentText.substring(0, currentText.length - 1) || '\u00A0';
-      setTimeout(() => deleteText(logoAnimate.textContent.replace('\u00A0', ''), callback), deletingSpeed);
+      logoAnimate.textContent =
+        currentText.substring(0, currentText.length - 1) || "\u00A0";
+      setTimeout(
+        () =>
+          deleteText(logoAnimate.textContent.replace("\u00A0", ""), callback),
+        deletingSpeed,
+      );
     } else {
       callback();
     }
@@ -41,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function typeWord() {
     const word = words[wordIndex];
     if (charIndex < word.length) {
-      if (logoAnimate.textContent === '\u00A0') logoAnimate.textContent = '';
+      if (logoAnimate.textContent === "\u00A0") logoAnimate.textContent = "";
       logoAnimate.textContent += word.charAt(charIndex);
       charIndex++;
       setTimeout(typeWord, typingSpeed);
@@ -53,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function deleteWord() {
     const word = words[wordIndex];
     if (charIndex > 0) {
-      logoAnimate.textContent = word.substring(0, charIndex - 1) || '\u00A0';
+      logoAnimate.textContent = word.substring(0, charIndex - 1) || "\u00A0";
       charIndex--;
       setTimeout(deleteWord, deletingSpeed);
     } else {
@@ -61,7 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (wordIndex === 0) {
         charIndex = 0;
         logoAnimate.textContent = defaultText;
-        setTimeout(() => deleteText(defaultText, () => typeWord()), pauseBetween);
+        setTimeout(
+          () => deleteText(defaultText, () => typeWord()),
+          pauseBetween,
+        );
       } else {
         charIndex = 0;
         setTimeout(typeWord, typingSpeed);
