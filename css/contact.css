@@ -1,0 +1,234 @@
+/* ===================================
+   Contact Page Styles
+   =================================== */
+
+.contact-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+/* ===================================
+   Info Side
+   =================================== */
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: var(--bg-primary);
+}
+
+.contact-info-inner {
+  max-width: 480px;
+}
+
+.contact-info h1 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.contact-intro {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ===================================
+   Contact Details
+   =================================== */
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-detail .detail-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.contact-detail .detail-value {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.contact-detail a.detail-value {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-detail a.detail-value:hover {
+  color: var(--accent);
+}
+
+/* ===================================
+   Social Links
+   =================================== */
+
+.contact-social {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-social .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.contact-social .social-link:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* ===================================
+   Form Side
+   =================================== */
+
+.contact-form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: var(--bg-secondary);
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 480px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px 32px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--accent);
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 992px) {
+  .contact-main {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    padding: 60px 40px;
+    order: 1;
+  }
+
+  .contact-form-side {
+    padding: 60px 40px;
+    order: 2;
+  }
+
+  .contact-info h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 40px 20px;
+  }
+
+  .contact-form-side {
+    padding: 40px 20px;
+  }
+
+  .contact-info h1 {
+    font-size: 2rem;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+  }
+}

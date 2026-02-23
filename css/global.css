@@ -1,0 +1,72 @@
+@import url("https://fonts.cdnfonts.com/css/blanka");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  --primary-text: #2c3e50;
+  --secondary-text: #7f8c8d;
+  --accent-color: #e67e22;
+  --background: #ffffff;
+  --alt-background: #f8f9fa;
+  --border-color: #ecf0f1;
+
+  --dark-text: #1e1e1e;
+  --light-text: #f6f6f6;
+
+  --light-background: #f6f6f6;
+  --dark-background: #1e1e1e;
+
+
+  /* FONTS */
+  --font-serif: 'Lora', serif;
+  --font-sans: 'Montserrat', sans-serif;
+
+  --Baskerville-font: "Libre Baskerville", serif;
+
+  --Abhaya-font: "Abhaya Libre", serif;
+  --Caslon-font-1: "Libre Calson Text", serif;
+  --Caslon-font-2: "Libre Caslon Display", system-ui;
+  --Blanka-font: "Blanka", sans-serif;
+  --Cinzel-font: "Cinzel", serif;
+
+  --font-syne: "Syne", sans-serif;
+}
+
+
+/* .syne-<uniquifier> {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--light-background);
+  color: var(--dark-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: var(--font-syne);
+}
+
+
+h1, h2, h3 {
+  font-family: var(--Baskerville-font);
+  /* font-weight: 700; */
+  line-height: 1.2;
+}

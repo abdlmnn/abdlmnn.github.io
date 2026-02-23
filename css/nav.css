@@ -1,0 +1,76 @@
+:root {
+  --primary-text: #2c3e50;
+  --secondary-text: #7f8c8d;
+  --accent-color: #e67e22;
+  --accent-color-3: #f4a261;
+  --light-background: #f6f6f6;
+  /* --dark-background: #1e1e1e; */
+  --alt-background: #f8f9fa;
+  --border-color: #ecf0f1;
+
+
+  /* FONTS */
+  --font-serif: 'Lora', serif;
+  --font-sans: 'Montserrat', sans-serif;
+
+  --Baskerville-font: "Libre Baskerville", serif;
+
+  --Abhaya-font: "Abhaya Libre", serif;
+  --Caslon-font-1: "Libre Calson Text", serif;
+  --Caslon-font-2: "Libre Caslon Display", system-ui;
+  --Blanka-font: "Blanka", sans-serif;
+  --Cinzel-font: "Cinzel", serif;
+
+  --font-syne: "Syne", sans-serif;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px 0 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  /* justify-content: right; */
+  gap: 24px;
+}
+
+nav .a-tag {
+  font-weight: 600;
+  /* font-size: 14px; */
+  /* font-weight: 700; */
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+nav .a-tag::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--dark-text);
+  /* background-color: var(--light-text); */
+  transition: width 0.3s ease;
+}
+
+nav .a-tag:hover::after {
+  width: 100%;
+}

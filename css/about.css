@@ -1,0 +1,184 @@
+/* ===================================
+   About Page Styles
+   =================================== */
+
+.about-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+/* ===================================
+   Photo Side
+   =================================== */
+
+.about-photo {
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 70px);
+  position: sticky;
+  top: 70px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================
+   Content Side
+   =================================== */
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: var(--bg-primary);
+}
+
+.about-content-inner {
+  max-width: 480px;
+}
+
+.about-content h1 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+}
+
+.about-intro {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.about-text {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ===================================
+   Details
+   =================================== */
+
+.about-details {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+
+.about-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.detail-value {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* ===================================
+   Social Links
+   =================================== */
+
+.about-social {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.about-social .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.about-social .social-link:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 992px) {
+  .about-main {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    height: 50vh;
+    position: relative;
+    top: 0;
+  }
+
+  .about-content {
+    padding: 60px 40px;
+  }
+
+  .about-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .about-intro {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-photo {
+    height: 40vh;
+  }
+
+  .about-content {
+    padding: 40px 20px;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-intro {
+    font-size: 1.1rem;
+  }
+
+  .about-details {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

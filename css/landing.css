@@ -1,0 +1,73 @@
+@import url("https://fonts.cdnfonts.com/css/blanka");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  --primary-text: #2c3e50;
+  --secondary-text: #7f8c8d;
+  --accent-color: #e67e22;
+  --light-background: #f6f6f6;
+  /* --dark-background: #1e1e1e; */
+  --alt-background: #f8f9fa;
+  --border-color: #ecf0f1;
+
+
+  /* FONTS */
+  --font-serif: 'Lora', serif;
+  --font-sans: 'Montserrat', sans-serif;
+
+  --Baskerville-font: "Libre Baskerville", serif;
+
+  --Abhaya-font: "Abhaya Libre", serif;
+  --Caslon-font-1: "Libre Calson Text", serif;
+  --Caslon-font-2: "Libre Caslon Display", system-ui;
+  --Blanka-font: "Blanka", sans-serif;
+  --Cinzel-font: "Cinzel", serif;
+
+  --font-syne: "Syne", sans-serif;
+}
+
+main {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.first-container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* height: 100vh; */
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.left-image-container {
+  /* border: 1px solid red; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.left-image-container img {
+  height: 800px;
+  width: 800px;
+  object-fit: cover;
+}
+
+.right-context-container {
+  /* border: 1px solid red; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
