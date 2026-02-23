@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const introWrapper = document.getElementById('introNameWrapper');
 
   if (introModal && introWrapper) {
+    document.body.style.overflow = 'hidden';
+
     // Array of letters: ABDULMANAN
     // Indices:          0123456789
     // Remove:           U(3), A(6), A(8)
@@ -48,10 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
           introModal.remove();
+          document.body.style.overflow = '';
         }, 1000);
       }, fadeOutElements.length * 300 + 1000);
 
-    }, 1335);
+    }, 1150);
   }
 
   const nav = document.getElementById('nav');
