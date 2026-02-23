@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdlmnn - Landscape and Travel Photography. Chasing Light.">
+  <meta name="keywords" content="photography, landscape, travel, photographer, abdlmnn">
   <meta name="author" content="Abdlmnn">
-  <title>ABDLMNN</title>
-  <!-- <title>ABDLMNN — Chasing Light</title> -->
+
+  <title>Abdlmnn | Chasing Light</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="images/Me/font icon/1.png">
+  <link rel="icon" type="image/svg+xml" href="my-images/bdmnn logo.svg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,25 +21,23 @@
     rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/index.css?v=1.0">
+  <link rel="stylesheet" href="css/photo-home.css">
 </head>
 
 <body>
   <!-- Navigation -->
-  <nav class="navigation" id="nav">
-    <div class="nav-cont">
-      <!-- Logo text\image -->
-      <!-- <a href="index.html" class="nav-logo">Abdlmnn</a> -->
+  <nav class="photo-nav" id="photoNav">
+    <div class="nav-container">
+      <a href="photo-home.html" class="nav-logo">Abdlmnn</a>
 
       <div class="nav-links" id="navLinks">
-        <a href="pages/blog/blog.html" class="nav-link">Blog</a>
-        <a href="pages/album/album.html" class="nav-link">Album</a>
-        <a href="pages/gallery/gallery.html" class="nav-link">Gallery</a>
-        <a href="pages/about/about.html" class="nav-link">About</a>
-        <a href="pages/contact/contact.html" class="nav-link">Contact</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="albums.html" class="nav-link">Albums</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
-      <!-- Toggle button -->
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -47,21 +47,18 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <!-- Image -->
-    <!-- <div class="hero-bg">
+  <section class="photo-hero" id="hero">
+    <div class="photo-hero-bg">
+      <!-- Placeholder gradient background - replace with actual photo -->
       <div class="placeholder-bg"></div>
     </div>
-    <div class="hero-overlay"></div> -->
+    <div class="photo-hero-overlay"></div>
 
-    <!-- Content -->
-    <div class="hero-content">
-      <h1 class="hero-name">ABDLMNN</h1>
-      <!-- <p class="hero-signature">Mohammad Abdulmanan</p> -->
-      <p class="hero-tagline">CHASING LIGHT</p>
+    <div class="photo-hero-content">
+      <h1 class="photo-hero-name">ABDLMNN</h1>
+      <p class="photo-hero-tagline">Chasing Light</p>
     </div>
 
-    <!-- Scroll -->
     <div class="scroll-indicator" id="scrollIndicator">
       <span class="scroll-text">Enter</span>
       <div class="scroll-arrow">
@@ -73,46 +70,46 @@
     </div>
   </section>
 
-  <!-- Feature Photo Section -->
-  <section class="feature">
-    <div class="feature-container">
-      <div class="feature-grid">
-        <div class="feature-item">
-          <img src="my-images/ksa-dessert.jpg" alt="Landscape photography" class="feature-img">
-          <div class="feature-overlay">
-            <span class="feature-location">Desertcape</span>
+  <!-- Featured Photos Section -->
+  <section class="featured-section">
+    <div class="featured-container">
+      <div class="featured-grid">
+        <div class="featured-item">
+          <img src="images/KSA/1000027491.jpg" alt="Landscape photography" class="featured-img">
+          <div class="featured-overlay">
+            <span class="featured-location">Saudi Arabia</span>
           </div>
         </div>
-        <div class="feature-item">
-          <img src="my-images/school-stolen.jpg" alt="Landscape photography" class="feature-img">
-          <div class="feature-overlay">
-            <span class="feature-location">Lost in Light</span>
+        <div class="featured-item">
+          <img src="images/PH/1000027516.jpg" alt="Travel photography" class="featured-img">
+          <div class="featured-overlay">
+            <span class="featured-location">Philippines</span>
           </div>
         </div>
-        <div class="feature-item">
-          <img src="my-images/ph-mountain.jpg" alt="Landscape photography" class="feature-img">
-          <div class="feature-overlay">
-            <span class="feature-location">Highlands</span>
+        <div class="featured-item">
+          <img src="images/KSA/1000027527.jpg" alt="Architecture photography" class="featured-img">
+          <div class="featured-overlay">
+            <span class="featured-location">Riyadh</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Statement Section -->
-  <section class="statement">
+  <!-- About Statement Section -->
+  <section class="statement-section">
     <div class="statement-container">
       <p class="statement-text">
         Every place holds a story waiting to unfold.
-        I follow light as it moves across landscapes and cultures, preserving moments that might otherwise fade.
+        I follow light as it moves across landscapes and cultures preserving moments that might otherwise fade.
       </p>
     </div>
   </section>
 
   <!-- Social Links Section -->
-  <section class="social">
+  <section class="social-section">
     <div class="social-container">
-      <p class="social-label">Where Light Leads</p>
+      <p class="social-label">Follow the Journey</p>
       <div class="social-links">
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link"
           aria-label="Instagram">
@@ -122,7 +119,6 @@
               fill="currentColor" />
           </svg>
         </a>
-
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link"
           aria-label="Twitter">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,44 +127,26 @@
               fill="currentColor" />
           </svg>
         </a>
-
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link"
-          aria-label="LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8 8h3.8v2.16h.05c.53-1 1.84-2.16 3.78-2.16C20.6 8 22 11.05 22 15.01V24h-4v-7.46c0-1.78-.03-4.07-2.48-4.07-2.49 0-2.87 1.94-2.87 3.95V24H8V8z"
-              fill="currentColor" transform="scale(0.9) translate(1,0)" />
-          </svg>
-        </a>
-
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link"
-          aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.71.5.09.68-.22.68-.49 0-.24-.01-1.03-.02-1.87-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.49-1.1-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.88 1.55 2.31 1.1 2.87.84.09-.66.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.4 9.4 0 0112 6.8c.85.004 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.56 1.4.21 2.44.11 2.7.64.72 1.02 1.64 1.02 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.27 10.27 0 0022 12.26C22 6.58 17.52 2 12 2z"
-              fill="currentColor" />
-          </svg>
-        </a>
-
-        <!-- <a href="mailto:hello@abdlmnn.com" class="social-link" aria-label="Email">
+        <a href="mailto:hello@abdlmnn.com" class="social-link" aria-label="Email">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-        </a> -->
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="photo-footer">
     <div class="footer-container">
-      <p class="footer-text">&copy; 2026, Mohammad Abdulmanan. All rights reserved.</p>
+      <p class="footer-text">&copy; 2024 Abdlmnn. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/index.js?v=1.0"></script>
+  <!-- JavaScript -->
+  <script src="js/photo-home.js"></script>
 </body>
 
 </html>

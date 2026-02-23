@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdlmnn - Gallery. A collection of landscape and travel photography.">
+  <meta name="keywords" content="photography, gallery, landscape, travel, abdlmnn">
+  <meta name="author" content="Abdlmnn">
+
+  <title>Gallery | Abdlmnn</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="my-images/bdmnn logo.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="photo-nav" id="photoNav">
+    <div class="nav-container">
+      <a href="photo-home.html" class="nav-logo">Abdlmnn</a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="albums.html" class="nav-link">Albums</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Gallery Header -->
+  <header class="gallery-header">
+    <h1 class="gallery-title">Gallery</h1>
+    <p class="gallery-subtitle">A collection of moments captured across borders</p>
+  </header>
+
+  <!-- Filter Buttons -->
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ksa">Saudi Arabia</button>
+    <button class="filter-btn" data-filter="ph">Philippines</button>
+    <button class="filter-btn" data-filter="other">Other</button>
+  </div>
+
+  <!-- Masonry Gallery -->
+  <main class="gallery-main">
+    <div class="masonry-gallery" id="masonryGallery">
+
+      <!-- KSA Images -->
+      <article class="gallery-item" data-category="ksa">
+        <img src="images/KSA/1000027400 (2).jpg" alt="Saudi Arabia landscape" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Saudi Arabia</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="ksa">
+        <img src="images/KSA/1000027404.jpg" alt="Desert sunset" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Desert</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="ksa">
+        <img src="images/KSA/1000027491.jpg" alt="City lights" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Riyadh</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="ksa">
+        <img src="images/KSA/1000027527.jpg" alt="Architecture" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Architecture</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="ksa">
+        <img src="images/KSA/1000027501.jpg" alt="Saudi landscape" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Saudi Arabia</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="ksa">
+        <img src="images/KSA/1000027405.jpg" alt="Desert view" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Desert</span>
+        </div>
+      </article>
+
+      <!-- Philippines Images -->
+      <article class="gallery-item" data-category="ph">
+        <img src="images/PH/1000027516.jpg" alt="Philippines nature" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Philippines</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="ph">
+        <img src="images/PH/1000027517.jpg" alt="Tropical paradise" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Philippines</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="ph">
+        <img src="images/PH/1000027522.jpg" alt="Island view" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Philippines</span>
+        </div>
+      </article>
+
+      <!-- Other Images -->
+      <article class="gallery-item" data-category="other">
+        <img src="images/earth-blue-marble.jpg" alt="Earth view" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Earth</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="other">
+        <img src="images/night-sky.png" alt="Night sky" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Night Sky</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="other">
+        <img src="images/earth-night.jpg" alt="Earth at night" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-location">Earth at Night</span>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="photo-footer">
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2024 Abdlmnn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+    <img src="" alt="" class="lightbox-image" id="lightboxImage">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="lightbox-info">
+      <span class="lightbox-counter" id="lightboxCounter"></span>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/gallery.js"></script>
+</body>
+
+</html>
