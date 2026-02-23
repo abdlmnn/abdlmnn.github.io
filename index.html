@@ -1,135 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdlmnn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Abdlmnn">
+  <title>ABDLMNN</title>
+  <!-- <title>ABDLMNN — Chasing Light</title> -->
 
-  <link rel="stylesheet" href="index.css?v=1.2" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/Me/font icon/1.png">
 
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-  <!-- Google Fonts -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
-    rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/index.css?v=1.0">
 </head>
 
 <body>
-  <header class="header-container">
-    <nav class="nav-container">
-      <a href="#" class="logo-link">
-        <span class="logo-text">M/A</span>
-        <!-- <span class="logo-text">
-          <span class="logo-animate">M/A</span>
-        </span> -->
-      </a>
+  <!-- Navigation -->
+  <nav class="navigation" id="nav">
+    <div class="nav-cont">
+      <!-- Logo text\image -->
+      <!-- <a href="index.html" class="nav-logo">Abdlmnn</a> -->
 
-      <ul class="social-links">
-        <li>
-          <a href="https://www.linkedin.com/in/abdlmnn/" target="_blank" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/abdlmnn/" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/abdlmnn24/" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <ul class="nav-links-dropdown">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </header>
-
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <!-- <div class="hero-image">
-          <img src="../assets/images/picture.png" alt="Personal of Mohammad Abdulmanan">
-        </div> -->
-
-        <div class="hero-split-image">
-          <div class="image image-top">
-            <img src="/images/KSA/1000027512.jpg" alt="Saudi Arabia" />
-          </div>
-
-          <div class="image image-bottom">
-            <img src="/images/PH/1000027516.jpg" alt="Philippines" />
-          </div>
-        </div>
-
-        <div class="hero-text">
-          <h1>Between Two Worlds</h1>
-
-          <p>
-            This is a collection of my memories.
-            <span class="highlight">Home</span> is the Kingdom of Saudi
-            Arabia, where my childhood was written in the warm sun and shared
-            laughter. <span class="highlight">Belonging</span>
-            is the Philippines, the sound of family and the taste of home.
-          </p>
-
-          <p>
-            For my family and anyone who has ever had two homes, this is our
-            story.
-          </p>
-
-          <span class="handwritten">
-            "Home isn't just where you're from, but where your family is."
-          </span>
-
-          <!-- <p>
-            Join me as I navigate the beautiful complexity of living between Saudi Arabia and the Philippines.
-          </p> -->
-        </div>
+      <div class="nav-links" id="navLinks">
+        <a href="pages/blog/blog.html" class="nav-link">Blog</a>
+        <a href="pages/album/album.html" class="nav-link">Album</a>
+        <a href="pages/gallery/gallery.html" class="nav-link">Gallery</a>
+        <a href="pages/about/about.html" class="nav-link">About</a>
+        <a href="pages/contact/contact.html" class="nav-link">Contact</a>
       </div>
 
-      <a href="#stories" class="dive-in"> Let's dive in... </a>
+      <!-- Toggle button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <!-- Image -->
+    <!-- <div class="hero-bg">
+      <div class="placeholder-bg"></div>
+    </div>
+    <div class="hero-overlay"></div> -->
+
+    <!-- Content -->
+    <div class="hero-content">
+      <h1 class="hero-name">ABDLMNN</h1>
+      <!-- <p class="hero-signature">Mohammad Abdulmanan</p> -->
+      <p class="hero-tagline">CHASING LIGHT</p>
+    </div>
+
+    <!-- Scroll -->
+    <div class="scroll-indicator" id="scrollIndicator">
+      <span class="scroll-text">Enter</span>
+      <div class="scroll-arrow">
+        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 0L6 18M6 18L1 13M6 18L11 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
     </div>
   </section>
 
-  <section class="visual-story" id="stories">
-    <div class="container">
-      <!-- <h2>Glimpses of My Journey</h2> -->
-      <div class="story-grid">
-        <div class="story-item item-1">
-          <img src="/images/KSA/1000027470.jpg" alt="Story Image 1" />
+  <!-- Feature Photo Section -->
+  <section class="feature">
+    <div class="feature-container">
+      <div class="feature-grid">
+        <div class="feature-item">
+          <img src="my-images/ksa-dessert.jpg" alt="Landscape photography" class="feature-img">
+          <div class="feature-overlay">
+            <span class="feature-location">Desertcape</span>
+          </div>
         </div>
-        <div class="story-item item-2">
-          <img src="/images/KSA/1000027502.jpg" alt="Story Image 1" />
+        <div class="feature-item">
+          <img src="my-images/school-stolen.jpg" alt="Landscape photography" class="feature-img">
+          <div class="feature-overlay">
+            <span class="feature-location">Lost in Light</span>
+          </div>
         </div>
-        <div class="story-item item-3">
-          <img src="/images/KSA/1000027491(crop).jpg" alt="Story Image 1" />
-        </div>
-        <div class="story-item item-4">
-          <img src="/images/KSA/1000027412.jpg" alt="Story Image 1" />
-        </div>
-        <div class="story-item item-5">
-          <img src="/images/KSA/1000027555(crop).jpg" alt="Story Image 1" />
+        <div class="feature-item">
+          <img src="my-images/ph-mountain.jpg" alt="Landscape photography" class="feature-img">
+          <div class="feature-overlay">
+            <span class="feature-location">Highlands</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <script src="script.js" defer></script>
+  <!-- Statement Section -->
+  <section class="statement">
+    <div class="statement-container">
+      <p class="statement-text">
+        Every place holds a story waiting to unfold.
+        I follow light as it moves across landscapes and cultures, preserving moments that might otherwise fade.
+      </p>
+    </div>
+  </section>
+
+  <!-- Social Links Section -->
+  <section class="social">
+    <div class="social-container">
+      <p class="social-label">Where Light Leads</p>
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              fill="currentColor" />
+          </svg>
+        </a>
+
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              fill="currentColor" />
+          </svg>
+        </a>
+
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8 8h3.8v2.16h.05c.53-1 1.84-2.16 3.78-2.16C20.6 8 22 11.05 22 15.01V24h-4v-7.46c0-1.78-.03-4.07-2.48-4.07-2.49 0-2.87 1.94-2.87 3.95V24H8V8z"
+              fill="currentColor" transform="scale(0.9) translate(1,0)" />
+          </svg>
+        </a>
+
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link"
+          aria-label="GitHub">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.71.5.09.68-.22.68-.49 0-.24-.01-1.03-.02-1.87-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.49-1.1-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.88 1.55 2.31 1.1 2.87.84.09-.66.35-1.1.63-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.4 9.4 0 0112 6.8c.85.004 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.56 1.4.21 2.44.11 2.7.64.72 1.02 1.64 1.02 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.27 10.27 0 0022 12.26C22 6.58 17.52 2 12 2z"
+              fill="currentColor" />
+          </svg>
+        </a>
+
+        <!-- <a href="mailto:hello@abdlmnn.com" class="social-link" aria-label="Email">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2026, Mohammad Abdulmanan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/index.js?v=1.0"></script>
 </body>
 
 </html>
