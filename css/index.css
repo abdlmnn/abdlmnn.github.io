@@ -59,6 +59,20 @@
   filter: blur(6px);
 }
 
+/* Responsive for intro modal */
+@media (max-width: 768px) {
+  .intro-name-wrapper {
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-name-wrapper {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+  }
+}
+
 .navigation {
   position: fixed;
   top: 0;
