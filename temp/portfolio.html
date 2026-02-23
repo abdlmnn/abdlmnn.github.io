@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Abdlmnn - Reader, Programmer, Video Maker. Personal portfolio showcasing projects and skills.">
+  <meta name="keywords" content="portfolio, developer, programmer, web development">
+  <meta name="author" content="Abdlmnn">
+
+  <title>Abdlmnn | Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="my-images/bdmnn logo.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+
+<body>
+  <!-- Magical Elements -->
+  <div class="magic-wand" id="magicWand">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="18" y="8" width="4" height="28" rx="2" fill="url(#wandGradient)" transform="rotate(-45 20 20)" />
+      <circle cx="12" cy="12" r="6" fill="url(#starGradient)" />
+      <path d="M12 6 L13 10 L17 10 L14 13 L15 17 L12 14 L9 17 L10 13 L7 10 L11 10 Z" fill="#ffd700" />
+      <defs>
+        <linearGradient id="wandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#8B4513" />
+          <stop offset="100%" style="stop-color:#5D3A1A" />
+        </linearGradient>
+        <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#fff" />
+          <stop offset="100%" style="stop-color:#ffd700" />
+        </radialGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="broomstick" id="broomstick">
+    <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Broom handle -->
+      <rect x="0" y="16" width="70" height="8" rx="2" fill="#8B4513" />
+      <!-- Broom bristles -->
+      <path d="M70 12 L120 8 L115 20 L120 32 L70 28 Z" fill="#D2691E" />
+      <path d="M75 14 L110 12 L108 20 L110 28 L75 26 Z" fill="#8B4513" />
+      <!-- Binding -->
+      <rect x="68" y="12" width="6" height="16" fill="#654321" />
+    </svg>
+  </div>
+
+  <div class="golden-snitch" id="goldenSnitch">
+    <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="15" cy="15" r="8" fill="url(#snitchGradient)" />
+      <ellipse cx="15" cy="15" rx="14" ry="3" fill="none" stroke="#C0C0C0" stroke-width="1" opacity="0.5" />
+      <!-- Wings -->
+      <path d="M23 15 Q28 10 25 15 Q28 20 23 15" fill="#FFD700" opacity="0.8">
+        <animate attributeName="d" dur="0.3s" repeatCount="indefinite"
+          values="M23 15 Q28 10 25 15 Q28 20 23 15;M23 15 Q30 8 27 15 Q30 22 23 15;M23 15 Q28 10 25 15 Q28 20 23 15" />
+      </path>
+      <path d="M7 15 Q2 10 5 15 Q2 20 7 15" fill="#FFD700" opacity="0.8">
+        <animate attributeName="d" dur="0.3s" repeatCount="indefinite"
+          values="M7 15 Q2 10 5 15 Q2 20 7 15;M7 15 Q0 8 3 15 Q0 22 7 15;M7 15 Q2 10 5 15 Q2 20 7 15" />
+      </path>
+      <defs>
+        <radialGradient id="snitchGradient" cx="30%" cy="30%">
+          <stop offset="0%" style="stop-color:#FFF8DC" />
+          <stop offset="50%" style="stop-color:#FFD700" />
+          <stop offset="100%" style="stop-color:#B8860B" />
+        </radialGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="hp-glasses-scar" id="hpGlassesScar" title="Harry Potter">
+    <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Lightning Scar -->
+      <path d="M50 5 L45 20 L52 18 L42 40 L55 25 L48 27 L58 5 Z" fill="#B8860B" stroke="#8B4513" stroke-width="0.5">
+        <animate attributeName="opacity" dur="2s" repeatCount="indefinite" values="0.6;1;0.6" />
+      </path>
+      <!-- Glasses -->
+      <circle cx="30" cy="50" r="18" stroke="#1a1a1a" stroke-width="3" fill="none" />
+      <circle cx="70" cy="50" r="18" stroke="#1a1a1a" stroke-width="3" fill="none" />
+      <!-- Bridge -->
+      <path d="M48 50 Q50 45 52 50" stroke="#1a1a1a" stroke-width="3" fill="none" />
+      <!-- Temple arms -->
+      <line x1="12" y1="50" x2="5" y2="45" stroke="#1a1a1a" stroke-width="3" />
+      <line x1="88" y1="50" x2="95" y2="45" stroke="#1a1a1a" stroke-width="3" />
+      <!-- Lens reflection -->
+      <path d="M20 42 Q25 38 35 42" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" />
+      <path d="M60 42 Q65 38 75 42" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+
+  <div class="magical-particles" id="magicalParticles"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="#hero">Abdlmnn</a>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#albums" class="nav-link">Albums</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <span class="hero-greeting">Hello, I'm</span>
+      <h1 class="hero-title">
+        <span class="text-gradient">Abdlmnn</span>
+      </h1>
+      <p class="hero-subtitle">
+        Reader, Programmer, Video Maker. I craft digital experiences that blend creativity with functionality.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-folder-open"></i>
+          View Projects
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i>
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll Down</span>
+      <div class="hero-scroll-icon"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image animate-on-scroll">
+          <img src="my-images/picture.png" alt="Abdlmnn - Profile Picture">
+        </div>
+
+        <div class="about-content">
+          <h2 class="animate-on-scroll">About Me</h2>
+          <p class="animate-on-scroll delay-1">
+            I'm a passionate developer and content creator who loves turning ideas into reality through code and visual
+            storytelling. With a keen eye for design and a love for clean code, I create digital experiences that make
+            an impact.
+          </p>
+          <p class="animate-on-scroll delay-2">
+            When I'm not coding, you'll find me exploring new books, creating videos, or diving into the latest tech
+            trends. I believe in continuous learning and pushing the boundaries of what's possible.
+          </p>
+
+          <div class="about-stats animate-on-scroll delay-3">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+          </div>
+
+          <div class="skills animate-on-scroll delay-4">
+            <h3 class="skills-title">Skills & Technologies</h3>
+            <div class="skills-list">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Video Editing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="projects-header">
+        <h2 class="animate-on-scroll">Featured Projects</h2>
+        <p class="animate-on-scroll delay-1">A selection of my recent work and personal projects</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card animate-on-scroll">
+          <div class="project-image">
+            <img src="images/earth-blue-marble.jpg" alt="Project 1">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Project Alpha</h3>
+            <p class="project-description">A modern web application built with cutting-edge technologies for seamless
+              user experience.</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card animate-on-scroll delay-1">
+          <div class="project-image">
+            <img src="images/earth-night.jpg" alt="Project 2">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Project Beta</h3>
+            <p class="project-description">An innovative platform designed to solve real-world problems with elegant
+              solutions.</p>
+            <div class="project-tags">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Tailwind</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card animate-on-scroll delay-2">
+          <div class="project-image">
+            <img src="images/night-sky.png" alt="Project 3">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Project Gamma</h3>
+            <p class="project-description">A creative portfolio showcasing the intersection of art and technology.</p>
+            <div class="project-tags">
+              <span class="project-tag">HTML/CSS</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">GSAP</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <h2 class="animate-on-scroll">Photo Gallery</h2>
+        <p class="animate-on-scroll delay-1">A collection of moments captured through my lens</p>
+      </div>
+
+      <!-- Gallery Filter -->
+      <div class="gallery-filters animate-on-scroll delay-2">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ksa">Saudi Arabia</button>
+        <button class="filter-btn" data-filter="ph">Philippines</button>
+        <button class="filter-btn" data-filter="personal">Personal</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- KSA Images -->
+        <div class="gallery-item animate-on-scroll" data-category="ksa" data-title="Saudi Arabia Landscape">
+          <img src="images/KSA/1000027400 (2).jpg" alt="Saudi Arabia Landscape">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Saudi Arabia Landscape</h4>
+            <span class="gallery-item-category">KSA</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll delay-1" data-category="ksa" data-title="Desert Sunset">
+          <img src="images/KSA/1000027404.jpg" alt="Desert Sunset">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Desert Sunset</h4>
+            <span class="gallery-item-category">KSA</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll delay-2" data-category="ksa" data-title="City Lights">
+          <img src="images/KSA/1000027491.jpg" alt="City Lights">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">City Lights</h4>
+            <span class="gallery-item-category">KSA</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll" data-category="ksa" data-title="Architecture">
+          <img src="images/KSA/1000027527.jpg" alt="Architecture">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Architecture</h4>
+            <span class="gallery-item-category">KSA</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+
+        <!-- Philippines Images -->
+        <div class="gallery-item animate-on-scroll delay-1" data-category="ph" data-title="Philippines Nature">
+          <img src="images/PH/1000027516.jpg" alt="Philippines Nature">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Philippines Nature</h4>
+            <span class="gallery-item-category">Philippines</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll delay-2" data-category="ph" data-title="Tropical Paradise">
+          <img src="images/PH/1000027517.jpg" alt="Tropical Paradise">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Tropical Paradise</h4>
+            <span class="gallery-item-category">Philippines</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+
+        <!-- Personal Images -->
+        <div class="gallery-item animate-on-scroll" data-category="personal" data-title="Earth View">
+          <img src="images/earth-blue-marble.jpg" alt="Earth View">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Earth View</h4>
+            <span class="gallery-item-category">Personal</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+
+        <div class="gallery-item animate-on-scroll delay-1" data-category="personal" data-title="Night Sky">
+          <img src="images/night-sky.png" alt="Night Sky">
+          <div class="gallery-item-overlay">
+            <h4 class="gallery-item-title">Night Sky</h4>
+            <span class="gallery-item-category">Personal</span>
+          </div>
+          <div class="gallery-item-icon">
+            <i class="fas fa-expand"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Albums Section -->
+  <section class="albums section" id="albums">
+    <div class="container">
+      <div class="gallery-header">
+        <h2 class="animate-on-scroll">Photo Albums</h2>
+        <p class="animate-on-scroll delay-1">Browse my photo collections organized by theme and location</p>
+      </div>
+
+      <div class="albums-grid">
+        <!-- KSA Album -->
+        <article class="album-card animate-on-scroll" data-album="ksa">
+          <div class="album-cover">
+            <img src="images/KSA/1000027491(crop).jpg" alt="Saudi Arabia Album">
+            <div class="album-cover-overlay"></div>
+            <span class="album-count">
+              <i class="fas fa-images"></i> 35
+            </span>
+          </div>
+          <div class="album-info">
+            <h3 class="album-title">Saudi Arabia</h3>
+            <p class="album-description">Exploring the beauty and culture of the Kingdom</p>
+            <div class="album-meta">
+              <span><i class="fas fa-calendar"></i> 2024</span>
+              <span><i class="fas fa-map-marker-alt"></i> KSA</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Philippines Album -->
+        <article class="album-card animate-on-scroll delay-1" data-album="ph">
+          <div class="album-cover">
+            <img src="images/PH/1000027516.jpg" alt="Philippines Album">
+            <div class="album-cover-overlay"></div>
+            <span class="album-count">
+              <i class="fas fa-images"></i> 3
+            </span>
+          </div>
+          <div class="album-info">
+            <h3 class="album-title">Philippines</h3>
+            <p class="album-description">Tropical paradise and island adventures</p>
+            <div class="album-meta">
+              <span><i class="fas fa-calendar"></i> 2024</span>
+              <span><i class="fas fa-map-marker-alt"></i> PH</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Personal Album -->
+        <article class="album-card animate-on-scroll delay-2" data-album="personal">
+          <div class="album-cover">
+            <img src="images/earth-night.jpg" alt="Personal Album">
+            <div class="album-cover-overlay"></div>
+            <span class="album-count">
+              <i class="fas fa-images"></i> 4
+            </span>
+          </div>
+          <div class="album-info">
+            <h3 class="album-title">Personal Favorites</h3>
+            <p class="album-description">A curated collection of my favorite shots</p>
+            <div class="album-meta">
+              <span><i class="fas fa-calendar"></i> Various</span>
+              <span><i class="fas fa-heart"></i> Favorites</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <img src="" alt="" class="lightbox-image" id="lightboxImage">
+      <button class="lightbox-nav lightbox-next" id="lightboxNext">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="lightbox-info">
+        <h4 class="lightbox-title" id="lightboxTitle"></h4>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-header">
+        <h2 class="animate-on-scroll">Get In Touch</h2>
+        <p class="animate-on-scroll delay-1">Have a project in mind? Let's work together to bring your ideas to life.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form animate-on-scroll" id="contactForm">
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+
+        <div class="contact-info animate-on-scroll delay-2">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Email</h4>
+              <p>hello@abdlmnn.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Location</h4>
+              <p>Saudi Arabia / Philippines</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Availability</h4>
+              <p>Open for freelance projects</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Abdlmnn</div>
+        <p class="footer-text">© 2024 Abdlmnn. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#gallery" class="footer-link">Gallery</a>
+          <a href="#albums" class="footer-link">Albums</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
