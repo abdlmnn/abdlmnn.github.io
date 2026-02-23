@@ -1,4 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const introModal = document.getElementById('introModal');
+  const introWrapper = document.getElementById('introNameWrapper');
+
+  if (introModal && introWrapper) {
+    // Array of letters: ABDULMANAN
+    // Indices:          0123456789
+    // Remove:           U(3), A(6), A(8)
+
+    const letters = ['A', 'B', 'D', 'U', 'L', 'M', 'A', 'N', 'A', 'N'];
+    const indicesToRemove = [3, 6, 8];
+
+    letters.forEach((char, index) => {
+      const span = document.createElement('span');
+      span.className = 'intro-letter';
+      span.textContent = char;
+      span.dataset.originalIndex = index;
+
+      if (indicesToRemove.includes(index)) {
+        span.classList.add('to-remove');
+      }
+
+      introWrapper.appendChild(span);
+    });
+
+    const fadeOutElements = introWrapper.querySelectorAll('.to-remove');
+
+    setTimeout(() => {
+      fadeOutElements.forEach((el, i) => {
+        setTimeout(() => {
+          const width = el.offsetWidth;
+          el.style.width = width + 'px';
+          el.style.maxWidth = width + 'px';
+
+          el.classList.add('fading');
+
+          setTimeout(() => {
+            el.style.width = '0px';
+            el.style.maxWidth = '0px';
+            el.style.margin = '0';
+            el.style.padding = '0';
+          }, 300);
+        }, i * 300);
+      });
+
+      setTimeout(() => {
+        introModal.classList.add('hidden');
+
+        setTimeout(() => {
+          introModal.remove();
+        }, 1000);
+      }, fadeOutElements.length * 300 + 1000);
+
+    }, 1335);
+  }
+
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
