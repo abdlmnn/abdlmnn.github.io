@@ -87,10 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (scrollY > 100) {
-      scrollIndicator.classList.add('hidden');
-    } else {
-      scrollIndicator.classList.remove('hidden');
+    // Only update scroll indicator if it exists
+    if (scrollIndicator) {
+      if (scrollY > 100) {
+        scrollIndicator.classList.add('hidden');
+      } else {
+        scrollIndicator.classList.remove('hidden');
+      }
     }
 
     ticking = false;
@@ -150,9 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  scrollIndicator.addEventListener('click', () => {
-    window.location.href = 'gallery.html';
-  });
+  // Scroll indicator click handler (only on index page)
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+      window.location.href = 'gallery.html';
+    });
+  }
 
   const observerOptions = {
     root: null,
