@@ -54,13 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
       }, fadeOutElements.length * 300 + 1000);
 
-    }, 1150);
+      // 1150
+      // 1335
+      // 1550
+    }, 1555);
   }
 
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   const scrollIndicator = document.getElementById('scrollIndicator');
+  const mobileBottomNav = document.getElementById('mobileBottomNav');
 
   let lastScrollY = 0;
   let ticking = false;
@@ -68,10 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateNav = () => {
     const scrollY = window.scrollY;
 
-    if (scrollY > 50) {
-      nav.classList.add('scrolled')
-    } else {
-      nav.classList.remove('scrolled')
+    // Only update desktop nav if it exists
+    if (nav) {
+      if (scrollY > 50) {
+        nav.classList.add('scrolled')
+      } else {
+        nav.classList.remove('scrolled')
+      }
     }
 
     if (scrollY > 100) {
@@ -95,28 +102,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
+  // Desktop navigation toggle (only for desktop)
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
 
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-  });
-
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
-  });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  });
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // Mobile bottom navigation - set active state based on current page
+  if (mobileBottomNav) {
+    const currentPath = window.location.pathname;
+    const mobileNavItems = mobileBottomNav.querySelectorAll('.mobile-nav-item');
+
+    mobileNavItems.forEach(item => {
+      const href = item.getAttribute('href');
+      // Check if the current path matches the nav item href
+      if (currentPath.includes(href) || (currentPath === '/' && href === 'index.html')) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
 
   scrollIndicator.addEventListener('click', () => {
     window.location.href = 'gallery.html';
