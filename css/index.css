@@ -592,6 +592,11 @@
   display: none;
 }
 
+/* Floating Contact Button - Hidden on Desktop */
+.contact-fab {
+  display: none;
+}
+
 @media (max-width: 768px) {
   :root {
     --nav-height: 70px;
@@ -661,6 +666,35 @@
 
   .mobile-nav-item.active {
     color: var(--text-primary);
+  }
+
+  /* Floating Contact Button (FAB) */
+  .contact-fab {
+    display: flex;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    background: var(--text-primary);
+    color: #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .contact-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact-fab svg {
+    width: 24px;
+    height: 24px;
   }
 
   /* Add padding at bottom for content to not be hidden by bottom nav */
