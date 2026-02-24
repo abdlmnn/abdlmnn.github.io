@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Prevent browser scroll restoration and scroll to top on page load/reload
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   const introModal = document.getElementById('introModal');
   const introWrapper = document.getElementById('introNameWrapper');
 
