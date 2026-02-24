@@ -11,14 +11,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
+  visibility: visible;
   transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
   overflow: hidden;
+  /* Force GPU rendering for Edge compatibility */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .intro-modal.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  will-change: opacity, visibility;
+}
+
+.intro-modal.hidden .intro-modal-content {
+  visibility: hidden;
 }
 
 .intro-modal-content {
@@ -29,6 +39,7 @@
   height: 100%;
   width: 100%;
   position: relative;
+  z-index: 1;
 }
 
 .intro-tagline {
