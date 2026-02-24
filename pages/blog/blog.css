@@ -1,0 +1,124 @@
+@import url('../../css/variable.css');
+
+/* Blog Hero Section */
+.blog-hero {
+  position: relative;
+  width: 100%;
+  padding-top: var(--nav-height);
+}
+
+/* Blog Hero Grid */
+.blog-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.blog-grid-item {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.blog-grid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%);
+  transition: filter var(--transition-medium);
+}
+
+/* Adjust only the first (ball) image focal point */
+.ball-img {
+  object-position: 50% 30%;
+}
+
+.blog-grid-img:hover {
+  filter: grayscale(0);
+}
+
+/* Blog Hero Text - Overlapping */
+.blog-hero-text {
+  /* border: var(--debug); */
+  position: relative;
+  background: #ffffff;
+  /* padding: 60px 40px; */
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: -35px;
+  z-index: 10;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+  /* margin-bottom: 15px; */
+  text-transform: uppercase;
+}
+
+.blog-hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .blog-grid-item {
+    aspect-ratio: 16/9;
+  }
+
+  .blog-hero-text {
+    padding: 40px 25px;
+    margin-top: -30px;
+  }
+
+  .blog-hero-title {
+    letter-spacing: 0.1em;
+  }
+
+  .blog-hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+.blog-content {
+  min-height: 100vh;
+  padding: 80px 40px;
+}
+
+@media (max-width: 480px) {
+  .blog-hero-text {
+    padding: 30px 20px;
+    margin-top: -20px;
+  }
+
+  .blog-hero-title {
+    font-size: 2rem;
+  }
+
+  .blog-hero-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .blog-content {
+    padding: 60px 20px;
+  }
+}
