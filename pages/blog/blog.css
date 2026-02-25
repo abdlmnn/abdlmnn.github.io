@@ -113,13 +113,12 @@
   }
 }
 
-.blog-content {
+/* .blog-content {
   min-height: 100vh;
   padding: 80px 40px;
-}
+} */
 
 @media (max-width: 480px) {
-
   .blog-hero {
     padding-top: 0;
   }
@@ -140,4 +139,122 @@
   .blog-content {
     padding: 60px 20px;
   }
+}
+
+
+/* Blog Content */
+.blog {
+  /* border: var(--debug); */
+  padding: 90px 0;
+}
+
+.blog-container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  /* border: var(--debug); */
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 4em;
+  width: 100%;
+}
+
+.blog-item {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0px 14px rgba(88, 88, 88, 0.1);
+
+}
+
+.blog-classic-top-content {
+  /* border: var(--debug); */
+  padding: 40px 50px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-classic-post-category {
+  margin: 0 0 10px;
+  padding: 5px 8px 5px 0px;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: var(--font-syne);
+  color: var(--text-primary);
+  opacity: 1;
+  transition: opacity var(--transition-medium);
+}
+
+.blog-classic-post-category:hover {
+  opacity: 0.5;
+}
+
+.blog-classic-post-title {
+  font-family: var(--font-syne);
+  font-size: 20px;
+  font-weight: 300;
+  margin: 10px 0;
+  color: var(--text-primary);
+}
+
+.blog-classic-post-image {
+  display: flex;
+  align-items: center;
+  height: 480px;
+  width: 100%;
+}
+
+.blog-post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter var(--transition-medium);
+}
+
+.blog-post-image:hover {
+  filter: grayscale(0%);
+}
+
+.blog-classic-bottom-content {
+  padding: 0 50px 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.blog-classic-post-date {
+  padding: 3px 15px;
+  background: var(--bg-black);
+  color: var(--text-white);
+  font-family: var(--font-syne);
+  font-weight: 200;
+  font-size: 14px;
+  width: 103px;
+  height: 26px;
+  text-align: center;
+  position: relative;
+  margin: -13px 0 0;
+}
+
+.blog-classic-post-description {
+  padding: 35px 0;
+  font-size: 14px;
+  font-style: var(--font-syne);
+  color: var(--text-secondary);
+}
+
+.blog-classic-a-link {
+  font-size: 16px;
+  font-family: var(--font-syne);
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 1;
+  transition: opacity var(--transition-medium);
+}
+
+.blog-classic-a-link:hover {
+  opacity: 0.5;
 }
