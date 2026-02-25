@@ -428,10 +428,15 @@
 }
 
 body.no-intro .hero-name,
-body.no-intro .hero-tagline,
-body.no-intro .scroll-indicator {
+body.no-intro .hero-tagline {
   opacity: 1;
   transform: none;
+  animation: none;
+}
+
+body.no-intro .scroll-indicator {
+  opacity: 1;
+  transform: translateX(-50%);
   animation: none;
 }
 
