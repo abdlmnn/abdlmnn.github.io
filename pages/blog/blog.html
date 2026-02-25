@@ -245,6 +245,68 @@
 
   <script>
     (function () {
+      const heroGrid = document.querySelector(".blog-hero-grid");
+      if (!heroGrid) return;
+
+      const slides = Array.from(heroGrid.querySelectorAll(".blog-grid-item"));
+      if (!slides.length) return;
+
+      let swipeModeTimer = null;
+      let scrollDebounce = null;
+
+      const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+      const setActiveSlide = (index) => {
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === index);
+        });
+      };
+
+      const syncActiveFromScroll = () => {
+        if (!isMobile()) return;
+
+        const nearestIndex = slides.reduce((bestIndex, slide, slideIndex) => {
+          const bestDistance = Math.abs(slides[bestIndex].offsetLeft - heroGrid.scrollLeft);
+          const currentDistance = Math.abs(slide.offsetLeft - heroGrid.scrollLeft);
+          return currentDistance < bestDistance ? slideIndex : bestIndex;
+        }, 0);
+
+        setActiveSlide(nearestIndex);
+      };
+
+      const startSwipeMode = () => {
+        if (!isMobile()) return;
+        clearTimeout(swipeModeTimer);
+        heroGrid.classList.add("is-swiping");
+      };
+
+      const stopSwipeMode = () => {
+        clearTimeout(swipeModeTimer);
+        swipeModeTimer = setTimeout(() => {
+          heroGrid.classList.remove("is-swiping");
+        }, 260);
+      };
+
+      heroGrid.addEventListener("touchstart", startSwipeMode, { passive: true });
+      heroGrid.addEventListener("touchend", stopSwipeMode, { passive: true });
+      heroGrid.addEventListener("scroll", () => {
+        startSwipeMode();
+        clearTimeout(scrollDebounce);
+        scrollDebounce = setTimeout(() => {
+          syncActiveFromScroll();
+          stopSwipeMode();
+        }, 120);
+      }, { passive: true });
+
+      window.addEventListener("resize", syncActiveFromScroll);
+
+      setActiveSlide(0);
+      syncActiveFromScroll();
+    })();
+  </script>
+
+  <script>
+    (function () {
       const form = document.getElementById("blogSubscribeForm");
       const statusEl = document.getElementById("blogSubscribeStatus");
 
