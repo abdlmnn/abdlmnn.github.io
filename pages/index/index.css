@@ -1,4 +1,4 @@
-@import url('./variable.css');
+@import url('../../css/variable.css');
 
 .intro-modal {
   position: fixed;
@@ -427,6 +427,14 @@
   transition: opacity var(--transition-medium);
 }
 
+body.no-intro .hero-name,
+body.no-intro .hero-tagline,
+body.no-intro .scroll-indicator {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
 /* .feature {
   padding: 0;
   background: var(--bg-light);
@@ -787,3 +795,4 @@
     font-size: 0.75rem;
   }
 }
+

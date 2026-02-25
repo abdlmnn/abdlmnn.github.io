@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Abdlmnn - Blog. Stories, thoughts, and experiences behind the lens.">
+  <meta id="blogRootMetaDescription" name="description"
+    content="Abdlmnn - Blog. Stories, thoughts, and experiences behind the lens.">
   <meta name="keywords" content="photography, blog, stories, travel, abdlmnn">
   <meta name="author" content="Abdlmnn">
 
-  <title>Blog | Abdlmnn</title>
+  <title id="blogRootPageTitle">Blog | Abdlmnn</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="my-images/bdmnn logo.svg">
@@ -51,8 +52,8 @@
   <main class="blog-main">
     <!-- Page Header -->
     <header class="blog-header">
-      <h1>Stories & Journeys</h1>
-      <p>Thoughts, experiences, and stories behind the lens</p>
+      <h1 id="blogRootHeading">Stories & Journeys</h1>
+      <p id="blogRootSubtitle">Thoughts, experiences, and stories behind the lens</p>
     </header>
 
     <!-- Featured Post -->
@@ -63,8 +64,8 @@
         </div>
         <div class="featured-post-content">
           <span class="post-category">Travel</span>
-          <h2>Chasing Sunsets in the Arabian Desert</h2>
-          <p>A journey through the golden dunes of Saudi Arabia, where the sun paints the sky in shades of orange and
+          <h2 id="blogRootFeaturedTitle">Chasing Sunsets in the Arabian Desert</h2>
+          <p id="blogRootFeaturedDescription">A journey through the golden dunes of Saudi Arabia, where the sun paints the sky in shades of orange and
             gold. The desert holds a certain magic that words can barely capture.</p>
           <div class="post-meta">
             <span class="post-date">February 15, 2026</span>
@@ -192,6 +193,37 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const pageData = {
+        meta: {
+          title: "Blog | Abdlmnn",
+          description: "Abdlmnn - Blog. Stories, thoughts, and experiences behind the lens.",
+        },
+        heading: "Stories & Journeys",
+        subtitle: "Thoughts, experiences, and stories behind the lens",
+        featuredTitle: "Chasing Sunsets in the Arabian Desert",
+        featuredDescription:
+          "A journey through the golden dunes of Saudi Arabia, where the sun paints the sky in shades of orange and gold. The desert holds a certain magic that words can barely capture.",
+      };
+
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (!el || typeof value !== "string") return;
+        el.textContent = value;
+      };
+
+      const titleEl = document.getElementById("blogRootPageTitle");
+      if (titleEl) titleEl.textContent = pageData.meta.title;
+      const descEl = document.getElementById("blogRootMetaDescription");
+      if (descEl) descEl.setAttribute("content", pageData.meta.description);
+
+      setText("blogRootHeading", pageData.heading);
+      setText("blogRootSubtitle", pageData.subtitle);
+      setText("blogRootFeaturedTitle", pageData.featuredTitle);
+      setText("blogRootFeaturedDescription", pageData.featuredDescription);
+    })();
+  </script>
   <script src="js/photo-home.js"></script>
 </body>
 
