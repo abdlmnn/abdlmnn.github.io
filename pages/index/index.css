@@ -783,6 +783,16 @@ body.no-intro .scroll-indicator {
   }
 }
 
+@media (max-width: 768px) and (max-height: 700px) {
+  .hero-name {
+    margin-bottom: 12px;
+  }
+
+  .scroll-indicator {
+    bottom: 76px;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-name {
     font-size: 2.5rem;
@@ -801,3 +811,16 @@ body.no-intro .scroll-indicator {
   }
 }
 
+  .hero {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
