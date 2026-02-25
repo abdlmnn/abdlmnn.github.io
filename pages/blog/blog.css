@@ -369,6 +369,24 @@
   opacity: 0.8;
 }
 
+.blog-subscribe-status {
+  grid-column: 2;
+  margin: 4px 0 0;
+  min-height: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.blog-subscribe-status.is-loading {
+  color: var(--text-secondary);
+}
+
+.blog-subscribe-status.is-error {
+  color: #b42318;
+}
+
 @media (max-width: 768px) {
   .blog-subscribe {
     width: min(640px, calc(100% - 24px));
@@ -391,5 +409,10 @@
   .blog-subscribe-form input,
   .blog-subscribe-form button {
     width: 100%;
+  }
+
+  .blog-subscribe-status {
+    grid-column: 1;
+    text-align: left;
   }
 }
