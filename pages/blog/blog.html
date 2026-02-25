@@ -50,7 +50,7 @@
 
   <!-- Mobile Bottom Navigation -->
   <nav class="mobile-bottom-nav" id="mobileBottomNav">
-    <a href="index.html" class="mobile-nav-item active">
+    <a href="../../index.html" class="mobile-nav-item active">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
@@ -141,10 +141,11 @@
       <h3 class="blog-subscribe-title">Catch the next scene.</h3>
       <p class="blog-subscribe-note">A short note each time a new story drops.</p>
     </div>
-    <form class="blog-subscribe-form">
-      <input type="email" placeholder="Email" required>
+    <form id="blogSubscribeForm" class="blog-subscribe-form" action="https://formspree.io/f/mjgejjae" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
       <button type="submit">Subscribe</button>
     </form>
+    <p id="blogSubscribeStatus" class="blog-subscribe-status" aria-live="polite"></p>
   </section>
 
   <!-- Blog Content -->
@@ -242,6 +243,51 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const form = document.getElementById("blogSubscribeForm");
+      const statusEl = document.getElementById("blogSubscribeStatus");
+
+      if (!form || !statusEl) return;
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitBtn = form.querySelector("button[type='submit']");
+        const formData = new FormData(form);
+
+        statusEl.textContent = "Subscribing...";
+        statusEl.classList.remove("is-error");
+        statusEl.classList.add("is-loading");
+
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error("Request failed");
+          }
+
+          form.reset();
+          statusEl.textContent = "Subscribed. You're in.";
+          statusEl.classList.remove("is-loading", "is-error");
+        } catch (_error) {
+          statusEl.textContent = "Subscription failed. Try again.";
+          statusEl.classList.remove("is-loading");
+          statusEl.classList.add("is-error");
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      });
+    })();
+  </script>
   <script src="../../js/index.js"></script>
 </body>
 
