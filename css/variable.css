@@ -19,11 +19,13 @@
   --bg-cream: #f8f7f5;
   --bg-light-grey: #f6f6f6;
   --bg-dark-brown:#1e1e1e;
+  --bg-black: #000000;
 
   --text-primary: #1a1a1a;
   --text-secondary: #666666;
   --text-muted: #999999;
   --text-accent: #222222;
+  --text-white: #ffff;
   --text-red: #ff3131;
 
   --border-light: #e5e5e5;
