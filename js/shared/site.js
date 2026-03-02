@@ -111,7 +111,7 @@ function renderDesktopNav(pageType) {
   if (!mount) return;
 
   const firstLink = pageType === 'blog'
-    ? { label: 'Home', href: toHref(pageType, 'index.html') }
+    ? { label: 'Home', href: toHref(pageType, '') }
     : { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') };
 
   const links = [
@@ -160,7 +160,7 @@ function renderMobileBottomNav(pageType) {
   const first = pageType === 'blog'
     ? {
         label: 'Home',
-        href: toHref(pageType, 'index.html'),
+        href: toHref(pageType, '/'),
         icon: iconHome(),
       }
     : {

@@ -41,12 +41,6 @@
     if (typeof imageData.src === "string") el.setAttribute("src", imageData.src);
     if (typeof imageData.alt === "string") el.setAttribute("alt", imageData.alt);
   };
-
-  const titleEl = document.getElementById("homePageTitle");
-  if (titleEl) titleEl.textContent = pageData.meta.title;
-  const descEl = document.getElementById("homeMetaDescription");
-  if (descEl) descEl.setAttribute("content", pageData.meta.description);
-
   setText("homeIntroTagline", pageData.introTagline);
   setText("homeHeroName", pageData.heroName);
   setText("homeHeroTagline", pageData.heroTagline);
@@ -61,4 +55,3 @@
   setText("homeFeatureLocation2", pageData.images.feature2.location);
   setText("homeFeatureLocation3", pageData.images.feature3.location);
 })();
-

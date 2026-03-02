@@ -53,12 +53,6 @@
     if (typeof imageData.src === "string") el.setAttribute("src", imageData.src);
     if (typeof imageData.alt === "string") el.setAttribute("alt", imageData.alt);
   };
-
-  const titleEl = document.getElementById("blogPageTitle");
-  if (titleEl) titleEl.textContent = blogData.meta.title;
-  const metaDescEl = document.getElementById("blogMetaDescription");
-  if (metaDescEl) metaDescEl.setAttribute("content", blogData.meta.description);
-
   setText("blogHeroTitle", blogData.hero.title);
   setText("blogHeroSubtitle", blogData.hero.subtitle);
 
