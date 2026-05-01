@@ -40,6 +40,26 @@
   filter: grayscale(0);
 }
 
+.blog-hero-dots {
+  display: none;
+}
+
+.blog-hero-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  transition: width 220ms ease, background-color 220ms ease, opacity 220ms ease;
+}
+
+.blog-hero-dot.is-active {
+  width: 18px;
+  background: var(--text-primary);
+}
+
 /* Blog Hero Text - Overlapping */
 .blog-hero-text {
   /* border: var(--debug); */
@@ -92,6 +112,14 @@
 
   .blog-hero-grid::-webkit-scrollbar {
     display: none;
+  }
+
+  .blog-hero-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0 4px;
   }
 
   .blog-hero-text {

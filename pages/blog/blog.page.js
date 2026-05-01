@@ -89,6 +89,7 @@
   if (!heroGrid) return;
 
   const slides = Array.from(heroGrid.querySelectorAll(".blog-grid-item"));
+  const dots = Array.from(document.querySelectorAll(".blog-hero-dot"));
   if (!slides.length) return;
 
   let swipeModeTimer = null;
@@ -99,6 +100,12 @@
   const setActiveSlide = (index) => {
     slides.forEach((slide, slideIndex) => {
       slide.classList.toggle("is-active", slideIndex === index);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
     });
   };
 
@@ -141,6 +148,21 @@
     },
     { passive: true }
   );
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      if (!isMobile()) return;
+
+      const slide = slides[dotIndex];
+      if (!slide) return;
+
+      setActiveSlide(dotIndex);
+      heroGrid.scrollTo({
+        left: slide.offsetLeft,
+        behavior: "smooth",
+      });
+    });
+  });
 
   window.addEventListener("resize", syncActiveFromScroll);
 
