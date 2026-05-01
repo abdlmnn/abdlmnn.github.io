@@ -7,12 +7,12 @@ function inferPageType() {
 }
 
 function getRootPrefix(pageType) {
-  if (pageType === 'post') return '../../../';
-  return pageType === 'blog' ? '../../' : '';
+  return '/';
 }
 
 function toHref(pageType, rootPath) {
-  return `${getRootPrefix(pageType)}${rootPath}`;
+  const normalizedPath = rootPath.replace(/^\/+/, '');
+  return `${getRootPrefix(pageType)}${normalizedPath}`;
 }
 
 function normalizePathname(pathname) {
@@ -111,7 +111,7 @@ function renderDesktopNav(pageType) {
   const mount = document.getElementById('siteNavMount');
   if (!mount) return;
 
-  const firstLink = pageType === 'blog'
+  const firstLink = pageType === 'blog' || pageType === 'post'
     ? { label: 'Home', href: toHref(pageType, '') }
     : { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') };
 

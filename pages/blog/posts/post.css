@@ -209,7 +209,7 @@ body[data-page="post"] {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(248, 245, 240, 0.03) 0%, rgba(248, 245, 240, 0.08) 44%, rgba(244, 239, 232, 0.56) 70%, rgba(242, 236, 228, 0.78) 100%);
+  /* background: linear-gradient(90deg, rgba(248, 245, 240, 0.03) 0%, rgba(248, 245, 240, 0.08) 44%, rgba(244, 239, 232, 0.56) 70%, rgba(242, 236, 228, 0.78) 100%); */
   pointer-events: none;
 }
 
