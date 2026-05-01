@@ -89,6 +89,7 @@
   if (!heroGrid) return;
 
   const slides = Array.from(heroGrid.querySelectorAll(".blog-grid-item"));
+  const dots = Array.from(document.querySelectorAll(".blog-hero-dot"));
   if (!slides.length) return;
 
   let swipeModeTimer = null;
@@ -96,17 +97,34 @@
 
   const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
+  const getOrderedSlides = () => {
+    if (!isMobile()) return slides;
+
+    return [...slides].sort((slideA, slideB) => slideA.offsetLeft - slideB.offsetLeft);
+  };
+
   const setActiveSlide = (index) => {
+    const orderedSlides = getOrderedSlides();
+    const activeSlide = orderedSlides[index];
+
     slides.forEach((slide, slideIndex) => {
-      slide.classList.toggle("is-active", slideIndex === index);
+      slide.classList.toggle("is-active", slide === activeSlide);
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
     });
   };
 
   const syncActiveFromScroll = () => {
     if (!isMobile()) return;
 
-    const nearestIndex = slides.reduce((bestIndex, slide, slideIndex) => {
-      const bestDistance = Math.abs(slides[bestIndex].offsetLeft - heroGrid.scrollLeft);
+    const orderedSlides = getOrderedSlides();
+
+    const nearestIndex = orderedSlides.reduce((bestIndex, slide, slideIndex) => {
+      const bestDistance = Math.abs(orderedSlides[bestIndex].offsetLeft - heroGrid.scrollLeft);
       const currentDistance = Math.abs(slide.offsetLeft - heroGrid.scrollLeft);
       return currentDistance < bestDistance ? slideIndex : bestIndex;
     }, 0);
@@ -141,6 +159,21 @@
     },
     { passive: true }
   );
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      if (!isMobile()) return;
+
+      const slide = getOrderedSlides()[dotIndex];
+      if (!slide) return;
+
+      setActiveSlide(dotIndex);
+      heroGrid.scrollTo({
+        left: slide.offsetLeft,
+        behavior: "smooth",
+      });
+    });
+  });
 
   window.addEventListener("resize", syncActiveFromScroll);
 

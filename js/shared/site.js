@@ -7,11 +7,12 @@ function inferPageType() {
 }
 
 function getRootPrefix(pageType) {
-  return pageType === 'blog' ? '../../' : '';
+  return '/';
 }
 
 function toHref(pageType, rootPath) {
-  return `${getRootPrefix(pageType)}${rootPath}`;
+  const normalizedPath = rootPath.replace(/^\/+/, '');
+  return `${getRootPrefix(pageType)}${normalizedPath}`;
 }
 
 function normalizePathname(pathname) {
@@ -110,7 +111,7 @@ function renderDesktopNav(pageType) {
   const mount = document.getElementById('siteNavMount');
   if (!mount) return;
 
-  const firstLink = pageType === 'blog'
+  const firstLink = pageType === 'blog' || pageType === 'post'
     ? { label: 'Home', href: toHref(pageType, '') }
     : { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') };
 
@@ -157,10 +158,10 @@ function renderMobileBottomNav(pageType) {
   const mount = document.getElementById('mobileNavMount');
   if (!mount) return;
 
-  const first = pageType === 'blog'
+  const first = pageType === 'blog' || pageType === 'post'
     ? {
         label: 'Home',
-        href: toHref(pageType, '/'),
+        href: toHref(pageType, ''),
         icon: iconHome(),
       }
     : {
@@ -346,6 +347,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
+      const nextSection = document.querySelector('.feature');
+
+      if (pageType === 'index' && nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
       window.location.href = toHref(pageType, 'pages/gallery/gallery.html');
     });
   }

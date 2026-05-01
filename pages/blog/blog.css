@@ -40,6 +40,26 @@
   filter: grayscale(0);
 }
 
+.blog-hero-dots {
+  display: none;
+}
+
+.blog-hero-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  transition: width 220ms ease, background-color 220ms ease, opacity 220ms ease;
+}
+
+.blog-hero-dot.is-active {
+  width: 18px;
+  background: var(--text-primary);
+}
+
 /* Blog Hero Text - Overlapping */
 .blog-hero-text {
   /* border: var(--debug); */
@@ -94,6 +114,14 @@
     display: none;
   }
 
+  .blog-hero-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0 4px;
+  }
+
   .blog-hero-text {
     /* padding: 30px 20px; */
     margin-top: 0;
@@ -108,7 +136,20 @@
     transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 420ms ease;
   }
 
+  .blog-grid-item:nth-child(1) {
+    order: 3;
+  }
+
+  .blog-grid-item:nth-child(2) {
+    order: 2;
+  }
+
+  .blog-grid-item:nth-child(3) {
+    order: 1;
+  }
+
   .blog-grid-item .blog-grid-img {
+    filter: grayscale(0);
     transform: none;
     transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), filter var(--transition-medium);
   }
@@ -443,5 +484,9 @@
   .blog-subscribe-status {
     grid-column: 1;
     text-align: left;
+  }
+
+  .blog-post-image {
+    filter: grayscale(0%);
   }
 }
