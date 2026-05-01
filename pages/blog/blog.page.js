@@ -97,9 +97,18 @@
 
   const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
+  const getOrderedSlides = () => {
+    if (!isMobile()) return slides;
+
+    return [...slides].sort((slideA, slideB) => slideA.offsetLeft - slideB.offsetLeft);
+  };
+
   const setActiveSlide = (index) => {
+    const orderedSlides = getOrderedSlides();
+    const activeSlide = orderedSlides[index];
+
     slides.forEach((slide, slideIndex) => {
-      slide.classList.toggle("is-active", slideIndex === index);
+      slide.classList.toggle("is-active", slide === activeSlide);
     });
 
     dots.forEach((dot, dotIndex) => {
@@ -112,8 +121,10 @@
   const syncActiveFromScroll = () => {
     if (!isMobile()) return;
 
-    const nearestIndex = slides.reduce((bestIndex, slide, slideIndex) => {
-      const bestDistance = Math.abs(slides[bestIndex].offsetLeft - heroGrid.scrollLeft);
+    const orderedSlides = getOrderedSlides();
+
+    const nearestIndex = orderedSlides.reduce((bestIndex, slide, slideIndex) => {
+      const bestDistance = Math.abs(orderedSlides[bestIndex].offsetLeft - heroGrid.scrollLeft);
       const currentDistance = Math.abs(slide.offsetLeft - heroGrid.scrollLeft);
       return currentDistance < bestDistance ? slideIndex : bestIndex;
     }, 0);
@@ -153,7 +164,7 @@
     dot.addEventListener("click", () => {
       if (!isMobile()) return;
 
-      const slide = slides[dotIndex];
+      const slide = getOrderedSlides()[dotIndex];
       if (!slide) return;
 
       setActiveSlide(dotIndex);
