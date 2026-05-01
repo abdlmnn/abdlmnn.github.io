@@ -481,6 +481,14 @@ body[data-page="post"] {
     position: relative;
     inset: auto;
     min-height: 240px;
+    pointer-events: none;
+  }
+
+  .post-intro-image,
+  .post-intro-panel:hover .post-intro-image,
+  .post-intro-panel:focus-within .post-intro-image {
+    filter: grayscale(0%);
+    transform: none;
   }
 
   .post-intro-copy {
