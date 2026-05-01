@@ -7,6 +7,7 @@ function inferPageType() {
 }
 
 function getRootPrefix(pageType) {
+  if (pageType === 'post') return '../../../';
   return pageType === 'blog' ? '../../' : '';
 }
 
@@ -157,10 +158,10 @@ function renderMobileBottomNav(pageType) {
   const mount = document.getElementById('mobileNavMount');
   if (!mount) return;
 
-  const first = pageType === 'blog'
+  const first = pageType === 'blog' || pageType === 'post'
     ? {
         label: 'Home',
-        href: toHref(pageType, '/'),
+        href: toHref(pageType, ''),
         icon: iconHome(),
       }
     : {
@@ -346,6 +347,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
+      const nextSection = document.querySelector('.feature');
+
+      if (pageType === 'index' && nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
       window.location.href = toHref(pageType, 'pages/gallery/gallery.html');
     });
   }
