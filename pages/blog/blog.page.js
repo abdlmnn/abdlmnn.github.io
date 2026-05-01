@@ -27,18 +27,21 @@
       title: "Catch the next scene.",
       note: "A short note each time a new story drops.",
     },
-    post1: {
-      status: "In Progress",
-      category: "Origin",
-      title: "Where It Begins",
-      date: "Mar 1, 2026",
-      description: "An opening chapter on why I started this blog, what I'm building, and the journey behind it.",
-      readMore: "Read More",
-      image: {
-        src: "../../my-images/1.jpg",
-        alt: "Back view at sunset, walking into a new chapter.",
-      },
-    },
+    posts: [
+      {
+        id: "post-1",
+        status: "In Progress",
+        category: "Origin",
+        title: "Where It Begins",
+        date: "Mar 1, 2026",
+        description: "An opening chapter on why I started this blog, what I'm building, and the journey behind it.",
+        readMore: "Read More",
+        image: {
+          src: "../../my-images/1.jpg",
+          alt: "Back view at sunset, walking into a new chapter.",
+        },
+      }
+    ]
   };
 
   const setText = (id, value) => {
@@ -64,14 +67,21 @@
   setText("blogSubscribeTitle", blogData.subscribe.title);
   setText("blogSubscribeNote", blogData.subscribe.note);
 
-  setText("post1Status", blogData.post1.status);
-  setText("post1Category", blogData.post1.category);
-  setText("post1Title", blogData.post1.title);
-  setText("post1Date", blogData.post1.date);
-  setText("post1Description", blogData.post1.description);
-  setText("post1ReadMore", blogData.post1.readMore);
-
-  setImage("post1Image", blogData.post1.image);
+  // Render posts dynamically
+  blogData.posts.forEach((post, index) => {
+    const prefix = `post${index + 1}`;
+    // Check if elements exist before setting them
+    const statusEl = document.getElementById(`${prefix}Status`);
+    if (statusEl) {
+      setText(`${prefix}Status`, post.status);
+      setText(`${prefix}Category`, post.category);
+      setText(`${prefix}Title`, post.title);
+      setText(`${prefix}Date`, post.date);
+      setText(`${prefix}Description`, post.description);
+      setText(`${prefix}ReadMore`, post.readMore);
+      setImage(`${prefix}Image`, post.image);
+    }
+  });
 })();
 
 (function () {
