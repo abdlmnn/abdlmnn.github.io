@@ -4,7 +4,7 @@
       title: "ABDLMNN",
       description: "ABDLMNN portfolio - Between worlds, built in motion.",
     },
-    introTagline: "Web & Mobile Designer",
+    introTagline: "Web & App Developer",
     heroName: "ABDLMNN",
     heroTagline: "CHASING LIGHT",
     statement:
