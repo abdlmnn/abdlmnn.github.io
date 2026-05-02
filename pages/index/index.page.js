@@ -7,8 +7,10 @@
     introTagline: "Web & App Developer",
     heroName: "ABDLMNN",
     heroTagline: "CHASING LIGHT",
+    // statement:
+    //   "Every place holds a story waiting to unfold. I follow light as it moves across landscapes and cultures, preserving moments that might otherwise fade.",
     statement:
-      "Every place holds a story waiting to unfold. I follow light as it moves across landscapes and cultures, preserving moments that might otherwise fade.",
+      "Every place has a story. I follow light across places and cultures, preserving moments before they fade.",
     socialLabel: "Where Light Leads",
     images: {
       feature1: {
