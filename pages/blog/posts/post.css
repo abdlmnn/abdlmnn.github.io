@@ -433,6 +433,77 @@ body[data-page="post"] {
   line-height: 1.75;
 }
 
+#sportHeading {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  line-height: 1.35;
+}
+
+#sportText1,
+#sportText2,
+#sportText3,
+#sportText4 {
+  position: relative;
+  max-width: 760px;
+  padding: 18px 20px 19px 58px;
+  background: linear-gradient(90deg, rgba(17, 17, 17, 0.045) 0%, rgba(17, 17, 17, 0.018) 58%, rgba(17, 17, 17, 0) 100%);
+}
+
+#sportText1::after,
+#sportText2::after,
+#sportText3::after,
+#sportText4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.38), rgba(17, 17, 17, 0.08));
+}
+
+#sportText1::before,
+#sportText2::before,
+#sportText3::before,
+#sportText4::before {
+  position: absolute;
+  left: 18px;
+  top: 19px;
+  font-family: var(--font-syne);
+  font-size: 0.82rem;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  color: rgba(17, 17, 17, 0.62);
+  font-weight: 600;
+}
+
+#sportText1::before {
+  content: "01";
+}
+
+#sportText2::before {
+  content: "02";
+}
+
+#sportText3::before {
+  content: "03";
+}
+
+#sportText4 {
+  background: linear-gradient(90deg, rgba(17, 17, 17, 0.08) 0%, rgba(17, 17, 17, 0.028) 58%, rgba(17, 17, 17, 0) 100%);
+  color: var(--text-primary);
+}
+
+#sportText4::after {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.82), rgba(17, 17, 17, 0.18));
+}
+
+#sportText4::before {
+  content: "KEY";
+  color: rgba(17, 17, 17, 0.68);
+}
+
 .post-footer {
   margin-top: 40px;
   padding-top: 24px;
@@ -626,60 +697,34 @@ body[data-page="post"] {
   }
 
   #sportHeading {
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(17, 17, 17, 0.08);
-    font-size: 1.06rem;
-    line-height: 1.35;
+    margin: 22px 0 0;
+    padding-top: 0;
+    border-top: 0;
+    font-size: 1.2rem;
+    line-height: normal;
   }
 
   #sportText1,
   #sportText2,
   #sportText3,
   #sportText4 {
-    position: relative;
-    padding: 16px 16px 17px 50px;
-    border-left: 2px solid rgba(17, 17, 17, 0.18);
-    background: linear-gradient(90deg, rgba(17, 17, 17, 0.045), rgba(17, 17, 17, 0.012));
-    font-size: 0.96rem;
-    line-height: 1.72;
+    max-width: none;
+    padding: 0;
+    border-left: 0;
+    background: transparent;
+    font-size: 1rem;
+    line-height: 1.9;
   }
 
   #sportText1::before,
   #sportText2::before,
   #sportText3::before,
-  #sportText4::before {
-    position: absolute;
-    left: 16px;
-    top: 18px;
-    font-family: var(--font-syne);
-    font-size: 0.68rem;
-    line-height: 1;
-    letter-spacing: 0.08em;
-    color: rgba(17, 17, 17, 0.45);
-  }
-
-  #sportText1::before {
-    content: "01";
-  }
-
-  #sportText2::before {
-    content: "02";
-  }
-
-  #sportText3::before {
-    content: "03";
-  }
-
-  #sportText4 {
-    border-left-color: rgba(17, 17, 17, 0.58);
-    background: linear-gradient(90deg, rgba(17, 17, 17, 0.08), rgba(17, 17, 17, 0.02));
-    color: var(--text-primary);
-  }
-
-  #sportText4::before {
-    content: "KEY";
-    color: rgba(17, 17, 17, 0.68);
+  #sportText4::before,
+  #sportText1::after,
+  #sportText2::after,
+  #sportText3::after,
+  #sportText4::after {
+    content: none;
   }
 
   .post-footer {
