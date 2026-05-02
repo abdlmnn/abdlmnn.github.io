@@ -369,16 +369,40 @@ body[data-page="post"] {
 }
 
 .post-quote {
-  margin: 4px 0 2px;
-  padding: 20px 0 20px 22px;
-  border-left: 1px solid rgba(0, 0, 0, 0.16);
+  position: relative;
+  max-width: 720px;
+  margin: 10px 0 8px;
+  padding: 22px 26px 24px 58px;
+  background: linear-gradient(90deg, rgba(17, 17, 17, 0.05) 0%, rgba(17, 17, 17, 0.024) 48%, rgba(17, 17, 17, 0) 100%);
+}
+
+.post-quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.72), rgba(17, 17, 17, 0.08));
+}
+
+.post-quote::after {
+  content: "\201C";
+  position: absolute;
+  left: 22px;
+  top: 14px;
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  line-height: 1;
+  color: rgba(17, 17, 17, 0.22);
 }
 
 .post-quote p {
   font-family: var(--font-serif);
-  font-size: 1.22rem;
-  line-height: 1.55;
+  font-size: clamp(1.16rem, 2vw, 1.38rem);
+  line-height: 1.5;
   color: var(--text-primary);
+  text-wrap: balance;
 }
 
 .post-notes {
