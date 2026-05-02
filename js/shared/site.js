@@ -119,7 +119,7 @@ function renderDesktopNav(pageType) {
     firstLink,
     { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
     { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
-    { label: 'Work', href: toHref(pageType, 'work.html') },
+    { label: 'Work', href: toHref(pageType, 'pages/work/work.html') },
     { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
     { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
   ];
@@ -173,7 +173,7 @@ function renderMobileBottomNav(pageType) {
   const items = [
     first,
     { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
-    { label: 'Work', href: toHref(pageType, 'work.html'), icon: iconWork() },
+    { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() },
     { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
     { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
   ];
