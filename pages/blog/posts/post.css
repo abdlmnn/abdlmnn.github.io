@@ -504,10 +504,40 @@ body[data-page="post"] {
   color: rgba(17, 17, 17, 0.68);
 }
 
+#builtInMotionHeading {
+  margin-top: 34px;
+}
+
+#builtInMotionText {
+  max-width: 62ch;
+  font-size: 1.02rem;
+  line-height: 1.86;
+  color: var(--text-primary);
+}
+
+#closingText1 {
+  margin-top: 14px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.34rem, 2.3vw, 1.72rem);
+  line-height: 1.2;
+  color: var(--text-primary);
+  max-width: 36ch;
+  text-wrap: pretty;
+}
+
+#closingText2 {
+  margin-top: 8px;
+  max-width: 64ch;
+  font-size: 0.96rem;
+  line-height: 1.86;
+  color: rgba(17, 17, 17, 0.72);
+  text-wrap: pretty;
+}
+
 .post-footer {
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 28px;
+  padding-top: 0;
+  border-top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -718,6 +748,30 @@ body[data-page="post"] {
     left: 16px;
     top: 18px;
     font-size: 0.76rem;
+  }
+
+  #builtInMotionHeading {
+    margin-top: 28px;
+  }
+
+  #builtInMotionText {
+    font-size: 1rem;
+    line-height: 1.82;
+  }
+
+  #closingText1 {
+    margin-top: 10px;
+    font-size: 1.38rem;
+    max-width: 100%;
+    text-wrap: balance;
+  }
+
+  #closingText2 {
+    margin-top: 5px;
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.82;
+    text-wrap: balance;
   }
 
   .post-footer {
