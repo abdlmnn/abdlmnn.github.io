@@ -9,8 +9,8 @@
       titleLine: "Built in Motion",
       titleSubline: "Why I Started This Blog",
       author: "Mohammad Abdulmanan",
-      dateText: "March 1, 2025",
-      dateTime: "2025-03-01",
+      dateText: "March 1, 2026",
+      dateTime: "2026-03-01",
     },
     intro: {
       image: {

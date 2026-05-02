@@ -33,7 +33,7 @@
         status: "Live",
         category: "Origin",
         title: "Where It Begins",
-        date: "Mar 1, 2025",
+        date: "Mar 1, 2026",
         description: "An opening chapter on why I started this blog, what I'm building, and the journey behind it.",
         readMore: "Read More",
         image: {
