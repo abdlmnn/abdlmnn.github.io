@@ -270,11 +270,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
   const scrollIndicator = document.getElementById('scrollIndicator');
   const mobileBottomNav = document.getElementById('mobileBottomNav');
+  const contactFab = document.querySelector('.contact-fab');
 
   let ticking = false;
+  let lastScrollY = window.scrollY;
 
   const updateNav = () => {
     const scrollY = window.scrollY;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const viewportBottom = scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+    const isNearPageEnd = viewportBottom >= pageHeight - 120;
 
     if (nav) {
       if (scrollY > 50) {
@@ -292,6 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    const shouldHideMobileChrome = isMobile && scrollY > 80 && scrollY > lastScrollY && !isNearPageEnd;
+    mobileBottomNav?.classList.toggle('is-mobile-chrome-hidden', shouldHideMobileChrome);
+    contactFab?.classList.toggle('is-mobile-chrome-hidden', shouldHideMobileChrome);
+
+    lastScrollY = scrollY;
     ticking = false;
   };
 
