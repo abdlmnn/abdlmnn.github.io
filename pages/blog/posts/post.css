@@ -697,11 +697,7 @@ body[data-page="post"] {
   }
 
   #sportHeading {
-    margin: 22px 0 0;
-    padding-top: 0;
-    border-top: 0;
-    font-size: 1.2rem;
-    line-height: normal;
+    font-size: 1.06rem;
   }
 
   #sportText1,
@@ -709,22 +705,18 @@ body[data-page="post"] {
   #sportText3,
   #sportText4 {
     max-width: none;
-    padding: 0;
-    border-left: 0;
-    background: transparent;
-    font-size: 1rem;
-    line-height: 1.9;
+    padding: 16px 16px 17px 50px;
+    font-size: 0.96rem;
+    line-height: 1.72;
   }
 
   #sportText1::before,
   #sportText2::before,
   #sportText3::before,
-  #sportText4::before,
-  #sportText1::after,
-  #sportText2::after,
-  #sportText3::after,
-  #sportText4::after {
-    content: none;
+  #sportText4::before {
+    left: 16px;
+    top: 18px;
+    font-size: 0.76rem;
   }
 
   .post-footer {
