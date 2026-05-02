@@ -33,7 +33,7 @@
         status: "In Progress",
         category: "Origin",
         title: "Where It Begins",
-        date: "Mar 1, 2026",
+        date: "Mar 1, 2025",
         description: "An opening chapter on why I started this blog, what I'm building, and the journey behind it.",
         readMore: "Read More",
         image: {
@@ -56,6 +56,14 @@
     if (typeof imageData.src === "string") el.setAttribute("src", imageData.src);
     if (typeof imageData.alt === "string") el.setAttribute("alt", imageData.alt);
   };
+
+  setText("blogPageTitle", blogData.meta.title);
+
+  const metaDescription = document.getElementById("blogMetaDescription");
+  if (metaDescription) {
+    metaDescription.setAttribute("content", blogData.meta.description);
+  }
+
   setText("blogHeroTitle", blogData.hero.title);
   setText("blogHeroSubtitle", blogData.hero.subtitle);
 

@@ -41,6 +41,14 @@
     if (typeof imageData.src === "string") el.setAttribute("src", imageData.src);
     if (typeof imageData.alt === "string") el.setAttribute("alt", imageData.alt);
   };
+
+  setText("homePageTitle", pageData.meta.title);
+
+  const metaDescription = document.getElementById("homeMetaDescription");
+  if (metaDescription) {
+    metaDescription.setAttribute("content", pageData.meta.description);
+  }
+
   setText("homeIntroTagline", pageData.introTagline);
   setText("homeHeroName", pageData.heroName);
   setText("homeHeroTagline", pageData.heroTagline);
