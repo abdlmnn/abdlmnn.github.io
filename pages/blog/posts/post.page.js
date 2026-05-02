@@ -18,37 +18,38 @@
         alt: "Map and portrait image for the first blog post",
       },
       kicker: "A quiet note",
-      title: "You leave places.",
-      text: "Some places never leave you.",
+      title: "You don’t become a developer by just writing code.",
+      text: "Programming trains how you think with discipline.",
     },
     opening: {
       label: "Opening Note",
-      lead: "Some moments pass too quickly to hold, so I write them.",
-      body: "This blog is my place to keep track of the journey while it is still unfolding: the work, lessons, failures, and small wins before the finished results.",
+      lead: "I used to think good code was enough.",
+      body: "But good code still gets lost when context disappears. That is the problem I kept running into: unfinished parts, quick fixes, and decisions I forget a week later. This blog is where I document the build while I solve that problem in real time.",
+      body: "But even good code can be hard to continue when context is lost. That happened to me a lot: unfinished tasks, quick fixes, and decisions I forgot after a few days. This blog is where I document my build process while solving that problem in real time.",
     },
     sections: {
       whoIAm: {
         heading: "Who I Am",
-        text: "I am someone growing between different worlds. Saudi Arabia is part of my story, and the Philippines is part of who I am too. Those experiences shaped how I see life, discipline, identity, and progress.",
-        developerText: "As a web and app developer, I care about more than making things look good and work well. I want to build with reason: for people, for problems, and for the small ways technology can make everyday life better.",
-        quote: "The result matters, but I do not want to forget what it took to get there.",
+        text: "I grew up between Saudi Arabia and the Philippines. That shaped how I see discipline, identity, and progress.",
+        developerText: "I’m a web and app developer building tools for everyday coding flow. Right now, I’m building Codbit in VS Code: a coding activity tracker and a workflow memory tool. Codbit came from my own routine. On busy weeks, I returned to unfinished work and spent too much time remembering what I was doing. I built Codbit to reduce that friction and move work forward with more clarity.",
+        quote: "I built Codbit so I don’t waste time figuring out where I left off, and can focus on continuing the work.",
       },
       whyStarted: {
         heading: "Why I Started This Blog",
-        text: "I started this blog because I wanted one place to be honest about what I am building. That includes my ideas, my projects, my growth, and the mindset behind them.",
+        text: "I started this blog to document what I’m building while it is still in progress. Not only the final result, but also the decisions, mistakes, and adjustments behind it. I want one place where the process stays visible and honest.",
       },
       whatYoullFind: {
         heading: "What You'll Find Here",
-        text: "This space will hold thoughts on sport, coding, personal growth, and life between places. Some posts will be about lessons. Some will be about building. Some will simply be reflections from the journey.",
+        text: "You’ll find project build logs, personal reflections, mindset notes, and thoughts on coding, AI, and growth. Some posts will focus on execution and workflow. Some will focus on lessons, perspective, and direction. Some will simply document what changed, what failed, and what improved.",
       },
       notes: [
         {
           label: "Building",
-          text: "Projects, experiments, and lessons from trying to make ideas real.",
+          text: "Projects, experiments, and lessons from turning ideas into practical systems.",
         },
         {
           label: "Becoming",
-          text: "Discipline, identity, and quiet progress between Saudi Arabia and the Philippines.",
+          text: "Discipline, identity, and consistency shaping the person behind the work.",
         },
       ],
       sport: {
@@ -56,8 +57,8 @@
         paragraphs: [
           "Sport taught me about unity, communication, teamwork, and trust.",
           "In practice, you learn the movement. In the game, you apply it.",
-          "Coding feels the same. I read documentation, study examples, copy good patterns, and apply them in my own projects. Basketball gave me that mindset: study the move, practice it, then make it your own.",
-          "That is one lesson I carry from sport into building: practice gives you the skill, but application gives you the growth.",
+          "Coding feels the same. I read documentation, study examples, learn proven patterns, and apply them in my own projects. Basketball gave me that mindset: study the move, practice it, then make it your own.",
+          "That is one lesson I carry into building: practice gives skill, but application gives growth.",
         ],
       },
       builtInMotion: {
@@ -66,10 +67,10 @@
       },
       closing: [
         "This is the beginning. More stories soon.",
-        "If this connects with you, I hope you follow along for the next chapter.",
+        "If this connects with you, follow along for what comes next.",
       ],
     },
-    tags: ["#introduction", "#journey", "#developer", "#building"],
+    tags: ["#introduction", "#buildinpublic", "#softwaredev", "#devjourney", "#workflow", "#codbit"],
   };
 
   const setText = (id, value) => {
