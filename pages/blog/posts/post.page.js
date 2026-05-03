@@ -19,54 +19,54 @@
       },
       kicker: "A quiet note",
       title: "You leave places.",
-      text: "Some places never leave you.",
+      text: "Some places stay with you.",
     },
     opening: {
       label: "Opening Note",
-      lead: "Some moments pass too quickly to hold, so I write them.",
-      body: "This blog is my place to keep track of the journey while it is still unfolding: the work, lessons, failures, and small wins before the finished results.",
+      lead: "Some moments pass too fast to hold, so I write them down.",
+      body: "This blog is where I track my journey while it is still happening: the work, lessons, failures, and small wins before everything is finished.",
     },
     sections: {
       whoIAm: {
         heading: "Who I Am",
-        text: "I am someone growing between different worlds. Saudi Arabia is part of my story, and the Philippines is part of who I am too. Those experiences shaped how I see life, discipline, identity, and progress.",
-        developerText: "As a web and app developer, I care about more than making things look good and work well. I want to build with reason: for people, for problems, and for the small ways technology can make everyday life better.",
+        text: "I am someone growing between different worlds. Saudi Arabia is part of my story, and the Philippines is part of who I am too. Those experiences shaped how I see discipline, identity, and progress.",
+        developerText: "I’m a web and app developer. I care about more than just how things look or work. I build with purpose for people, real problems, and small ways technology can make everyday life easier.",
         quote: "The result matters, but I do not want to forget what it took to get there.",
       },
       whyStarted: {
         heading: "Why I Started This Blog",
-        text: "I started this blog because I wanted one place to be honest about what I am building. That includes my ideas, my projects, my growth, and the mindset behind them.",
+        text: "I started this blog because I wanted one place to be honest about what I’m building. It includes my ideas, my projects, my growth, and how I think while building them.",
       },
       whatYoullFind: {
         heading: "What You'll Find Here",
-        text: "This space will hold thoughts on sport, coding, personal growth, and life between places. Some posts will be about lessons. Some will be about building. Some will simply be reflections from the journey.",
+        text: "This space holds thoughts on sport, coding, personal growth, and life between places. Some posts are lessons. Some are builds. Some are simple reflections from the journey.",
       },
       notes: [
         {
           label: "Building",
-          text: "Projects, experiments, and lessons from trying to make ideas real.",
+          text: "Projects, experiments, and lessons from turning ideas into practical systems.",
         },
         {
           label: "Becoming",
-          text: "Discipline, identity, and quiet progress between Saudi Arabia and the Philippines.",
+          text: "Discipline, identity, and consistency shaping the person behind the work.",
         },
       ],
       sport: {
         heading: "What Sport Taught Me About Building",
         paragraphs: [
-          "Sport taught me about unity, communication, teamwork, and trust.",
+          "Sport taught me unity, communication, teamwork, and trust.",
           "In practice, you learn the movement. In the game, you apply it.",
-          "Coding feels the same. I read documentation, study examples, copy good patterns, and apply them in my own projects. Basketball gave me that mindset: study the move, practice it, then make it your own.",
+          "Coding feels the same. I read documentation, study examples, and learn patterns. Then I apply them in my own projects. Basketball gave me that mindset: study the move, practice it, then use it when it matters.",
           "That is one lesson I carry from sport into building: practice gives you the skill, but application gives you the growth.",
         ],
       },
       builtInMotion: {
         heading: "Built in Motion",
-        text: "If there is one thing I want this blog to stand for, it is this: progress is built in motion. You do not become ready first. You become ready by showing up consistently.",
+        text: "If there is one idea this blog stands on, it is this: progress is built in motion. You don’t become ready first. You become ready by showing up consistently.",
       },
       closing: [
         "This is the beginning. More stories soon.",
-        "If this connects with you, I hope you follow along for the next chapter.",
+        "If this connects with you, follow along for the next chapter.",
       ],
     },
     tags: ["#introduction", "#journey", "#developer", "#building"],
