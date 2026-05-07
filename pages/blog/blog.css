@@ -307,6 +307,10 @@
   object-position: 50% 20%;
 }
 
+.blog-second-img {
+  object-position: 50% 70%;
+}
+
 .blog-post-image:hover {
   filter: grayscale(0%);
 }

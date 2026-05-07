@@ -584,6 +584,20 @@ body[data-page="post"] {
   color: var(--text-white);
 }
 
+.post-coming-soon {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  margin-top: 8px;
+}
+
+.post-coming-soon-text {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  color: var(--text-secondary);
+}
+
 @media (max-width: 768px) {
   .post-container {
     width: min(100% - 24px, 920px);
