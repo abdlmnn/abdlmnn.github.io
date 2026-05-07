@@ -271,24 +271,27 @@ body[data-page="post"] {
 .post-intro-title {
   margin: 4px 0 0;
   font-family: var(--font-serif);
-  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-size: clamp(1.9rem, 3vw, 2.3rem);
   line-height: 0.96;
   letter-spacing: -0.03em;
   color: var(--text-white);
   /* max-width: 9.5ch; */
-  max-width: 12ch;
+  max-width: 15ch;
   font-style: normal;
   font-weight: 550;
   text-transform: none;
   text-wrap: balance;
+  line-height: 1.12;
+  text-wrap: pretty;
 }
 
 .post-intro-text {
   margin: 4px 0 0;
   /* max-width: 20ch; */
-  max-width: 25ch;
+  max-width: 20ch;
   font-family: var(--font-sans);
   font-size: 0.92rem;
+  /* font-size: 1rem; */
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.78);
   font-style: normal;
@@ -348,17 +351,23 @@ body[data-page="post"] {
 }
 
 .post-lead {
-  max-width: 26ch;
+  max-width: 34ch;
   margin-bottom: 2px;
   font-family: var(--font-serif);
   font-size: clamp(1.65rem, 3.2vw, 2.35rem);
   line-height: 1.14;
   color: var(--text-primary);
+  text-wrap: pretty;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .post-body-intro {
-  max-width: 58ch;
+  max-width: 70ch;
   font-size: 1.02rem;
+  text-wrap: pretty;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .post-content h2 {
@@ -509,10 +518,14 @@ body[data-page="post"] {
 }
 
 #builtInMotionText {
-  max-width: 62ch;
+  max-width: 65ch;
   font-size: 1.02rem;
   line-height: 1.86;
   color: var(--text-primary);
+  /* white-space: pre-line; */
+  text-wrap: pretty;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 #closingText1 {
@@ -644,8 +657,9 @@ body[data-page="post"] {
   }
 
   .post-lead {
-    max-width: none;
+    max-width: 30ch;
     font-size: 1.7rem;
+    text-wrap: pretty;
   }
 
   .post-meta {
@@ -666,6 +680,10 @@ body[data-page="post"] {
     gap: 12px;
     margin-top: 0;
     padding-left: 22px;
+  }
+
+  .post-body-intro {
+    max-width: 100%;
   }
 
   .post-opening-label {
@@ -699,7 +717,7 @@ body[data-page="post"] {
     right: auto;
     bottom: 16px;
     z-index: 2;
-    width: min(60vw, 226px);
+    width: min(60vw, 250px);
     min-height: auto;
     margin-left: 0;
     padding: 15px 15px 16px;
@@ -729,7 +747,9 @@ body[data-page="post"] {
     color: var(--text-white);
     font-size: clamp(1.18rem, 5.8vw, 1.5rem);
     /* max-width: 9.5ch; */
-    max-width: 12ch;
+    max-width: 20ch;
+    line-height: 1.12;
+    /* text-wrap: pretty; */
   }
 
   .post-intro-text {
@@ -771,6 +791,7 @@ body[data-page="post"] {
   #builtInMotionText {
     font-size: 1rem;
     line-height: 1.82;
+    max-width: 100%;
   }
 
   #closingText1 {
@@ -800,33 +821,70 @@ body[data-page="post"] {
     z-index: 998;
   }
 
-.back-to-top:hover,
-.back-to-top:focus,
-.back-to-top:active {
-  background: var(--bg-white);
-  color: var(--text-primary);
+  .back-to-top:hover,
+  .back-to-top:focus,
+  .back-to-top:active {
+    background: var(--bg-white);
+    color: var(--text-primary);
+  }
 }
+
+@media (max-width: 420px) {
+  .post-intro-copy {
+    width: min(55vw, 250px);
+  }
 }
 
 @media (max-width: 390px) {
   .post-intro-copy {
-    width: min(60vw, 210px);
+    width: min(55vw, 250px);
   }
 
-  /* .post-intro-title {
-    color: var(--text-white);
-    font-size: clamp(1.18rem, 5.8vw, 1.5rem);
-    max-width: 12ch;
+  .post-intro-title {
+    /* font-size: clamp(1.18rem, 5.8vw, 2.5rem); */
+    max-width: 30ch;
+    font-size: 1.4rem;
   }
 
   .post-intro-text {
-    color: rgba(255, 255, 255, 0.78);
-    max-width: 20ch;
-  } */
+    font-size: 0.85rem;
+  }
 
 }
 
-/* Placeholder pages (nav + tag routes that will get content later) */
+@media (max-width: 360px) {
+  .post-intro-copy {
+    width: min(55vw, 200px);
+  }
+
+  .post-intro-text {
+    font-size: 0.80rem;
+    max-width: 30ch;
+  }
+
+  .post-lead {
+    max-width: 34ch;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .post-intro-copy {
+    width: min(60vw, 250px);
+  }
+
+  .post-intro-text {
+    font-size: 0.76rem;
+    max-width: 30ch;
+  }
+
+  .post-intro-title {
+    font-size: clamp(1.18rem, 5.8vw, 1.2rem);
+    max-width: 15ch;
+  }
+
+}
+
 .placeholder-page {
   min-height: 100vh;
   display: grid;
@@ -893,20 +951,4 @@ body[data-page="post"] {
   }
 }
 
-@media (max-width: 360px) {
-  .post-intro-copy {
-    width: min(60vw, 200px);
-  }
 
-  /* .post-intro-title {
-    color: var(--text-white);
-    font-size: clamp(1.18rem, 5.8vw, 1.5rem);
-    max-width: 12ch;
-  }
-
-  .post-intro-text {
-    color: rgba(255, 255, 255, 0.78);
-    max-width: 20ch;
-  } */
-
-}
