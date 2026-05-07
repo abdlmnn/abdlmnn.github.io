@@ -286,7 +286,7 @@ body[data-page="post"] {
 .post-intro-text {
   margin: 4px 0 0;
   /* max-width: 20ch; */
-  max-width: 25ch;
+  max-width: 30ch;
   font-family: var(--font-sans);
   font-size: 0.92rem;
   line-height: 1.75;
@@ -348,7 +348,7 @@ body[data-page="post"] {
 }
 
 .post-lead {
-  max-width: 26ch;
+  max-width: 30ch;
   margin-bottom: 2px;
   font-family: var(--font-serif);
   font-size: clamp(1.65rem, 3.2vw, 2.35rem);
