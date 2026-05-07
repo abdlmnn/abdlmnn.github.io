@@ -34,13 +34,39 @@
         category: "Origin",
         title: "Where It Begins",
         date: "Mar 1, 2026",
-        description: "An opening chapter on why I started this blog, what I'm building, and the journey behind it.",
+        description: "An opening chapter about why I started this blog, where I come from, and my journey so far.",
         readMore: "Read More",
         image: {
           src: "../../my-images/1.jpg",
           alt: "Back view at sunset, walking into a new chapter.",
         },
-      }
+      },
+      {
+        id: "post-2",
+        status: "In Progress",
+        category: "Building",
+        title: "What I Started Building",
+        date: "May 3, 2026",
+        description: "A look at the idea I started building, the problem behind it, and why it matters in my workflow.",
+        readMore: "Read More",
+        image: {
+          src: "../../my-images/1.1.jpg",
+          alt: "Back view at sunset, walking into a new chapter.",
+        },
+      },
+      {
+        id: "post-3",
+        status: "Upcoming",
+        category: "Reflections",
+        title: "Coding in the Age of AI",
+        date: "Jun 6, 2026",
+        description: "How AI changed the way I approach coding, learning, and building as a developer.",
+        readMore: "Read More",
+        image: {
+          src: "../../my-images/23.jpg",
+          alt: "Back view at sunset, walking into a new chapter.",
+        },
+      },
     ]
   };
 
