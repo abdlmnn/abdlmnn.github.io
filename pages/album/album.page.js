@@ -81,16 +81,38 @@ document.addEventListener("DOMContentLoaded", () => {
     return "";
   };
 
+  const getLayoutSize = (item) => {
+    const label = String(item.label || "").trim();
+    const alt = String(item.alt || "").trim();
+    const combined = `${label} ${alt}`;
+    if (/\b3\b/.test(combined) || /\b6\b/.test(combined)) {
+      return { width: 390, height: 520 };
+    }
+    return { width: 390, height: 260 };
+  };
+
   gallery.innerHTML = pageData.items
     .map(
-      (item) => `
+      (item, index) => {
+        const size = getLayoutSize(item);
+        const isPriority = index < 6;
+        return `
       <article class="gallery-item ${getLayoutClass(item)}">
-        <img src="${item.src}" alt="${item.alt}" loading="lazy" decoding="async">
+        <img
+          src="${item.src}"
+          alt="${item.alt}"
+          width="${size.width}"
+          height="${size.height}"
+          loading="${isPriority ? "eager" : "lazy"}"
+          fetchpriority="${isPriority ? "high" : "auto"}"
+          decoding="async"
+        >
         <div class="gallery-item-overlay">
           <span class="gallery-item-text">${item.label}</span>
         </div>
       </article>
-    `,
+    `;
+      },
     )
     .join("");
 });
