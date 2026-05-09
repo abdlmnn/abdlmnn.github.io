@@ -2,9 +2,9 @@
   --album-bg-white: #ffffff;
   --album-text-primary: #1a1a1a;
   --album-text-secondary: #666666;
-  --album-text-muted: #999999;
-  --album-border-lighter: #f0f0f0;
-  --album-bg-cream: #f8f7f5;
+  --album-card-width: 535px;
+  --album-card-height: 385px;
+  --album-track-gap: 24px;
 }
 
 body {
@@ -16,14 +16,12 @@ body {
 .albums-header {
   padding: calc(var(--nav-height) + 60px) 20px 40px;
   text-align: center;
-  background: var(--album-bg-white);
 }
 
 .albums-title {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
-  color: var(--album-text-primary);
   margin-bottom: 15px;
 }
 
@@ -32,332 +30,86 @@ body {
   font-size: 1rem;
   font-weight: 300;
   color: var(--album-text-secondary);
-  letter-spacing: 0.05em;
 }
 
 .albums-main {
-  width: min(1160px, calc(100% - 48px));
+  width: min(100%, calc(100% - 40px));
   margin: 0 auto;
   padding: 0 0 80px;
 }
 
-.masonry-gallery {
-  display: grid;
-  grid-template-columns: 390px 390px 390px;
-  grid-auto-rows: 260px;
-  gap: 0;
-  justify-content: center;
+.scroll-slider {
+  position: relative;
+}
+
+.scroll-slider-sticky {
+  position: sticky;
+  top: calc(var(--nav-height) + 14px);
+  height: calc(100vh - var(--nav-height) - 28px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.scroll-slider-track {
+  display: flex;
+  gap: var(--album-track-gap);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  padding: 0 0 0 20px;
 }
 
 .gallery-item {
   position: relative;
+  width: var(--album-card-width);
+  height: var(--album-card-height);
+  flex: 0 0 auto;
   overflow: hidden;
+  border-radius: 14px;
   cursor: pointer;
-  width: 100%;
-  height: auto;
-  aspect-ratio: auto;
-  contain: layout paint style;
-}
-
-.gallery-item.layout-one {
-  grid-column: 1;
-  grid-row: 1;
-  width: 390px;
-  height: 260px;
-  aspect-ratio: auto;
-}
-
-.gallery-item.layout-three {
-  grid-column: 2;
-  grid-row: 1;
-  width: 390px;
-  height: 520px;
-  grid-row-end: span 2;
-  aspect-ratio: auto;
-}
-
-.gallery-item.layout-four,
-.gallery-item.layout-five,
-.gallery-item.layout-six {
-  width: 100%;
-  height: 100%;
-  grid-row-end: span 2;
-  aspect-ratio: auto;
-}
-
-.gallery-item.layout-two {
-  grid-column: 3;
-  grid-row: 1;
-  width: 390px;
-  height: 260px;
-  aspect-ratio: auto;
 }
 
 .gallery-item img {
   width: 100%;
-  height: auto;
-  display: block;
-  filter: grayscale(100%);
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-.gallery-item.layout-one img,
-.gallery-item.layout-two img,
-.gallery-item.layout-three img,
-.gallery-item.layout-four img,
-.gallery-item.layout-five img,
-.gallery-item.layout-six img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .gallery-item-overlay {
   position: absolute;
-  top: 0;
-  left: 20%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  z-index: 1;
-  transform-origin: top center;
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  will-change: transform;
-}
-
-.gallery-item:not(:hover) .gallery-item-overlay {
-  transform: translateX(-50%) scaleY(0);
-}
-
-.gallery-item:hover .gallery-item-overlay {
-  transform: translateX(-50%) scaleY(1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .gallery-item:hover img {
-    filter: grayscale(0%);
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  .gallery-item img {
-    filter: none;
-  }
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
 }
 
 .gallery-item-text {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--album-text-primary);
-  letter-spacing: 0.15em;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  white-space: nowrap;
-  text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 0.3s ease 0.2s;
-}
-
-.gallery-item:hover .gallery-item-text {
-  opacity: 1;
-}
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity var(--transition-medium),
-    visibility var(--transition-medium);
-}
-
-.lightbox.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.lightbox-close,
-.lightbox-nav {
-  border: none;
-  background: none;
   color: #fff;
-  cursor: pointer;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-}
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.2rem;
-  padding: 8px 14px;
-}
-
-.lightbox-prev {
-  left: 16px;
-}
-
-.lightbox-next {
-  right: 16px;
-}
-
-.lightbox-image {
-  max-width: 90vw;
-  max-height: 85vh;
-  object-fit: contain;
-}
-
-@media (max-width: 1024px) {
-  .masonry-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: initial;
-  }
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
+  :root {
+    --album-card-width: 82vw;
+    --album-card-height: calc(82vw * 0.72);
+    --album-track-gap: 14px;
+  }
+
   .albums-header {
     padding: 24px 20px 20px;
   }
 
-  .albums-main {
-    width: min(640px, calc(100% - 24px));
-    padding: 0 0 80px;
+  .scroll-slider-sticky {
+    top: calc(var(--nav-height) + 8px);
+    height: calc(100vh - var(--nav-height) - 16px);
   }
 
-  .masonry-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .gallery-item {
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
-
-  /* Mobile sequence: 1, 3, 2 */
-  .gallery-item.layout-one {
-    order: 1;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
-
-  .gallery-item.layout-three {
-    order: 2;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 5;
-  }
-
-  .gallery-item.layout-two {
-    order: 3;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
-
-  /* Keep remaining items after 1/3/2 */
-  .gallery-item.layout-four { order: 4; }
-  .gallery-item.layout-five { order: 5; }
-  .gallery-item.layout-six { order: 6; }
-
-  .gallery-item.layout-one img,
-  .gallery-item.layout-two img,
-  .gallery-item.layout-three img,
-  .gallery-item.layout-four img,
-  .gallery-item.layout-five img,
-  .gallery-item.layout-six img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Mobile label inside image at bottom-left */
-  .gallery-item-overlay,
-  .gallery-item:not(:hover) .gallery-item-overlay,
-  .gallery-item:hover .gallery-item-overlay {
-    left: 16px;
-    bottom: 12px;
-    top: auto;
-    width: auto;
-    height: auto;
-    transform: none;
-    background: linear-gradient(180deg, rgba(12, 12, 12, 0.866), rgba(12, 12, 12, 0.667));
-    border: 1px solid rgba(255, 255, 255, 0.132);
-    border-radius: 8px;
-    padding: 12px 8px;
-    min-height: 96px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.324);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-
-  .gallery-item-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    letter-spacing: 0.05em;
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 600;
-    line-height: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-    opacity: 1;
-    transition: none;
-    text-transform: uppercase;
-  }
-}
-
-@media (max-width: 480px) {
-  .albums-title {
-    font-size: 2rem;
-  }
-
-  .masonry-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-item.layout-one,
-  .gallery-item.layout-two,
-  .gallery-item.layout-three,
-  .gallery-item.layout-four,
-  .gallery-item.layout-five,
-  .gallery-item.layout-six {
-    grid-column: auto;
-    grid-row: auto;
-    grid-row-end: auto;
-    width: auto;
-    height: auto;
-  }
-
-  .gallery-item.layout-one,
-  .gallery-item.layout-two {
-    aspect-ratio: 1 / 1;
-  }
-
-  .gallery-item.layout-three {
-    aspect-ratio: 3 / 5;
+  .scroll-slider-track {
+    padding: 0 0 0 12px;
   }
 }
