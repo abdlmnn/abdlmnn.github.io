@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let maxTranslate = 0;
   let scrollDistance = 0;
+  let endHoldDistance = 0;
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -71,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     maxTranslate = Math.max(0, trackWidth - sliderWidth);
     scrollDistance = maxTranslate;
-    slider.style.height = `${stickyHeight + stickyTop + scrollDistance}px`;
+    endHoldDistance = Math.round(stickyHeight * 0.35);
+    slider.style.height = `${stickyHeight + stickyTop + scrollDistance + endHoldDistance}px`;
 
     updateSlider();
   };

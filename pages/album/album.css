@@ -4,7 +4,9 @@
   --album-text-secondary: #666666;
   --album-card-width: 535px;
   --album-card-height: 385px;
-  --album-track-gap: 26px;
+  --album-track-gap: 100px;
+  --album-edge-space-x: 75px;
+  --album-edge-space-y: 18px;
 }
 
 body {
@@ -34,13 +36,12 @@ body {
 }
 
 .scroll-slider-track {
+  /* border: 1px solid red; */
   display: flex;
-  /* width: calc(100vh - var(--nav-width) - 28px); */
-  border: 1px solid red;
   gap: var(--album-track-gap);
   will-change: transform;
   transform: translate3d(0, 0, 0);
-  /* padding: 0 0 0 20px; */
+  padding: var(--album-edge-space-y) var(--album-edge-space-x);
 }
 
 .gallery-item {
@@ -81,6 +82,8 @@ body {
     --album-card-width: 82vw;
     --album-card-height: calc(82vw * 0.72);
     --album-track-gap: 14px;
+    --album-edge-space-x: 14px;
+    --album-edge-space-y: 10px;
   }
 
   .albums-header {
@@ -93,6 +96,6 @@ body {
   }
 
   .scroll-slider-track {
-    padding: 0 0 0 12px;
+    padding: var(--album-edge-space-y) var(--album-edge-space-x);
   }
 }
