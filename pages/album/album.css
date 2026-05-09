@@ -7,6 +7,9 @@
   --album-track-gap: 100px;
   --album-edge-space-x: 75px;
   --album-edge-space-y: 18px;
+
+  --album-edge-left: 75px;
+  --album-edge-right: 85px;
 }
 
 body {
@@ -41,7 +44,10 @@ body {
   gap: var(--album-track-gap);
   will-change: transform;
   transform: translate3d(0, 0, 0);
-  padding: var(--album-edge-space-y) var(--album-edge-space-x);
+  /* padding: var(--album-edge-space-y) var(--album-edge-space-x); */
+
+  padding-left: var(--album-edge-left);
+  padding-right: var(--album-edge-right);
 }
 
 .gallery-item {
