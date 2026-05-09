@@ -158,6 +158,32 @@ function renderMobileBottomNav(pageType) {
   const mount = document.getElementById('mobileNavMount');
   if (!mount) return;
 
+  if (pageType === 'album') {
+    const items = [
+      { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() },
+      { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
+    ];
+
+    mount.innerHTML = `
+      <nav class="mobile-bottom-nav" id="mobileBottomNav">
+        ${items
+          .map(
+            (item) => `
+              <a href="${item.href}" class="mobile-nav-item">
+                ${item.icon}
+                <span>${item.label}</span>
+              </a>
+            `
+          )
+          .join('')}
+      </nav>
+    `;
+    return;
+  }
+
   const first = pageType === 'blog' || pageType === 'post'
     ? {
         label: 'Home',
