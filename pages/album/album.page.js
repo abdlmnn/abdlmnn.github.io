@@ -57,6 +57,27 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .join("");
 
+  const setHoveredBackground = (imageSrc) => {
+    if (!imageSrc) {
+      document.body.style.removeProperty("--album-hover-bg");
+      document.body.classList.remove("has-hover-bg");
+      return;
+    }
+
+    document.body.style.setProperty("--album-hover-bg", `url("${imageSrc}")`);
+    document.body.classList.add("has-hover-bg");
+  };
+
+  track.querySelectorAll(".gallery-item img").forEach((imageEl) => {
+    imageEl.addEventListener("mouseenter", () => {
+      setHoveredBackground(imageEl.currentSrc || imageEl.src);
+    });
+
+    imageEl.addEventListener("mouseleave", () => {
+      setHoveredBackground("");
+    });
+  });
+
   let maxTranslate = 0;
   let scrollDistance = 0;
   let endHoldDistance = 0;

@@ -13,9 +13,40 @@
 }
 
 body {
+  position: relative;
   color: var(--album-text-primary);
   background-color: var(--album-bg-white);
   overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--album-hover-bg, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+body.has-hover-bg::before,
+body.has-hover-bg::after {
+  opacity: 1;
 }
 
 .albums-main {
@@ -75,6 +106,23 @@ body {
   pointer-events: none;
 }
 
+.gallery-item::after {
+  content: "+";
+  position: absolute;
+  top: calc(var(--album-card-height) / 2);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
 .gallery-item img {
   width: 100%;
   height: var(--album-card-height);
@@ -85,7 +133,11 @@ body {
 }
 
 .gallery-item:hover img {
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(0.42);
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
 }
 
 .gallery-item-overlay {
