@@ -45,6 +45,7 @@ body {
   will-change: transform;
   transform: translate3d(0, 0, 0);
   /* padding: var(--album-edge-space-y) var(--album-edge-space-x); */
+  counter-reset: album-counter;
 
   padding-left: var(--album-edge-left);
   padding-right: var(--album-edge-right);
@@ -55,8 +56,23 @@ body {
   width: var(--album-card-width);
   height: var(--album-card-height);
   flex: 0 0 auto;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
+  counter-increment: album-counter;
+}
+
+.gallery-item::before {
+  content: counter(album-counter, decimal-leading-zero);
+  position: absolute;
+  top: 0px;
+  left: -25px;
+  z-index: 2;
+  color: var(--album-text-secondary);
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  pointer-events: none;
 }
 
 .gallery-item img {
@@ -64,6 +80,12 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: grayscale(100%);
+  transition: filter 260ms ease;
+}
+
+.gallery-item:hover img {
+  filter: grayscale(0%);
 }
 
 .gallery-item-overlay {
