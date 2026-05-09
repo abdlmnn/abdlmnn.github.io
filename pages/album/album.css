@@ -18,6 +18,26 @@ body {
   overflow-x: hidden;
 }
 
+@media (min-width: 769px) {
+  .navigation {
+    position: static !important;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .navigation.scrolled {
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .scroll-slider-sticky {
+    top: 14px;
+    height: calc(91vh - 28px);
+  }
+}
+
 .albums-main {
   /* width: min(100%, calc(100% - 40px)); */
   margin: 0 auto;
