@@ -111,6 +111,34 @@ function renderDesktopNav(pageType) {
   const mount = document.getElementById('siteNavMount');
   if (!mount) return;
 
+  if (pageType === 'album') {
+    const links = [
+      { label: 'Home', href: toHref(pageType, '') },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
+      { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') },
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
+      { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
+    ];
+
+    mount.innerHTML = `
+      <nav class="navigation" id="nav">
+        <div class="nav-cont">
+          <div class="nav-links" id="navLinks">
+            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
+          </div>
+
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    `;
+    return;
+  }
+
   const firstLink = pageType === 'blog' || pageType === 'post'
     ? { label: 'Home', href: toHref(pageType, '') }
     : { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') };
