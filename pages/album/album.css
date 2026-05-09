@@ -35,7 +35,7 @@ body {
 .albums-main {
   width: min(100%, calc(100% - 40px));
   margin: 0 auto;
-  padding: 0 0 80px;
+  padding: 0;
 }
 
 .scroll-slider {

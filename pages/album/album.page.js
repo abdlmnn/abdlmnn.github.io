@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let maxTranslate = 0;
   let scrollDistance = 0;
-  let holdDistance = 0;
+  let stickyOffsetTop = 0;
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -72,14 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     maxTranslate = Math.max(0, trackWidth - sliderWidth);
     scrollDistance = maxTranslate;
-    holdDistance = stickyHeight;
-    slider.style.height = `${stickyHeight + stickyTop + scrollDistance + holdDistance}px`;
+    stickyOffsetTop = stickyTop;
+    slider.style.height = `${stickyHeight + stickyTop + scrollDistance}px`;
 
     updateSlider();
   };
 
   const updateSlider = () => {
-    const start = slider.offsetTop;
+    const start = slider.offsetTop - stickyOffsetTop;
     const current = window.scrollY - start;
     const progress = clamp(current / (scrollDistance || 1), 0, 1);
     const x = -maxTranslate * progress;
