@@ -24,7 +24,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: var(--album-hover-bg, none);
+  background-image: var(--album-hover-bg-a, none);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,7 +40,10 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: transparent;
+  background-image: var(--album-hover-bg-b, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 300ms ease;
   pointer-events: none;
@@ -48,8 +51,11 @@ body::after {
   transform: translateZ(0);
 }
 
-body.has-hover-bg::before,
-body.has-hover-bg::after {
+body.has-hover-bg.layer-a::before {
+  opacity: 1;
+}
+
+body.has-hover-bg.layer-b::after {
   opacity: 1;
 }
 

@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let hoverBgTimer = null;
   let activeBgSrc = "";
   let activeItem = null;
+  let activeLayer = "a";
   const decodedHoverImages = new Set();
   const decodeTasks = new Map();
 
@@ -95,12 +96,20 @@ document.addEventListener("DOMContentLoaded", () => {
     activeBgSrc = imageSrc;
 
     if (!imageSrc) {
-      document.body.style.removeProperty("--album-hover-bg");
+      document.body.style.removeProperty("--album-hover-bg-a");
+      document.body.style.removeProperty("--album-hover-bg-b");
       document.body.classList.remove("has-hover-bg");
+      document.body.classList.remove("layer-a");
+      document.body.classList.remove("layer-b");
+      activeLayer = "a";
       return;
     }
 
-    document.body.style.setProperty("--album-hover-bg", `url("${imageSrc}")`);
+    const nextLayer = activeLayer === "a" ? "b" : "a";
+    document.body.style.setProperty(`--album-hover-bg-${nextLayer}`, `url("${imageSrc}")`);
+    document.body.classList.remove(`layer-${activeLayer}`);
+    document.body.classList.add(`layer-${nextLayer}`);
+    activeLayer = nextLayer;
     document.body.classList.add("has-hover-bg");
   };
 
