@@ -311,6 +311,9 @@ body[data-page="album"] .mobile-bottom-nav {
 
   .gallery-item {
     scroll-snap-align: start;
+    -webkit-touch-callout: none;
+    user-select: none;
+    touch-action: pan-x;
   }
 
   .album-bottom-bar {
@@ -358,5 +361,29 @@ body[data-page="album"] .mobile-bottom-nav {
     opacity: 0;
     background: transparent;
   }
+
+  .gallery-item:active .image-darkener {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.573);
+  }
+
+  .gallery-item.is-pressed .image-darkener {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.573);
+  }
+
+  .gallery-item:active::after {
+    opacity: 1;
+  }
+
+  .gallery-item.is-pressed::after {
+    opacity: 1;
+  }
+}
+
+.gallery-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 

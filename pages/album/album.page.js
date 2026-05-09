@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     heading: "Albums",
     subtitle: "Photo collections organized by theme and location",
     items: [
-      { src: "../../images/KSA/1000027400 (2).jpg", alt: "Saudi Arabia 1", label: "Saudi Arabia 1" },
-      { src: "../../images/KSA/1000027491.jpg", alt: "Desert sunset 3", label: "Desert Sunset 3" },
-      { src: "../../images/KSA/1000027404.jpg", alt: "City lights 2", label: "City Lights 2" },
-      { src: "../../images/KSA/1000027527.jpg", alt: "Architecture 4", label: "Architecture 4" },
+      { src: "../../images/KSA/1000027400 (2).jpg", alt: "Saudi Arabia 1", label: "Saudi Arabia 1", href: "" },
+      { src: "../../images/KSA/1000027491.jpg", alt: "Desert sunset 3", label: "Desert Sunset 3", href: "" },
+      { src: "../../images/KSA/1000027404.jpg", alt: "City lights 2", label: "City Lights 2", href: "" },
+      { src: "../../images/KSA/1000027527.jpg", alt: "Architecture 4", label: "Architecture 4", href: "" },
       // { src: "../../images/KSA/1000027501.jpg", alt: "Saudi landscape", label: "Landscape 5" },
       // { src: "../../images/KSA/1000027405.jpg", alt: "Desert view", label: "Desert View 6" },
       // { src: "../../images/KSA/1000027401 (2).jpg", alt: "Saudi Arabia", label: "Saudi Arabia 7" },
@@ -42,15 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const isPriority = index < 3;
       return `
         <article class="gallery-item">
-          <img
-            src="${item.src}"
-            alt="${item.alt}"
-            width="535"
-            height="385"
-            loading="${isPriority ? "eager" : "lazy"}"
-            fetchpriority="${isPriority ? "high" : "auto"}"
-            decoding="async"
-          >
+          <a class="gallery-item-link" href="${item.href || ""}" aria-label="${item.label}">
+            <img
+              src="${item.src}"
+              alt="${item.alt}"
+              width="535"
+              height="385"
+              loading="${isPriority ? "eager" : "lazy"}"
+              fetchpriority="${isPriority ? "high" : "auto"}"
+              decoding="async"
+            >
+          </a>
           <span class="image-darkener" aria-hidden="true"></span>
           <div class="gallery-item-overlay">
             <span class="gallery-item-text">${item.label}</span>
@@ -147,6 +149,21 @@ document.addEventListener("DOMContentLoaded", () => {
     itemEl.addEventListener("mouseenter", onEnter);
     itemEl.addEventListener("pointerleave", clearActiveHover);
     itemEl.addEventListener("mouseleave", clearActiveHover);
+
+    if (isMobileSwipeMode) {
+      const clearPressed = () => itemEl.classList.remove("is-pressed");
+      const setPressed = () => itemEl.classList.add("is-pressed");
+
+      itemEl.addEventListener("pointerdown", setPressed, { passive: true });
+      itemEl.addEventListener("pointerup", clearPressed, { passive: true });
+      itemEl.addEventListener("pointercancel", clearPressed, { passive: true });
+      itemEl.addEventListener("touchstart", () => {
+        setPressed();
+      }, { passive: true });
+      itemEl.addEventListener("touchend", clearPressed, { passive: true });
+      itemEl.addEventListener("touchcancel", clearPressed, { passive: true });
+      itemEl.addEventListener("dragstart", clearPressed, { passive: true });
+    }
   });
 
   track.addEventListener("pointerleave", clearActiveHover);
