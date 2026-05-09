@@ -134,17 +134,34 @@ body.has-hover-bg::after {
   height: var(--album-card-height);
   object-fit: cover;
   display: block;
-  filter: grayscale(100%);
-  transition: filter 220ms ease;
-  will-change: filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
-.gallery-item.is-hovered img {
-  filter: grayscale(0%) brightness(0.20);
+.image-darkener {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: var(--album-card-height);
+  background: rgba(0, 0, 0, 0.62);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.gallery-item.is-hovered .image-darkener {
+  opacity: 1;
 }
 
 .gallery-item.is-hovered::after {
   opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .image-darkener {
+    transition: none;
+  }
 }
 
 .gallery-item-overlay {

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const pageData = {
     meta: {
-      title: "Albums | Abdlmnn",
+      title: "Albums - abdlmnn",
       description: "Abdlmnn - Albums. Photo collections organized by theme and location.",
     },
     heading: "Albums",
@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fetchpriority="${isPriority ? "high" : "auto"}"
             decoding="async"
           >
+          <span class="image-darkener" aria-hidden="true"></span>
           <div class="gallery-item-overlay">
             <span class="gallery-item-text">${item.label}</span>
           </div>
