@@ -4,21 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <meta id="albumMetaDescription" name="description" content="Album page is being prepared.">
-  <title id="albumPageTitle">Album | Coming Soon</title>
-  <link rel="stylesheet" href="../blog/posts/post.css">
+  <meta id="albumMetaDescription" name="description" content="">
+  <title id="albumPageTitle"></title>
+  <link rel="stylesheet" href="../index/index.css">
+  <link rel="stylesheet" href="./album.css">
 </head>
 
-<body data-page="placeholder">
-  <main class="placeholder-page">
-    <section class="placeholder-card">
-      <p class="placeholder-kicker">Coming Soon</p>
-      <h1 class="placeholder-title">Album Page In Progress</h1>
-      <p class="placeholder-copy">This page is under construction and will be updated with full content soon.</p>
-      <a class="placeholder-link" href="/pages/blog/blog.html">Go to Blog</a>
-    </section>
+<body data-page="album">
+  <div id="siteNavMount"></div>
+  <div id="mobileNavMount"></div>
+  <div id="contactFabMount"></div>
+
+  <header class="albums-header">
+    <h1 id="albumsHeading" class="albums-title"></h1>
+    <p id="albumsSubtitle" class="albums-subtitle"></p>
+  </header>
+
+  <main class="albums-main">
+    <div class="masonry-gallery" id="masonryGallery"></div>
   </main>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">X</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+    <img src="" alt="" class="lightbox-image" id="lightboxImage">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+  </div>
+
+  <script src="../../js/shared/site.js"></script>
+  <script src="./album.page.js"></script>
+  <script src="../../js/albums.js"></script>
 </body>
 
 </html>
