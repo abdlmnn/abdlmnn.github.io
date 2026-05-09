@@ -96,6 +96,12 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  filter: grayscale(100%);
+  transition: filter var(--transition-medium);
+}
+
+.gallery-item:hover img {
+  filter: grayscale(0%);
 }
 
 .gallery-item.layout-one img,
