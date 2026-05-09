@@ -4,7 +4,7 @@
   --album-text-secondary: #666666;
   --album-card-width: 535px;
   --album-card-height: 385px;
-  --album-track-gap: 24px;
+  --album-track-gap: 26px;
 }
 
 body {
@@ -13,29 +13,10 @@ body {
   overflow-x: hidden;
 }
 
-.albums-header {
-  padding: calc(var(--nav-height) + 60px) 20px 40px;
-  text-align: center;
-}
-
-.albums-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 400;
-  margin-bottom: 15px;
-}
-
-.albums-subtitle {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 300;
-  color: var(--album-text-secondary);
-}
-
 .albums-main {
-  width: min(100%, calc(100% - 40px));
+  /* width: min(100%, calc(100% - 40px)); */
   margin: 0 auto;
-  padding: 0;
+  padding: 0 ;
 }
 
 .scroll-slider {
@@ -45,18 +26,21 @@ body {
 .scroll-slider-sticky {
   position: sticky;
   top: calc(var(--nav-height) + 14px);
-  height: calc(100vh - var(--nav-height) - 28px);
+  height: calc(91vh - var(--nav-height) - 28px);
   display: flex;
   align-items: center;
   overflow: hidden;
+  /* border: 1px solid red; */
 }
 
 .scroll-slider-track {
   display: flex;
+  /* width: calc(100vh - var(--nav-width) - 28px); */
+  border: 1px solid red;
   gap: var(--album-track-gap);
   will-change: transform;
   transform: translate3d(0, 0, 0);
-  padding: 0 0 0 20px;
+  /* padding: 0 0 0 20px; */
 }
 
 .gallery-item {
@@ -65,7 +49,6 @@ body {
   height: var(--album-card-height);
   flex: 0 0 auto;
   overflow: hidden;
-  border-radius: 14px;
   cursor: pointer;
 }
 
