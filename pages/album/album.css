@@ -10,6 +10,11 @@
 
   --album-edge-left: 75px;
   --album-edge-right: 85px;
+  /* --album-bg-fade-ms: 240ms; */
+  --album-bg-fade-ms-snappier: 240ms;
+  --album-bg-fade-ms-balanced: 320ms;
+  --album-bg-fade-ms-cinematic: 420ms;
+  --album-bg-fade-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 body {
@@ -29,7 +34,7 @@ body::before {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 300ms ease;
+  transition: opacity var(--album-bg-fade-ms-cinematic) var(--album-bg-fade-ease);
   pointer-events: none;
   will-change: opacity;
   transform: translateZ(0);
@@ -45,7 +50,7 @@ body::after {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 300ms ease;
+  transition: opacity var(--album-bg-fade-ms-cinematic) var(--album-bg-fade-ease);
   pointer-events: none;
   will-change: opacity;
   transform: translateZ(0);
@@ -218,3 +223,4 @@ body.has-hover-bg.layer-b::after {
     padding: var(--album-edge-space-y) var(--album-edge-space-x);
   }
 }
+
