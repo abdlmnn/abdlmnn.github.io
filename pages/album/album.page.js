@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageEl = itemEl.querySelector("img");
     if (!imageEl) return;
 
-    itemEl.addEventListener("pointerenter", () => {
+    const onEnter = () => {
       if (activeItem && activeItem !== itemEl) {
         activeItem.classList.remove("is-hovered");
       }
@@ -141,9 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
           if (activeItem === itemEl) setHoveredBackground(hoverSrc);
         });
       }, 40);
-    });
+    };
 
+    itemEl.addEventListener("pointerenter", onEnter);
+    itemEl.addEventListener("mouseenter", onEnter);
     itemEl.addEventListener("pointerleave", clearActiveHover);
+    itemEl.addEventListener("mouseleave", clearActiveHover);
   });
 
   track.addEventListener("pointerleave", clearActiveHover);

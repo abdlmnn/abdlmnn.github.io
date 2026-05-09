@@ -215,6 +215,7 @@ body[data-page="album"] .mobile-bottom-nav {
   height: var(--album-card-height);
   object-fit: cover;
   display: block;
+  filter: grayscale(100%) brightness(0.85);
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform;
@@ -225,8 +226,7 @@ body[data-page="album"] .mobile-bottom-nav {
   inset: 0 auto auto 0;
   width: 100%;
   height: var(--album-card-height);
-  background: rgba(0, 0, 0, 0.62);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 180ms ease;
   pointer-events: none;
   will-change: opacity;
@@ -234,6 +234,7 @@ body[data-page="album"] .mobile-bottom-nav {
 
 .gallery-item.is-hovered .image-darkener {
   opacity: 1;
+  background: rgba(0, 0, 0, 0.573);
 }
 
 .gallery-item.is-hovered::after {
