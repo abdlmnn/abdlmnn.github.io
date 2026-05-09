@@ -64,6 +64,24 @@ body.has-hover-bg.layer-b::after {
   opacity: 1;
 }
 
+body[data-page="album"] .navigation,
+body[data-page="album"] .navigation.scrolled {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 0 !important;
+}
+
+body[data-page="album"] .mobile-bottom-nav {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-top: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
 .albums-main {
   /* width: min(100%, calc(100% - 40px)); */
   margin: 0 auto;
@@ -214,13 +232,31 @@ body.has-hover-bg.layer-b::after {
     padding: 24px 20px 20px;
   }
 
+  .scroll-slider {
+    height: auto !important;
+  }
+
   .scroll-slider-sticky {
-    top: calc(var(--nav-height) + 8px);
+    position: relative;
+    top: 0;
     height: calc(100vh - var(--nav-height) - 16px);
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--album-edge-space-x);
   }
 
   .scroll-slider-track {
-    padding: var(--album-edge-space-y) var(--album-edge-space-x);
+    transform: none !important;
+    will-change: auto;
+    padding: var(--album-edge-space-y) var(--album-edge-space-x) 24px;
+  }
+
+  .gallery-item {
+    scroll-snap-align: start;
   }
 }
 

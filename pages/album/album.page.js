@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("masonryGallery");
   const slider = document.getElementById("scrollSlider");
   if (!track || !slider) return;
+  const sticky = slider.querySelector(".scroll-slider-sticky");
+  const isMobileSwipeMode = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
 
   track.innerHTML = pageData.items
     .map((item, index) => {
@@ -171,9 +173,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
   const recalculateSlider = () => {
+    if (isMobileSwipeMode) {
+      slider.style.height = "auto";
+      track.style.transform = "none";
+      return;
+    }
+
     const sliderWidth = slider.clientWidth;
     const trackWidth = track.scrollWidth;
-    const sticky = slider.querySelector(".scroll-slider-sticky");
     const stickyHeight = sticky ? sticky.clientHeight : window.innerHeight;
     const stickyTop = sticky ? parseFloat(window.getComputedStyle(sticky).top || "0") : 0;
 
@@ -186,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateSlider = () => {
+    if (isMobileSwipeMode) return;
     const start = slider.offsetTop;
     const current = window.scrollY - start;
     const progress = clamp(current / (scrollDistance || 1), 0, 1);
@@ -195,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let scrollRaf = null;
   const onScroll = () => {
+    if (isMobileSwipeMode) return;
     if (scrollRaf) return;
     scrollRaf = window.requestAnimationFrame(() => {
       updateSlider();
@@ -208,7 +217,9 @@ document.addEventListener("DOMContentLoaded", () => {
     resizeTimer = window.setTimeout(recalculateSlider, 120);
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
+  if (!isMobileSwipeMode) {
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
   window.addEventListener("resize", onResize, { passive: true });
 
   recalculateSlider();
