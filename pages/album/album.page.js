@@ -23,31 +23,31 @@ document.addEventListener("DOMContentLoaded", () => {
         alt: "City lights 2",
         label: "City Lights 2",
       },
-      {
-        src: "../../images/KSA/1000027527.jpg",
-        alt: "Architecture 4",
-        label: "Architecture 4",
-      },
-      {
-        src: "../../images/KSA/1000027501.jpg",
-        alt: "Saudi landscape",
-        label: "Landscape 5",
-      },
-      {
-        src: "../../images/KSA/1000027405.jpg",
-        alt: "Desert view",
-        label: "Desert View 6",
-      },
-      {
-        src: "../../images/KSA/1000027401 (2).jpg",
-        alt: "Saudi Arabia",
-        label: "Saudi Arabia",
-      },
-      {
-        src: "../../images/KSA/1000027402 (2).jpg",
-        alt: "Saudi Arabia",
-        label: "Saudi Arabia",
-      },
+      // {
+      //   src: "../../images/KSA/1000027527.jpg",
+      //   alt: "Architecture 4",
+      //   label: "Architecture 4",
+      // },
+      // {
+      //   src: "../../images/KSA/1000027501.jpg",
+      //   alt: "Saudi landscape",
+      //   label: "Landscape 5",
+      // },
+      // {
+      //   src: "../../images/KSA/1000027405.jpg",
+      //   alt: "Desert view",
+      //   label: "Desert View 6",
+      // },
+      // {
+      //   src: "../../images/KSA/1000027401 (2).jpg",
+      //   alt: "Saudi Arabia",
+      //   label: "Saudi Arabia",
+      // },
+      // {
+      //   src: "../../images/KSA/1000027402 (2).jpg",
+      //   alt: "Saudi Arabia",
+      //   label: "Saudi Arabia",
+      // },
     ],
   };
 
