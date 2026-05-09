@@ -31,6 +31,8 @@ body::before {
   opacity: 0;
   transition: opacity 300ms ease;
   pointer-events: none;
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 body::after {
@@ -42,6 +44,8 @@ body::after {
   opacity: 0;
   transition: opacity 300ms ease;
   pointer-events: none;
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 body.has-hover-bg::before,
@@ -103,6 +107,8 @@ body.has-hover-bg::after {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
+  opacity: 1;
+  transition: opacity 180ms ease;
   pointer-events: none;
 }
 
@@ -129,14 +135,15 @@ body.has-hover-bg::after {
   object-fit: cover;
   display: block;
   filter: grayscale(100%);
-  transition: filter 260ms ease;
+  transition: filter 220ms ease;
+  will-change: filter;
 }
 
-.gallery-item:hover img {
-  filter: grayscale(0%) brightness(0.42);
+.gallery-item.is-hovered img {
+  filter: grayscale(0%) brightness(0.20);
 }
 
-.gallery-item:hover::after {
+.gallery-item.is-hovered::after {
   opacity: 1;
 }
 
@@ -152,6 +159,15 @@ body.has-hover-bg::after {
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  transition: opacity 180ms ease;
+}
+
+.gallery-item.is-hovered .gallery-item-text {
+  opacity: 0;
+}
+
+.gallery-item.is-hovered::before {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {

@@ -57,7 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .join("");
 
+  let hoverBgTimer = null;
+  let activeBgSrc = "";
+  let activeItem = null;
+
   const setHoveredBackground = (imageSrc) => {
+    if (imageSrc === activeBgSrc) return;
+    activeBgSrc = imageSrc;
+
     if (!imageSrc) {
       document.body.style.removeProperty("--album-hover-bg");
       document.body.classList.remove("has-hover-bg");
@@ -68,15 +75,36 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("has-hover-bg");
   };
 
-  track.querySelectorAll(".gallery-item img").forEach((imageEl) => {
-    imageEl.addEventListener("mouseenter", () => {
-      setHoveredBackground(imageEl.currentSrc || imageEl.src);
+  const clearActiveHover = () => {
+    if (activeItem) activeItem.classList.remove("is-hovered");
+    activeItem = null;
+    if (hoverBgTimer) window.clearTimeout(hoverBgTimer);
+    hoverBgTimer = window.setTimeout(() => {
+      setHoveredBackground("");
+    }, 40);
+  };
+
+  track.querySelectorAll(".gallery-item").forEach((itemEl) => {
+    const imageEl = itemEl.querySelector("img");
+    if (!imageEl) return;
+
+    itemEl.addEventListener("pointerenter", () => {
+      if (activeItem && activeItem !== itemEl) {
+        activeItem.classList.remove("is-hovered");
+      }
+      itemEl.classList.add("is-hovered");
+      activeItem = itemEl;
+      if (hoverBgTimer) window.clearTimeout(hoverBgTimer);
+      hoverBgTimer = window.setTimeout(() => {
+        setHoveredBackground(imageEl.currentSrc || imageEl.src);
+      }, 40);
     });
 
-    imageEl.addEventListener("mouseleave", () => {
-      setHoveredBackground("");
-    });
+    itemEl.addEventListener("pointerleave", clearActiveHover);
   });
+
+  track.addEventListener("pointerleave", clearActiveHover);
+  window.addEventListener("blur", clearActiveHover);
 
   let maxTranslate = 0;
   let scrollDistance = 0;
@@ -107,8 +135,23 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.transform = `translate3d(${x}px, 0, 0)`;
   };
 
-  window.addEventListener("scroll", updateSlider, { passive: true });
-  window.addEventListener("resize", recalculateSlider);
+  let scrollRaf = null;
+  const onScroll = () => {
+    if (scrollRaf) return;
+    scrollRaf = window.requestAnimationFrame(() => {
+      updateSlider();
+      scrollRaf = null;
+    });
+  };
+
+  let resizeTimer = null;
+  const onResize = () => {
+    if (resizeTimer) window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(recalculateSlider, 120);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onResize, { passive: true });
 
   recalculateSlider();
 });
