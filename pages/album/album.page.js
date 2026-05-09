@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
       { src: "../../images/KSA/1000027491.jpg", alt: "Desert sunset 3", label: "Desert Sunset 3" },
       { src: "../../images/KSA/1000027404.jpg", alt: "City lights 2", label: "City Lights 2" },
       { src: "../../images/KSA/1000027527.jpg", alt: "Architecture 4", label: "Architecture 4" },
-      { src: "../../images/KSA/1000027501.jpg", alt: "Saudi landscape", label: "Landscape 5" },
-      { src: "../../images/KSA/1000027405.jpg", alt: "Desert view", label: "Desert View 6" },
-      { src: "../../images/KSA/1000027401 (2).jpg", alt: "Saudi Arabia", label: "Saudi Arabia 7" },
-      { src: "../../images/KSA/1000027402 (2).jpg", alt: "Saudi Arabia", label: "Saudi Arabia 8" },
+      // { src: "../../images/KSA/1000027501.jpg", alt: "Saudi landscape", label: "Landscape 5" },
+      // { src: "../../images/KSA/1000027405.jpg", alt: "Desert view", label: "Desert View 6" },
+      // { src: "../../images/KSA/1000027401 (2).jpg", alt: "Saudi Arabia", label: "Saudi Arabia 7" },
+      // { src: "../../images/KSA/1000027402 (2).jpg", alt: "Saudi Arabia", label: "Saudi Arabia 8" },
     ],
   };
 
@@ -61,6 +61,34 @@ document.addEventListener("DOMContentLoaded", () => {
   let hoverBgTimer = null;
   let activeBgSrc = "";
   let activeItem = null;
+  const decodedHoverImages = new Set();
+  const decodeTasks = new Map();
+
+  const predecodeImage = (src) => {
+    if (!src || decodedHoverImages.has(src)) return Promise.resolve();
+    if (decodeTasks.has(src)) return decodeTasks.get(src);
+
+    const task = new Promise((resolve) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = src;
+      const finish = () => {
+        decodedHoverImages.add(src);
+        decodeTasks.delete(src);
+        resolve();
+      };
+
+      if (img.decode) {
+        img.decode().then(finish).catch(finish);
+      } else {
+        img.onload = finish;
+        img.onerror = finish;
+      }
+    });
+
+    decodeTasks.set(src, task);
+    return task;
+  };
 
   const setHoveredBackground = (imageSrc) => {
     if (imageSrc === activeBgSrc) return;
@@ -95,9 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       itemEl.classList.add("is-hovered");
       activeItem = itemEl;
+      const hoverSrc = imageEl.currentSrc || imageEl.src;
       if (hoverBgTimer) window.clearTimeout(hoverBgTimer);
       hoverBgTimer = window.setTimeout(() => {
-        setHoveredBackground(imageEl.currentSrc || imageEl.src);
+        predecodeImage(hoverSrc).finally(() => {
+          if (activeItem === itemEl) setHoveredBackground(hoverSrc);
+        });
       }, 40);
     });
 
@@ -106,6 +137,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   track.addEventListener("pointerleave", clearActiveHover);
   window.addEventListener("blur", clearActiveHover);
+
+  const primeHoverBackgrounds = () => {
+    const imageEls = track.querySelectorAll(".gallery-item img");
+    imageEls.forEach((imgEl, index) => {
+      const src = imgEl.currentSrc || imgEl.src;
+      const delay = index * 60;
+      window.setTimeout(() => {
+        predecodeImage(src);
+      }, delay);
+    });
+  };
+
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(primeHoverBackgrounds, { timeout: 1200 });
+  } else {
+    window.setTimeout(primeHoverBackgrounds, 500);
+  }
 
   let maxTranslate = 0;
   let scrollDistance = 0;

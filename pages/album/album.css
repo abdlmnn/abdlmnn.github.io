@@ -94,6 +94,8 @@ body.has-hover-bg::after {
   overflow: visible;
   cursor: pointer;
   counter-increment: album-counter;
+  contain: layout paint style;
+  content-visibility: auto;
 }
 
 .gallery-item::before {
@@ -136,6 +138,7 @@ body.has-hover-bg::after {
   display: block;
   transform: translateZ(0);
   backface-visibility: hidden;
+  will-change: transform;
 }
 
 .image-darkener {
