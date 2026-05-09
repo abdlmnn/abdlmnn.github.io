@@ -87,7 +87,55 @@ body[data-page="album"] .mobile-bottom-nav {
 .albums-main {
   /* width: min(100%, calc(100% - 40px)); */
   margin: 0 auto;
-  padding: 0 ;
+  padding: 0;
+}
+
+.album-bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  z-index: 998;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 26px;
+  color: var(--album-text-primary);
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  /* border: 1px solid red; */
+  margin-left: 55px;
+  margin-right: 55px;
+}
+
+.album-bottom-left {
+  justify-self: start;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  transform: translateY(-26px);
+  /* margin-left: 55px; */
+  font-size: 0.86rem;
+}
+
+.album-bottom-center {
+  justify-self: center;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  transform: translateY(-26px);
+  font-size: 0.86rem;
+}
+
+.album-bottom-right {
+  justify-self: end;
+  font-family: var(--font-syne);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0.1em;
 }
 
 .scroll-slider {
@@ -265,6 +313,27 @@ body[data-page="album"] .mobile-bottom-nav {
 
   .gallery-item {
     scroll-snap-align: start;
+  }
+
+  .album-bottom-bar {
+    bottom: 84px;
+    padding: 0 14px;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+  }
+
+  .album-bottom-left {
+    transform: translateY(-6px);
+    font-size: 0.74rem;
+  }
+
+  .album-bottom-center {
+    transform: translateY(-6px);
+    font-size: 0.84rem;
+  }
+
+  .album-bottom-right {
+    display: none;
   }
 }
 
