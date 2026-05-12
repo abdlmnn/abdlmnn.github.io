@@ -41,6 +41,37 @@ body {
   padding: 0 0 80px;
 }
 
+.prologue-section {
+  padding: 0 20px 100px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prologue-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  line-height: 2;
+  color: var(--album-text-primary);
+  font-style: italic;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  letter-spacing: 0.01em;
+  opacity: 0.9;
+  position: relative;
+}
+
+.prologue-text::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--album-text-muted);
+  margin: 0 auto 2rem;
+  opacity: 0.5;
+}
+
 .masonry-gallery {
   display: grid;
   grid-template-columns: 390px 390px 390px;
