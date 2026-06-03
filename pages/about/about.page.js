@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageData = {
     meta: {
       title: "About | ABDLMNN",
-      description: "About Mohammad Abdulmanan, also known as ABDLMNN.",
+      description: "Personal developer portfolio of Mohammad Abdulmanan, bringing together web systems, interfaces, writing, and images.",
     },
     socialLabel: "WHERE MY WORLDS MEET",
     valuesTitle: "What Matters to Me",
@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
       alt: "Portrait of Mohammad Abdulmanan",
     },
     paragraphs: [
-      "I have never belonged to just one world. I move between code and image, discipline and instinct, motion and stillness. Some parts of me are built through structure: writing systems, refining interfaces, paying attention to the logic that holds things together. Other parts are built through attention: the kind that comes from sport, from rhythm, from watching light, gesture, and silence closely enough that they begin to say something on their own.",
-      "Growing up between places changed the way I understand identity. I do not think of myself as one fixed thing. I am a builder, an athlete, a writer, and an observer, and none of those selves cancel the others out. They sharpen each other. Sport taught me repetition, endurance, and control. Writing taught me how to stay with a thought long enough to understand it. Images taught me that not everything meaningful can be explained, only noticed.",
-      "This site holds those worlds in one place. It is not only a portfolio, and not only a journal. It is a record of how I think, what I make, what I chase, and what I keep returning to. If there is a thread running through all of it, it is this: I am interested in the meeting point between precision and feeling, where something well-made can still carry a soul.",
+      "I have never belonged to just one world. I move between code and image, discipline and instinct, motion and stillness. At the center of that is the work I do as a developer: building web systems, designing interfaces, and shaping digital experiences that feel clear, intentional, and human. Other parts of me are built through attention: the kind that comes from sport, from rhythm, from watching light, gesture, and silence closely enough that they begin to say something on their own.",
+      "Growing up between places changed the way I understand identity, and it also shaped the way I work. I do not think of myself as one fixed thing. I am a builder, an athlete, a writer, and an observer, and none of those selves cancel the others out. They sharpen each other. Sport taught me repetition, endurance, and control. Writing taught me how to stay with a problem long enough to understand its shape. Images taught me that not everything meaningful can be measured, but it still has to be noticed.",
+      "This site holds those worlds in one place. It is not only a journal, and not only a portfolio. It is a record of how I think, what I build, what I make, and what I keep returning to as a developer and as a person. If there is a thread running through all of it, it is this: I care about the meeting point between precision and feeling, where a digital experience can be functional, thoughtful, and still carry a soul.",
     ],
   };
 
