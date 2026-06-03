@@ -27,8 +27,10 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  /* Blog hero grayscale treatment kept here for later use.
   filter: grayscale(100%);
   transition: filter var(--transition-medium);
+  */
 }
 
 /* Adjust only the first (ball) image focal point */
@@ -36,9 +38,11 @@
   object-position: 50% 30%;
 }
 
+/* Blog hero grayscale hover treatment kept here for later use.
 .blog-grid-img:hover {
   filter: grayscale(0);
 }
+*/
 
 .blog-hero-dots {
   display: none;
@@ -299,8 +303,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Blog post-card grayscale treatment kept here for later use.
   filter: grayscale(100%);
   transition: filter var(--transition-medium);
+  */
 }
 
 .blog-first-img {
@@ -311,9 +317,11 @@
   object-position: 50% 70%;
 }
 
+/* Blog post-card grayscale hover treatment kept here for later use.
 .blog-post-image:hover {
   filter: grayscale(0%);
 }
+*/
 
 .blog-classic-bottom-content {
   padding: 0 50px 50px;

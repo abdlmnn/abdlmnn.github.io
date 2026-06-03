@@ -107,9 +107,102 @@ function iconAbout() {
   `;
 }
 
+function iconContact() {
+  return `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17V7C2 5.89543 2.89543 5 4 5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M22 7L12 13L2 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  `;
+}
+
 function renderDesktopNav(pageType) {
   const mount = document.getElementById('siteNavMount');
   if (!mount) return;
+
+  if (pageType === 'album') {
+    const links = [
+      { label: 'Home', href: toHref(pageType, '') },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
+      { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
+    ];
+
+    mount.innerHTML = `
+      <nav class="navigation" id="nav">
+        <div class="nav-cont">
+          <div class="nav-links" id="navLinks">
+            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
+          </div>
+
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    `;
+    return;
+  }
+
+  if (pageType === 'about') {
+    const links = [
+      { label: 'Home', href: toHref(pageType, '') },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
+      { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
+      { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
+    ];
+
+    mount.innerHTML = `
+      <nav class="navigation" id="nav">
+        <div class="nav-cont">
+          <div class="nav-links" id="navLinks">
+            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
+          </div>
+
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    `;
+    return;
+  }
+
+  if (pageType === 'contact') {
+    const links = [
+      { label: 'Home', href: toHref(pageType, '') },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
+      { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
+    ];
+
+    mount.innerHTML = `
+      <nav class="navigation" id="nav">
+        <div class="nav-cont">
+          <div class="nav-links" id="navLinks">
+            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
+          </div>
+
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    `;
+    return;
+  }
 
   const firstLink = pageType === 'blog' || pageType === 'post'
     ? { label: 'Home', href: toHref(pageType, '') }
@@ -118,8 +211,8 @@ function renderDesktopNav(pageType) {
   const links = [
     firstLink,
     { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
-    { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
-    { label: 'Work', href: toHref(pageType, 'pages/work/work.html') },
+    /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
+    { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
     { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
     { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
   ];
@@ -145,6 +238,11 @@ function renderContactFab(pageType) {
   const mount = document.getElementById('contactFabMount');
   if (!mount) return;
 
+  if (pageType === 'contact') {
+    mount.innerHTML = '';
+    return;
+  }
+
   mount.innerHTML = `
     <a href="${toHref(pageType, 'pages/contact/contact.html')}" class="contact-fab" aria-label="Contact">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,6 +255,85 @@ function renderContactFab(pageType) {
 function renderMobileBottomNav(pageType) {
   const mount = document.getElementById('mobileNavMount');
   if (!mount) return;
+
+  if (pageType === 'album') {
+    const items = [
+      { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
+    ];
+
+    mount.innerHTML = `
+      <nav class="mobile-bottom-nav" id="mobileBottomNav">
+        ${items
+          .map(
+            (item) => `
+              <a href="${item.href}" class="mobile-nav-item">
+                ${item.icon}
+                <span>${item.label}</span>
+              </a>
+            `
+          )
+          .join('')}
+      </nav>
+    `;
+    return;
+  }
+
+  if (pageType === 'about') {
+    const items = [
+      { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
+      { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
+    ];
+
+    mount.innerHTML = `
+      <nav class="mobile-bottom-nav" id="mobileBottomNav">
+        ${items
+          .map(
+            (item) => `
+              <a href="${item.href}" class="mobile-nav-item">
+                ${item.icon}
+                <span>${item.label}</span>
+              </a>
+            `
+          )
+          .join('')}
+      </nav>
+    `;
+    return;
+  }
+
+  if (pageType === 'contact') {
+    const items = [
+      { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
+      { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
+    ];
+
+    mount.innerHTML = `
+      <nav class="mobile-bottom-nav" id="mobileBottomNav">
+        ${items
+          .map(
+            (item) => `
+              <a href="${item.href}" class="mobile-nav-item">
+                ${item.icon}
+                <span>${item.label}</span>
+              </a>
+            `
+          )
+          .join('')}
+      </nav>
+    `;
+    return;
+  }
 
   const first = pageType === 'blog' || pageType === 'post'
     ? {
@@ -172,9 +349,9 @@ function renderMobileBottomNav(pageType) {
 
   const items = [
     first,
-    { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
-    { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() },
     { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
+    /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
+    { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
     { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
   ];
 

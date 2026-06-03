@@ -30,7 +30,7 @@
     posts: [
       {
         id: "post-1",
-        status: "Live",
+        status: "",
         category: "Origin",
         title: "Where It Begins",
         date: "Mar 1, 2026",
@@ -97,8 +97,9 @@
   blogData.posts.forEach((post, index) => {
     const prefix = `post${index + 1}`;
     // Check if elements exist before setting them
-    const statusEl = document.getElementById(`${prefix}Status`);
-    if (statusEl) {
+    // const statusEl = document.getElementById(`${prefix}Status`);
+
+    // if (statusEl) {
       setText(`${prefix}Status`, post.status);
       setText(`${prefix}Category`, post.category);
       setText(`${prefix}Title`, post.title);
@@ -106,7 +107,14 @@
       setText(`${prefix}Description`, post.description);
       setText(`${prefix}ReadMore`, post.readMore);
       setImage(`${prefix}Image`, post.image);
-    }
+    // } else {
+    //   setText(`${prefix}Category`, post.category);
+    //   setText(`${prefix}Title`, post.title);
+    //   setText(`${prefix}Date`, post.date);
+    //   setText(`${prefix}Description`, post.description);
+    //   setText(`${prefix}ReadMore`, post.readMore);
+    //   setImage(`${prefix}Image`, post.image);
+    // }
   });
 })();
 
