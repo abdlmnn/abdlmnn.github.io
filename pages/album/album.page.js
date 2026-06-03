@@ -5,9 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "Abdlmnn - Albums. Photo collections organized by theme and location.",
     },
-    heading: "Visual Journals",
-    subtitle: "Logic & Light",
-    prologue: "I live in two languages.<br><br>The world is often framed as a binary: a sequence of logical operations or a collection of stories. As a developer, I build the systems; as a writer, I explore the souls within them.<br><br>But there is a wordless reality that exists between the code and the page—a space that doesn't care about brackets or grammar. These images are from that space. They are the moments where I stopped trying to solve the world or describe it, and simply stood still within it.<br><br>This is the light that spoke when I finally ran out of things to say.",
+    heading: "VISUAL JOURNALS",
+    subtitle: "LOGIC & LIGHT",
+    introImage: {
+      src: "../../my-images/me_scrapbook.svg",
+      alt: "Mohammad Abdulmanan holding a camera while taking photos",
+    },
+    prologue: "I live in two languages.<br><br>The world is often framed as a binary: a sequence of logical operations or a collection of stories. As a developer, I build the systems; as a writer, I explore the souls within them.<br><br>But there is a wordless reality that exists between the code and the page—a space that doesn't care about brackets or grammar. These images are from that space. They are the moments where I stopped trying to solve the world or describe it, and simply stood still within it.<br><br>This is the light that spoke when I finally ran out of things&nbsp;to&nbsp;say.",
     items: [
       {
         src: "../../images/KSA/1000027400 (2).jpg",
@@ -70,6 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setText("albumsHeading", pageData.heading);
   setText("albumsSubtitle", pageData.subtitle);
   setText("albumsPrologue", pageData.prologue, true);
+
+  const prologueImageEl = document.getElementById("albumsPrologueImage");
+  if (prologueImageEl && pageData.introImage) {
+    prologueImageEl.src = pageData.introImage.src;
+    prologueImageEl.alt = pageData.introImage.alt;
+  }
 
   const gallery = document.getElementById("masonryGallery");
   if (!gallery) return;

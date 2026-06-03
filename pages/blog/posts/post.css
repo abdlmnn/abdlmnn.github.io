@@ -201,8 +201,11 @@ body[data-page="post"] {
   height: 100%;
   object-fit: cover;
   object-position: center 50%;
+  /* Post intro grayscale treatment kept here for later use.
   filter: grayscale(100%);
   transition: filter var(--transition-medium), transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  */
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .post-intro-panel::after {
@@ -213,11 +216,13 @@ body[data-page="post"] {
   pointer-events: none;
 }
 
+/* Post intro grayscale hover treatment kept here for later use.
 .post-intro-panel:hover .post-intro-image,
 .post-intro-panel:focus-within .post-intro-image {
   filter: grayscale(0%);
   transform: scale(1.03) translateX(1%);
 }
+*/
 
 .post-intro-copy {
   position: absolute;
