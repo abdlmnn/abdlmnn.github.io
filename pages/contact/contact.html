@@ -5,20 +5,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
-  <meta id="contactMetaDescription" name="description" content="Contact page is being prepared.">
-  <title id="contactPageTitle">Contact | Coming Soon</title>
-  <link rel="stylesheet" href="../blog/posts/post.css">
+  <meta name="author" content="Mohammad Abdulmanan">
+  <meta name="robots" content="index, follow">
+  <meta id="contactMetaDescription" name="description" content="">
+  <title id="contactPageTitle"></title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdlmnn.github.io/pages/contact/contact.html">
+  <meta property="og:title" content="Contact | ABDLMNN">
+  <meta property="og:description" content="Get in touch with Mohammad Abdulmanan through a direct contact form and thoughtful channels.">
+  <meta property="og:image" content="https://abdlmnn.github.io/my-images/me_side.jpg">
+  <meta property="og:image:alt" content="Portrait of Mohammad Abdulmanan">
+  <meta property="og:site_name" content="ABDLMNN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://abdlmnn.github.io/pages/contact/contact.html">
+  <meta name="twitter:title" content="Contact | ABDLMNN">
+  <meta name="twitter:description" content="Get in touch with Mohammad Abdulmanan through a direct contact form and thoughtful channels.">
+  <meta name="twitter:image" content="https://abdlmnn.github.io/my-images/me_side.jpg">
+
+  <link rel="canonical" href="https://abdlmnn.github.io/pages/contact/contact.html">
+  <link rel="icon" type="image/svg+xml" href="../../images/Me/font icon/1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="preload" as="image" href="../../my-images/me_side.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="../index/index.css">
+  <link rel="stylesheet" href="./contact.css?v=1.1">
 </head>
 
-<body data-page="placeholder">
-  <main class="placeholder-page">
-    <section class="placeholder-card">
-      <p class="placeholder-kicker">Coming Soon</p>
-      <h1 class="placeholder-title">Contact Page In Progress</h1>
-      <p class="placeholder-copy">This page is under construction and will be updated with full content soon.</p>
-      <a class="placeholder-link" href="/pages/blog/blog.html">Go to Blog</a>
+<body data-page="contact">
+  <div id="siteNavMount"></div>
+  <div id="mobileNavMount"></div>
+  <div id="contactFabMount"></div>
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <div class="contact-shell">
+        <div class="contact-header">
+          <p id="contactEyebrow" class="contact-eyebrow"></p>
+          <h1 id="contactTitle" class="contact-title"></h1>
+          <p id="contactLead" class="contact-lead"></p>
+        </div>
+
+        <div class="contact-stage">
+          <figure class="contact-portrait-wrap">
+            <div class="contact-portrait-frame">
+              <img
+                id="contactPortrait"
+                class="contact-portrait"
+                src="../../my-images/me_side.jpg"
+                alt="Portrait of Mohammad Abdulmanan"
+                width="1920"
+                height="2560"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async">
+            </div>
+            <figcaption id="contactImageNote" class="contact-image-note"></figcaption>
+          </figure>
+
+          <section class="contact-panel" aria-labelledby="contactPanelTitle">
+            <p id="contactPanelKicker" class="contact-panel-kicker"></p>
+            <h2 id="contactPanelTitle" class="contact-panel-title"></h2>
+            <p id="contactPanelIntro" class="contact-panel-intro"></p>
+            <div id="contactChannels" class="contact-channels"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section" aria-labelledby="contactFormTitle">
+      <div class="contact-shell">
+        <div class="contact-form-stage">
+          <div class="contact-form-copy">
+            <p id="contactFormKicker" class="contact-form-kicker"></p>
+            <h2 id="contactFormTitle" class="contact-form-title"></h2>
+            <p id="contactFormLead" class="contact-form-lead"></p>
+          </div>
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/mjgejjae"
+            method="POST">
+            <input type="hidden" name="_subject" value="New contact inquiry from abdlmnn.github.io">
+
+            <div class="contact-form-grid">
+              <div class="contact-field">
+                <label class="contact-label" for="contactName">Your Name</label>
+                <input id="contactName" name="name" type="text" placeholder="What should I call you?" required>
+              </div>
+
+              <div class="contact-field">
+                <label class="contact-label" for="contactEmail">Your Email</label>
+                <input id="contactEmail" name="email" type="email" placeholder="Where can I reply to you?" required>
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label class="contact-label" for="contactSubject">Subject</label>
+                <input id="contactSubject" name="subject" type="text" placeholder="A short line about your message" required>
+              </div>
+
+              <div class="contact-field contact-field-full">
+                <label class="contact-label" for="contactMessage">Your Message</label>
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  rows="6"
+                  placeholder="Share your question, idea, or what you need help with."
+                  required></textarea>
+              </div>
+            </div>
+
+            <button class="contact-submit" type="submit">Submit Message</button>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2026 Mohammad Abdulmanan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/shared/site.js"></script>
+  <script src="./contact.page.js"></script>
 </body>
 
 </html>
