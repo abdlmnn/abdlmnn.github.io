@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slug: "ilpi-hr-management",
         name: "HR Management System",
         type: "Internship Project / Human Resources Platform",
-        status: "Internship Project",
+        status: "",
         summary:
           "An HR system for Iligan Light & Power, Inc. built for job posts, applications, and internship intake.",
         whatItSolved:
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slug: "pharmago",
         name: "PharmaGo",
         type: "Capstone / Multi-Pharmacy On-Demand Medicine Platform",
-        status: "Completed Project",
+        status: "",
         summary:
           "A centralized medicine ordering and delivery system for customers, pharmacies, riders, and admins in Iligan City.",
         whatItSolved:
