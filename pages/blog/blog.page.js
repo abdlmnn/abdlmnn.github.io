@@ -82,6 +82,14 @@
     if (typeof imageData.src === "string") el.setAttribute("src", imageData.src);
     if (typeof imageData.alt === "string") el.setAttribute("alt", imageData.alt);
   };
+  blogData.meta.title = "Blog | ABDLMNN";
+  setText("blogPageTitle", blogData.meta.title);
+
+  const metaDescription = document.getElementById("blogMetaDescription");
+  if (metaDescription) {
+    metaDescription.setAttribute("content", blogData.meta.description);
+  }
+
   setText("blogHeroTitle", blogData.hero.title);
   setText("blogHeroSubtitle", blogData.hero.subtitle);
 

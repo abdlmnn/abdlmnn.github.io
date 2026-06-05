@@ -124,8 +124,8 @@ function renderDesktopNav(pageType) {
     const links = [
       { label: 'Home', href: toHref(pageType, '') },
       { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
-      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
-      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') }, */
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') },
       { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
       { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
     ];
@@ -153,8 +153,8 @@ function renderDesktopNav(pageType) {
       { label: 'Home', href: toHref(pageType, '') },
       { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
       { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
-      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
-      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') }, */
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') },
       { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
     ];
 
@@ -181,9 +181,37 @@ function renderDesktopNav(pageType) {
       { label: 'Home', href: toHref(pageType, '') },
       { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
       { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
-      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
-      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') }, */
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html') },
       { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
+    ];
+
+    mount.innerHTML = `
+      <nav class="navigation" id="nav">
+        <div class="nav-cont">
+          <div class="nav-links" id="navLinks">
+            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
+          </div>
+
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    `;
+    return;
+  }
+
+  if (pageType === 'work') {
+    const links = [
+      { label: 'Home', href: toHref(pageType, '') },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html') },
+      { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') }, */
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
+      { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
     ];
 
     mount.innerHTML = `
@@ -211,8 +239,8 @@ function renderDesktopNav(pageType) {
   const links = [
     firstLink,
     { label: 'Album', href: toHref(pageType, 'pages/album/album.html') },
-    /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') },
-    { label: 'Work', href: toHref(pageType, 'pages/work/work.html') }, */
+    /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html') }, */
+    { label: 'Work', href: toHref(pageType, 'pages/work/work.html') },
     { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
     { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
   ];
@@ -260,8 +288,8 @@ function renderMobileBottomNav(pageType) {
     const items = [
       { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
       { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
-      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
-      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() }, */
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() },
       { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
     ];
 
@@ -287,8 +315,8 @@ function renderMobileBottomNav(pageType) {
       { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
       { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
       { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
-      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
-      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() }, */
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() },
     ];
 
     mount.innerHTML = `
@@ -313,8 +341,34 @@ function renderMobileBottomNav(pageType) {
       { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
       { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
       { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
-      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
-      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() }, */
+      { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() },
+      { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
+    ];
+
+    mount.innerHTML = `
+      <nav class="mobile-bottom-nav" id="mobileBottomNav">
+        ${items
+          .map(
+            (item) => `
+              <a href="${item.href}" class="mobile-nav-item">
+                ${item.icon}
+                <span>${item.label}</span>
+              </a>
+            `
+          )
+          .join('')}
+      </nav>
+    `;
+    return;
+  }
+
+  if (pageType === 'work') {
+    const items = [
+      { label: 'Home', href: toHref(pageType, ''), icon: iconHome() },
+      { label: 'Blog', href: toHref(pageType, 'pages/blog/blog.html'), icon: iconBlog() },
+      { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
+      /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() }, */
       { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
     ];
 
@@ -350,8 +404,8 @@ function renderMobileBottomNav(pageType) {
   const items = [
     first,
     { label: 'Album', href: toHref(pageType, 'pages/album/album.html'), icon: iconAlbum() },
-    /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() },
-    { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() }, */
+    /* { label: 'Gallery', href: toHref(pageType, 'pages/gallery/gallery.html'), icon: iconGallery() }, */
+    { label: 'Work', href: toHref(pageType, 'pages/work/work.html'), icon: iconWork() },
     { label: 'About', href: toHref(pageType, 'pages/about/about.html'), icon: iconAbout() },
   ];
 
@@ -586,5 +640,3 @@ function setHeroImage(imagePath) {
 }
 
 window.setHeroImage = setHeroImage;
-
-

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Personal developer portfolio of Mohammad Abdulmanan, bringing together web systems, interfaces, writing, and images.",
     },
     socialLabel: "WHERE MY WORLDS MEET",
+    /*
     valuesTitle: "What Matters to Me",
     values: [
       {
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "Precision matters, but it should still leave room for feeling.",
       },
     ],
+    */
     name: "Mohammad Abdulmanan",
     image: {
       src: "../../my-images/me_back.jpg",
@@ -50,8 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (descriptionEl) descriptionEl.setAttribute("content", pageData.meta.description);
 
   setText("aboutSocialLabel", pageData.socialLabel);
-  setText("aboutValuesTitle", pageData.valuesTitle);
   setText("aboutName", pageData.name);
+  // About values section kept here in comments for later reuse.
+  // setText("aboutValuesTitle", pageData.valuesTitle);
 
   const portraitEl = document.getElementById("aboutPortrait");
   if (portraitEl) {
@@ -66,6 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     copyEl.innerHTML = pageData.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
   }
 
+  // About values section kept here in comments for later reuse.
+  /*
   const valuesEl = document.getElementById("aboutValuesRows");
   if (valuesEl) {
     valuesEl.innerHTML = pageData.values
@@ -79,4 +84,5 @@ document.addEventListener("DOMContentLoaded", () => {
       )
       .join("");
   }
+  */
 });

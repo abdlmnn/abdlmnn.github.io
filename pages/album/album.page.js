@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const pageData = {
     meta: {
-      title: "Albums | Abdlmnn",
+      title: "Album | ABDLMNN",
       description:
         "Abdlmnn - Albums. Photo collections organized by theme and location.",
     },

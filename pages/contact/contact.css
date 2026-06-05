@@ -324,13 +324,21 @@ a.contact-channel-value:hover {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .contact-submit:hover {
-  background: transparent;
-  color: var(--contact-ink);
+  opacity: 0.82;
   transform: translateY(-1px);
+}
+
+.contact-form-notice {
+  margin: 26px 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--contact-muted);
 }
 
 @media (max-width: 1024px) {
