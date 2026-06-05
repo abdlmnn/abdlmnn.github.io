@@ -1,0 +1,488 @@
+@import url('../../css/variable.css');
+
+:root {
+  --work-bg: #ffffff;
+  --work-ink: #191919;
+  --work-muted: #686868;
+  --work-faint: #8c8c8c;
+  --work-line: rgba(25, 25, 25, 0.1);
+  --work-line-strong: rgba(25, 25, 25, 0.22);
+  --work-shell: min(1120px, calc(100% - 56px));
+}
+
+body[data-page="work"] {
+  background: var(--work-bg);
+  color: var(--work-ink);
+}
+
+.work-page {
+  padding: calc(var(--nav-height) + 54px) 0 92px;
+}
+
+.work-shell {
+  width: var(--work-shell);
+  margin: 0 auto;
+}
+
+.work-kicker,
+.work-foundation-label,
+.work-chapter-number,
+.work-chapter-type,
+.work-project-detail-label {
+  margin: 0;
+  font-family: var(--font-syne);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--work-faint);
+}
+
+.work-intro-title,
+.work-foundation-title,
+.work-experience-role,
+.work-project-title,
+.work-cta-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  color: var(--work-ink);
+  letter-spacing: 0;
+}
+
+.work-intro-note,
+.work-foundation-value,
+.work-experience-company,
+.work-experience-period,
+.work-project-summary,
+.work-project-detail-text,
+.work-chapter-status,
+.work-cta-copy {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--work-muted);
+}
+
+.work-intro-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px 66px;
+}
+
+.work-intro-header > .work-kicker {
+  display: none;
+}
+
+.work-intro-topline {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 58px;
+  align-items: end;
+}
+
+.work-intro-title {
+  max-width: 760px;
+  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.work-intro-note {
+  max-width: 320px;
+  font-size: 0.96rem;
+  line-height: 1.76;
+}
+
+.work-foundation,
+.work-chapters,
+.work-cta {
+  padding-top: 86px;
+}
+
+.work-foundation-grid {
+  display: grid;
+  gap: 46px;
+}
+
+.work-tools,
+.work-experience {
+  display: grid;
+  grid-template-columns: 158px minmax(0, 1fr);
+  gap: 26px 66px;
+  padding: 0;
+}
+
+.work-tools > .work-kicker,
+.work-experience > .work-kicker {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 8px;
+}
+
+.work-tools-list,
+.work-experience-list {
+  grid-column: 2;
+  display: grid;
+}
+
+.work-experience-list {
+  gap: 34px;
+}
+
+.work-experience-item {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.34fr) minmax(0, 1fr);
+  gap: 34px;
+}
+
+.work-experience-head {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.work-experience-role {
+  font-size: 1.45rem;
+  line-height: 1.08;
+}
+
+.work-experience-company,
+.work-experience-period {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.work-experience-period {
+  color: var(--work-faint);
+}
+
+.work-experience-details {
+  display: grid;
+}
+
+.work-foundation-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 22px;
+  padding: 8px 0;
+}
+
+.work-foundation-row:first-child {
+  padding-top: 20px;
+}
+
+.work-foundation-value {
+  font-size: 0.96rem;
+  line-height: 1.64;
+}
+
+.work-chapters-list {
+  display: grid;
+  gap: 82px;
+}
+
+.work-view-all {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  margin: 58px auto 0;
+  padding: 0 0 14px;
+  border: 0;
+  border-bottom: 1px solid rgba(25, 25, 25, 0.28);
+  background: transparent;
+  color: var(--work-ink);
+  font-family: var(--font-syne);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.work-view-all:hover {
+  transform: translateY(-1px);
+}
+
+.work-view-all[hidden] {
+  display: none;
+}
+
+.work-chapter {
+  display: grid;
+  grid-template-columns: 158px minmax(0, 1fr);
+  gap: 24px 66px;
+  padding-top: 0;
+}
+
+.work-chapter-marker {
+  padding-top: 7px;
+}
+
+.work-chapter-number {
+  font-size: 1.9rem;
+  line-height: 1;
+  color: rgba(25, 25, 25, 0.34);
+}
+
+.work-chapter-main {
+  display: grid;
+  gap: 24px;
+}
+
+.work-chapter-header {
+  display: grid;
+  gap: 13px;
+  padding-bottom: 18px;
+}
+
+.work-chapter-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px 20px;
+}
+
+.work-chapter-status {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.work-project-title {
+  font-size: 2.45rem;
+  line-height: 1.02;
+}
+
+.work-project-summary {
+  max-width: 680px;
+  font-size: 1rem;
+  line-height: 1.64;
+}
+
+.work-chapter-body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(380px, 0.62fr);
+  gap: 56px;
+  padding-top: 26px;
+  border-top: 1px solid var(--work-line);
+}
+
+.work-project-details,
+.work-project-facts {
+  display: grid;
+}
+
+.work-project-detail,
+.work-project-fact {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 22px;
+  padding: 8px 0;
+}
+
+.work-project-facts {
+  padding-left: 26px;
+  border-left: 1px solid var(--work-line);
+}
+
+.work-project-detail-text {
+  font-size: 0.96rem;
+  line-height: 1.64;
+}
+
+.work-cta-block {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(260px, 0.38fr);
+  gap: 56px;
+  align-items: end;
+  padding: 42px 0 0;
+  border-top: 1px solid var(--work-line);
+}
+
+.work-cta-block > .work-kicker {
+  display: none;
+}
+
+.work-cta-title,
+.work-cta-copy,
+.work-cta-actions {
+  grid-column: auto;
+}
+
+.work-cta-title {
+  max-width: 760px;
+  font-size: 2.55rem;
+  line-height: 1.06;
+}
+
+.work-cta-copy {
+  grid-column: 1;
+  max-width: 620px;
+  margin-top: -28px;
+  font-size: 0.98rem;
+  line-height: 1.74;
+}
+
+.work-cta-actions {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-self: stretch;
+}
+
+.work-cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  padding: 15px 18px;
+  border: 1px solid rgba(25, 25, 25, 0.2);
+  font-family: var(--font-syne);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--work-ink);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.work-cta-link:first-child {
+  background: var(--work-ink);
+  color: #ffffff;
+}
+
+.work-cta-link:hover {
+  background: #f1f1f1;
+  color: var(--work-ink);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.work-cta-link:first-child:hover {
+  background: var(--work-ink);
+  color: #ffffff;
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --work-shell: calc(100% - 48px);
+  }
+
+  .work-intro-topline,
+  .work-chapter-body {
+    grid-template-columns: 1fr;
+  }
+
+  .work-intro-note {
+    max-width: 620px;
+  }
+
+  .work-project-facts {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--work-line);
+    padding-top: 18px;
+  }
+
+  .work-cta-block {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 24px;
+  }
+
+  .work-cta-copy,
+  .work-cta-actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .work-cta-copy {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --work-shell: calc(100% - 30px);
+  }
+
+  .work-page {
+    padding: 38px 0 88px;
+  }
+
+  .work-intro-header,
+  .work-tools,
+  .work-experience,
+  .work-chapter,
+  .work-cta-block {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .work-intro-header > .work-kicker,
+  .work-intro-topline,
+  .work-tools > .work-kicker,
+  .work-experience > .work-kicker,
+  .work-tools-list,
+  .work-experience-list,
+  .work-cta-block > .work-kicker,
+  .work-cta-title,
+  .work-cta-copy,
+  .work-cta-actions {
+    grid-column: 1;
+  }
+
+  .work-intro-title {
+    font-size: clamp(1.4rem, 8.5vw, 2.2rem);
+    line-height: 1.14;
+  }
+
+  .work-foundation,
+  .work-chapters,
+  .work-cta {
+    padding-top: 72px;
+  }
+
+  .work-cta-title {
+    font-size: 1.62rem;
+  }
+
+  .work-foundation-row,
+  .work-experience-item,
+  .work-project-detail,
+  .work-project-fact {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .work-experience-list {
+    gap: 42px;
+  }
+
+  .work-chapters-list {
+    gap: 62px;
+  }
+
+  .work-project-title {
+    font-size: 1.95rem;
+  }
+
+  .work-chapter-meta {
+    display: grid;
+  }
+
+  .work-cta-actions {
+    gap: 12px;
+  }
+}

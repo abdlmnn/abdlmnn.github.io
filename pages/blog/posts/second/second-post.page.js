@@ -101,6 +101,7 @@
     el.innerHTML = value;
   };
 
+  postData.meta.title = "What I Started Building | ABDLMNN";
   setText("post2PageTitle", postData.meta.title);
 
   const metaDescription = document.getElementById("post2MetaDescription");

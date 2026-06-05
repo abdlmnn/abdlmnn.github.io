@@ -1,7 +1,7 @@
 (function () {
   const postData = {
     meta: {
-      title: "Built in Motion: Why I Started This Blog",
+      title: "Why I Started This Blog | ABDLMNN",
       description: "First blog post on my journey of sharing thoughts, lessons, and projects between Saudi Arabia and the Philippines.",
     },
     header: {

@@ -5,20 +5,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
-  <meta id="workMetaDescription" name="description" content="Work page is being prepared.">
-  <title id="workPageTitle">Work | Coming Soon</title>
-  <link rel="stylesheet" href="../blog/posts/post.css">
+  <meta name="author" content="Mohammad Abdulmanan">
+  <meta name="robots" content="index, follow">
+  <meta id="workMetaDescription" name="description" content="">
+  <title id="workPageTitle"></title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abdlmnn.github.io/pages/work/work.html">
+  <meta property="og:title" content="Work | ABDLMNN">
+  <meta property="og:description"
+    content="Selected work by Mohammad Abdulmanan across real systems, mobile-connected experiences, and interface design.">
+  <meta property="og:image" content="https://abdlmnn.github.io/my-images/projects/pharmago/menu_dashboard_pharmacy.png">
+  <meta property="og:image:alt" content="PharmaGo pharmacy dashboard preview">
+  <meta property="og:site_name" content="ABDLMNN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://abdlmnn.github.io/pages/work/work.html">
+  <meta name="twitter:title" content="Work | ABDLMNN">
+  <meta name="twitter:description"
+    content="Selected work by Mohammad Abdulmanan across real systems, mobile-connected experiences, and interface design.">
+  <meta name="twitter:image" content="https://abdlmnn.github.io/my-images/projects/pharmago/menu_dashboard_pharmacy.png">
+
+  <link rel="canonical" href="https://abdlmnn.github.io/pages/work/work.html">
+  <link rel="icon" type="image/svg+xml" href="../../images/Me/font icon/1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../index/index.css">
+  <link rel="stylesheet" href="./work.css?v=2.9">
 </head>
 
-<body data-page="placeholder">
-  <main class="placeholder-page">
-    <section class="placeholder-card">
-      <p class="placeholder-kicker">Coming Soon</p>
-      <h1 class="placeholder-title">Work Page In Progress</h1>
-      <p class="placeholder-copy">This page is under construction and will be updated with full content soon.</p>
-      <a class="placeholder-link" href="/">Go to Home</a>
+<body data-page="work">
+  <div id="siteNavMount"></div>
+  <div id="mobileNavMount"></div>
+  <div id="contactFabMount"></div>
+
+  <main class="work-page">
+    <section class="work-intro" aria-labelledby="workHeroTitle">
+      <div class="work-shell">
+        <div class="work-intro-header">
+          <p id="workHeroKicker" class="work-kicker"></p>
+          <div class="work-intro-topline">
+            <h1 id="workHeroTitle" class="work-intro-title"></h1>
+            <p id="workHeroLead" class="work-intro-note"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-foundation" aria-labelledby="workToolsTitle">
+      <div class="work-shell">
+        <div class="work-foundation-grid">
+          <section class="work-tools" aria-labelledby="workToolsTitle">
+            <p id="workToolsTitle" class="work-kicker">Tools I Use</p>
+            <div id="workToolsList" class="work-tools-list"></div>
+          </section>
+
+          <section class="work-experience" aria-labelledby="workExperienceTitle">
+            <p id="workExperienceTitle" class="work-kicker">Experience</p>
+            <div id="workExperienceList" class="work-experience-list"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-chapters" aria-label="Selected work">
+      <div class="work-shell">
+        <div id="workProjectsList" class="work-chapters-list"></div>
+        <!--
+        <button id="workViewAllProjects" class="work-view-all" type="button" hidden>View All Projects</button>
+        -->
+      </div>
+    </section>
+
+    <section class="work-cta" aria-labelledby="workCtaTitle">
+      <div class="work-shell">
+        <div class="work-cta-block">
+          <p id="workCtaKicker" class="work-kicker"></p>
+          <h2 id="workCtaTitle" class="work-cta-title"></h2>
+          <p id="workCtaCopy" class="work-cta-copy"></p>
+          <div class="work-cta-actions">
+            <a id="workCtaPrimary" class="work-cta-link" href="../contact/contact.html"></a>
+            <a id="workCtaSecondary" class="work-cta-link" href="../about/about.html"></a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2026 Mohammad Abdulmanan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/shared/site.js?v=1.1"></script>
+  <script src="./work.page.js?v=2.1"></script>
 </body>
 
 </html>
