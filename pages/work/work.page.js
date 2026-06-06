@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <header class="work-chapter-header">
                 <div class="work-chapter-meta">
                   <p class="work-chapter-type">${project.type}</p>
-                  <p class="work-chapter-status">${project.status}</p>
+                  ${project.status ? `<p class="work-chapter-status">${project.status}</p>` : ""}
                 </div>
                 <h3 class="work-project-title">${project.name}</h3>
                 <p class="work-project-summary">${project.summary}</p>
