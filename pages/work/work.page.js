@@ -157,6 +157,13 @@ document.addEventListener("DOMContentLoaded", () => {
         stack:
           "Django, Django REST Framework, ReactJS, React Native, PostgreSQL, Google Maps API",
         platforms: "Web + Mobile",
+        /*
+        visuals: {
+          href: "../../my-images/projects/pharmago/menu_dashboard_pharmacy.png",
+          label: "View images",
+          count: 2,
+        },
+        */
       },
       /*
       {
@@ -335,6 +342,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="work-project-detail-label">Stack</p>
                     <p class="work-project-detail-text">${project.stack}</p>
                   </div>
+                  ${/*
+                    project.visuals
+                      ? `
+                  <div class="work-project-fact work-project-visuals">
+                    <p class="work-project-detail-label">Visuals</p>
+                    <a class="work-project-visual-link" href="${project.visuals.href}" target="_blank" rel="noopener noreferrer">
+                      <span>${project.visuals.label}</span>
+                      <span>${project.visuals.count} images</span>
+                    </a>
+                  </div>
+                      `
+                      : ""
+                  */""}
                 </div>
               </div>
             </div>

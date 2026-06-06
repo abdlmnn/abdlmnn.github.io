@@ -295,6 +295,43 @@ body[data-page="work"] {
   line-height: 1.64;
 }
 
+/*
+.work-project-visuals {
+  margin-top: 14px;
+}
+
+.work-project-visual-link {
+  display: inline-grid;
+  gap: 5px;
+  width: max-content;
+  max-width: 100%;
+  color: var(--work-ink);
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  font-weight: 300;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.work-project-visual-link span:first-child {
+  border-bottom: 1px solid rgba(25, 25, 25, 0.28);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.work-project-visual-link span:last-child {
+  font-family: var(--font-syne);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--work-faint);
+}
+
+.work-project-visual-link:hover span:first-child {
+  border-color: var(--work-ink);
+  transform: translateY(-1px);
+}
+*/
+
 .work-cta-block {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(260px, 0.38fr);
