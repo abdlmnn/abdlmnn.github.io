@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         role:
           "Founder / Product Builder / Full-stack Developer",
         stack:
-          "Django, Django REST Framework, GeoDjango, Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, PostGIS, Docker, Google Maps API",
+          "Django, Django REST Framework, GeoDjango, Next.js, React, React Native, Expo, TypeScript, Tailwind CSS, PostgreSQL, PostGIS, Docker, Google Maps API",
         platforms: "Web + Mobile",
       },
       {
