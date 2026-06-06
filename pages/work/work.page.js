@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         role:
           "Founder / Product Builder / Full-stack Developer",
         stack:
-          "Next.js, React, TypeScript, Tailwind CSS, Django REST Framework, GeoDjango, PostgreSQL, PostGIS, Docker, Google Maps API",
+          "Django, Django REST Framework, GeoDjango, Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, PostGIS, Docker, Google Maps API",
         platforms: "Web + Mobile",
       },
       {
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         role:
           "Intern Web Developer",
         stack:
-          "Django, Django REST Framework, Next.js, React, PostgreSQL",
+          "Django, Django REST Framework, Next.js, Tailwind CSS, Redux, Docker, PostgreSQL",
         platforms: "Web",
       },
       {
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
         role:
           "Full-stack Developer / System Developer, Team Build",
         stack:
-          "Django, Django REST Framework, ReactJS, React Native, PostgreSQL, Google Maps API",
+          "Django, Django REST Framework, ReactJS, Tailwind CSS, React Native, Expo, PostgreSQL, Docker, Google Maps API",
         platforms: "Web + Mobile",
         /*
         visuals: {
