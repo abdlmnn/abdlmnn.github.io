@@ -24,7 +24,8 @@
   <meta name="twitter:title" content="Work | ABDLMNN">
   <meta name="twitter:description"
     content="Selected work by Mohammad Abdulmanan across real systems, mobile-connected experiences, and interface design.">
-  <meta name="twitter:image" content="https://abdlmnn.github.io/my-images/projects/pharmago/menu_dashboard_pharmacy.png">
+  <meta name="twitter:image"
+    content="https://abdlmnn.github.io/my-images/projects/pharmago/menu_dashboard_pharmacy.png">
 
   <link rel="canonical" href="https://abdlmnn.github.io/pages/work/work.html">
   <link rel="icon" type="image/svg+xml" href="../../images/Me/font icon/1.png">
@@ -36,7 +37,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="../index/index.css">
-  <link rel="stylesheet" href="./work.css?v=2.9">
+  <link rel="stylesheet" href="./work.css?v=3.1">
 </head>
 
 <body data-page="work">
@@ -51,9 +52,18 @@
           <p id="workHeroKicker" class="work-kicker"></p>
           <div class="work-intro-topline">
             <h1 id="workHeroTitle" class="work-intro-title"></h1>
-            <p id="workHeroLead" class="work-intro-note"></p>
           </div>
         </div>
+        <figure class="work-portrait">
+          <figcaption id="workHeroLead" class="work-intro-note"></figcaption>
+          <!-- <img id="workHeroImage" class="work-portrait-image" src="" alt="" width="1365" height="2048" loading="eager"
+            decoding="async"> -->
+
+          <div class="work-portrait-frame">
+            <img id="workHeroImage" class="work-portrait-image" src="" alt="" width="1365" height="2048" loading="eager"
+              decoding="async">
+          </div>
+        </figure>
       </div>
     </section>
 
@@ -96,6 +106,17 @@
       </div>
     </section>
   </main>
+
+  <div id="workVisualModal" class="work-visual-modal" hidden>
+    <div class="work-visual-modal-backdrop" data-visual-close></div>
+    <section class="work-visual-dialog" role="dialog" aria-modal="true" aria-labelledby="workVisualModalTitle">
+      <header class="work-visual-header">
+        <p id="workVisualHeaderLabel" class="work-project-detail-label"></p>
+        <button class="work-visual-close" type="button" data-visual-close aria-label="Close project images"></button>
+      </header>
+      <div id="workVisualGallery" class="work-visual-gallery"></div>
+    </section>
+  </div>
 
   <footer class="footer">
     <div class="footer-container">
