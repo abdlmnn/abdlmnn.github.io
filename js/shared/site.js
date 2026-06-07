@@ -119,6 +119,24 @@ function iconContact() {
 function renderDesktopNav(pageType) {
   const mount = document.getElementById('siteNavMount');
   if (!mount) return;
+        // <a href="${toHref(pageType, '')}" class="nav-wordmark" aria-label="ABDLMNN home">ABDLMNN</a>
+
+  const buildDesktopNav = (links) => `
+    <nav class="navigation" id="nav">
+      <div class="nav-cont">
+
+        <div class="nav-links" id="navLinks">
+          ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  `;
 
   if (pageType === 'album') {
     const links = [
@@ -130,21 +148,7 @@ function renderDesktopNav(pageType) {
       { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
     ];
 
-    mount.innerHTML = `
-      <nav class="navigation" id="nav">
-        <div class="nav-cont">
-          <div class="nav-links" id="navLinks">
-            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
-          </div>
-
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </nav>
-    `;
+    mount.innerHTML = buildDesktopNav(links);
     return;
   }
 
@@ -158,21 +162,7 @@ function renderDesktopNav(pageType) {
       { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
     ];
 
-    mount.innerHTML = `
-      <nav class="navigation" id="nav">
-        <div class="nav-cont">
-          <div class="nav-links" id="navLinks">
-            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
-          </div>
-
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </nav>
-    `;
+    mount.innerHTML = buildDesktopNav(links);
     return;
   }
 
@@ -186,21 +176,7 @@ function renderDesktopNav(pageType) {
       { label: 'About', href: toHref(pageType, 'pages/about/about.html') },
     ];
 
-    mount.innerHTML = `
-      <nav class="navigation" id="nav">
-        <div class="nav-cont">
-          <div class="nav-links" id="navLinks">
-            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
-          </div>
-
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </nav>
-    `;
+    mount.innerHTML = buildDesktopNav(links);
     return;
   }
 
@@ -214,21 +190,7 @@ function renderDesktopNav(pageType) {
       { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
     ];
 
-    mount.innerHTML = `
-      <nav class="navigation" id="nav">
-        <div class="nav-cont">
-          <div class="nav-links" id="navLinks">
-            ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
-          </div>
-
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </nav>
-    `;
+    mount.innerHTML = buildDesktopNav(links);
     return;
   }
 
@@ -245,21 +207,7 @@ function renderDesktopNav(pageType) {
     { label: 'Contact', href: toHref(pageType, 'pages/contact/contact.html') },
   ];
 
-  mount.innerHTML = `
-    <nav class="navigation" id="nav">
-      <div class="nav-cont">
-        <div class="nav-links" id="navLinks">
-          ${links.map((item) => `<a href="${item.href}" class="nav-link">${item.label}</a>`).join('')}
-        </div>
-
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </nav>
-  `;
+  mount.innerHTML = buildDesktopNav(links);
 }
 
 function renderContactFab(pageType) {

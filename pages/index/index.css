@@ -127,62 +127,73 @@
   z-index: 1000;
   height: var(--nav-height);
   background: transparent;
-  transition: background-color var(--transition-medium), box-shadow var(--transition-medium);
+  transition: background-color var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
 }
 
 .navigation.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 1px 0 var(--border-lighter);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  box-shadow: none;
 }
 
 .nav-cont {
-  max-width: 1400px;
+  position: relative;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 28px;
   height: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   justify-content: center;
+  /* border-bottom: 1px solid rgba(26, 26, 26, 0.08); */
 }
 
-.nav-logo {
+.nav-wordmark {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
   font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-size: 0.86rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
   color: var(--text-primary);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 40px
+  gap: 34px;
 }
 
 .nav-link {
   font-family: var(--font-syne);
-  /* font-family: var(--font-serif); */
-  /* font-size: 0.85rem; */
+  font-size: 0.78rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   position: relative;
   color: var(--text-muted);
-  /* color: var(--text-primary); */
-  /* text-transform: uppercase; */
-  /* padding: 5px 0; */
+  padding: 6px 0;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 50%;
   width: 0;
   height: 1px;
   background: var(--text-primary);
   transition: width var(--transition-medium), left var(--transition-medium);
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
 }
 
 .nav-link:hover {
@@ -895,10 +906,6 @@ body.no-intro .scroll-indicator {
     line-height: 1.4;
     letter-spacing: 0.07em;
     max-width: 220px;
-  }
-
-  .nav-logo {
-    font-size: 1.3rem;
   }
 
   .footer-text {
