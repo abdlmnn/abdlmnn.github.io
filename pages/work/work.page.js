@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
       kicker: "",
       title: "Systems I have built.",
       lead: "A concise record of what I worked on, what I contributed, and what each system was made to improve.",
+      image: {
+        src: "../../my-images/me_coding.jpg",
+        alt: "Mohammad Abdulmanan coding on a laptop",
+      },
     },
     tools: {
       items: [
@@ -265,6 +269,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setText("workHeroKicker", pageData.hero.kicker);
   setText("workHeroTitle", pageData.hero.title);
   setText("workHeroLead", pageData.hero.lead);
+
+  const heroImageEl = document.getElementById("workHeroImage");
+  if (heroImageEl && pageData.hero.image) {
+    heroImageEl.src = pageData.hero.image.src;
+    heroImageEl.alt = pageData.hero.image.alt;
+  }
 
   const toolsListEl = document.getElementById("workToolsList");
   if (toolsListEl) {
