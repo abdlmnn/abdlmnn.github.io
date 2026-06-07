@@ -158,13 +158,41 @@ document.addEventListener("DOMContentLoaded", () => {
         stack:
           "Django, Django REST Framework, ReactJS, Tailwind CSS, React Native, Expo, PostgreSQL, Docker, Google Maps API",
         platforms: "Web + Mobile",
-        /*
         visuals: {
-          href: "../../my-images/projects/pharmago/menu_dashboard_pharmacy.png",
           label: "View images",
-          count: 2,
+          groups: [
+            {
+              label: "Website",
+              items: [
+                {
+                  label: "Super Admin",
+                  href: "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
+                  image: "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
+                },
+                {
+                  label: "Admin",
+                  href: "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
+                  image: "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
+                },
+              ],
+            },
+            {
+              label: "Mobile",
+              items: [
+                {
+                  label: "Customer",
+                  href: "../../my-images/projects/pharmago/customer mobile/landing.svg",
+                  image: "../../my-images/projects/pharmago/customer mobile/landing.svg",
+                },
+                {
+                  label: "Rider",
+                  href: "../../my-images/projects/pharmago/rider mobile/landing.svg",
+                  image: "../../my-images/projects/pharmago/rider mobile/landing.svg",
+                },
+              ],
+            },
+          ],
         },
-        */
       },
       /*
       {
@@ -343,19 +371,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="work-project-detail-label">Stack</p>
                     <p class="work-project-detail-text">${project.stack}</p>
                   </div>
-                  ${/*
+                  ${
                     project.visuals
                       ? `
                   <div class="work-project-fact work-project-visuals">
                     <p class="work-project-detail-label">Visuals</p>
-                    <a class="work-project-visual-link" href="${project.visuals.href}" target="_blank" rel="noopener noreferrer">
-                      <span>${project.visuals.label}</span>
-                      <span>${project.visuals.count} images</span>
-                    </a>
+                    <div class="work-project-visual-content">
+                      <button class="work-project-visual-link" type="button" data-project-visuals="${project.slug}">
+                        ${project.visuals.label}
+                      </button>
+                    </div>
                   </div>
                       `
                       : ""
-                  */""}
+                  }
                 </div>
               </div>
             </div>
@@ -377,4 +406,66 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  const visualModal = document.getElementById("workVisualModal");
+  const visualHeaderLabel = document.getElementById("workVisualHeaderLabel");
+  const visualGallery = document.getElementById("workVisualGallery");
+
+  const renderVisualGallery = (project) => {
+    visualGallery.innerHTML = project.visuals.groups
+      .map((group) => {
+        const modifierClass = group.label.toLowerCase() === "mobile" ? " is-mobile-group" : "";
+
+        return `
+          <section class="work-visual-group${modifierClass}">
+            <p class="work-visual-group-label">${group.label}</p>
+            <div class="work-visual-group-grid">
+              ${group.items
+                .map(
+                  (item) => `
+                    <figure class="work-visual-shot">
+                      <span class="work-visual-shot-label">${item.label}</span>
+                      <img src="${item.image}" alt="${item.label} preview" loading="lazy" decoding="async">
+                    </figure>
+                  `,
+                )
+                .join("")}
+            </div>
+          </section>
+        `;
+      })
+      .join("");
+  };
+
+  const openVisualModal = (project) => {
+    if (!visualModal || !visualGallery) return;
+    if (visualHeaderLabel) visualHeaderLabel.textContent = project.name;
+    renderVisualGallery(project);
+    visualModal.hidden = false;
+    document.body.classList.add("is-visual-modal-open");
+  };
+
+  const closeVisualModal = () => {
+    if (!visualModal) return;
+    visualModal.hidden = true;
+    document.body.classList.remove("is-visual-modal-open");
+  };
+
+  document.addEventListener("click", (event) => {
+    const visualTrigger = event.target.closest("[data-project-visuals]");
+    if (visualTrigger) {
+      const project = pageData.projects.find((item) => item.slug === visualTrigger.dataset.projectVisuals);
+      if (project?.visuals) openVisualModal(project);
+    }
+
+    if (event.target.closest("[data-visual-close]")) {
+      closeVisualModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && visualModal && !visualModal.hidden) {
+      closeVisualModal();
+    }
+  });
 });
