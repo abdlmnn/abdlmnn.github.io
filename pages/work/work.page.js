@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       items: [
         {
           label: "Frontend",
-          value: "React, Next.js, TypeScript, JavaScript, Tailwind CSS",
+          value: "React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS",
         },
         {
           label: "Backend",
@@ -332,6 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projectsListEl.innerHTML = projects
       .map((project, index) => {
         const projectNumber = String(index + 1).padStart(2, "0");
+        const hasVisualAction = project.visuals && project.status !== "In Development";
         return `
           <article id="project-${project.slug}" class="work-chapter">
             <div class="work-chapter-marker">
@@ -342,13 +343,38 @@ document.addEventListener("DOMContentLoaded", () => {
               <header class="work-chapter-header">
                 <div class="work-chapter-meta">
                   <p class="work-chapter-type">${project.type}</p>
-                  ${project.status ? `<p class="work-chapter-status">${project.status}</p>` : ""}
+                  <div class="work-chapter-actions">
+                    ${project.status ? `<p class="work-chapter-status">${project.status}</p>` : ""}
+                    ${
+                      hasVisualAction
+                        ? `<button class="work-project-visual-link" type="button" data-project-visuals="${project.slug}">
+                            ${project.visuals.label}
+                          </button>`
+                        : ""
+                    }
+                  </div>
                 </div>
                 <h3 class="work-project-title">${project.name}</h3>
                 <p class="work-project-summary">${project.summary}</p>
+                ${
+                  hasVisualAction
+                    ? `<button class="work-project-visual-link-mobile" type="button" data-project-visuals="${project.slug}">
+                        ${project.visuals.label}
+                      </button>`
+                    : ""
+                }
+                <button
+                  class="work-project-more"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="project-details-${project.slug}"
+                  data-project-details="${project.slug}"
+                >
+                  Project details
+                </button>
               </header>
 
-              <div class="work-chapter-body">
+              <div id="project-details-${project.slug}" class="work-chapter-body" hidden>
                 <div class="work-project-details">
                   <div class="work-project-detail">
                     <p class="work-project-detail-label">What it solved</p>
@@ -381,20 +407,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="work-project-detail-label">Stack</p>
                     <p class="work-project-detail-text">${project.stack}</p>
                   </div>
-                  ${
-                    project.visuals
-                      ? `
-                  <div class="work-project-fact work-project-visuals">
-                    <p class="work-project-detail-label">Visuals</p>
-                    <div class="work-project-visual-content">
-                      <button class="work-project-visual-link" type="button" data-project-visuals="${project.slug}">
-                        ${project.visuals.label}
-                      </button>
-                    </div>
-                  </div>
-                      `
-                      : ""
-                  }
                 </div>
               </div>
             </div>
@@ -420,6 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const visualModal = document.getElementById("workVisualModal");
   const visualHeaderLabel = document.getElementById("workVisualHeaderLabel");
   const visualGallery = document.getElementById("workVisualGallery");
+  const visualModalStorageKey = "workVisualModalProject";
 
   const renderVisualGallery = (project) => {
     visualGallery.innerHTML = project.visuals.groups
@@ -453,19 +466,38 @@ document.addEventListener("DOMContentLoaded", () => {
     renderVisualGallery(project);
     visualModal.hidden = false;
     document.body.classList.add("is-visual-modal-open");
+    sessionStorage.setItem(visualModalStorageKey, project.slug);
   };
 
   const closeVisualModal = () => {
     if (!visualModal) return;
     visualModal.hidden = true;
     document.body.classList.remove("is-visual-modal-open");
+    sessionStorage.removeItem(visualModalStorageKey);
   };
+
+  const persistedVisualProjectSlug = sessionStorage.getItem(visualModalStorageKey);
+  if (persistedVisualProjectSlug) {
+    const persistedProject = pageData.projects.find((item) => item.slug === persistedVisualProjectSlug);
+    if (persistedProject?.visuals) openVisualModal(persistedProject);
+  }
 
   document.addEventListener("click", (event) => {
     const visualTrigger = event.target.closest("[data-project-visuals]");
     if (visualTrigger) {
       const project = pageData.projects.find((item) => item.slug === visualTrigger.dataset.projectVisuals);
       if (project?.visuals) openVisualModal(project);
+    }
+
+    const detailsTrigger = event.target.closest("[data-project-details]");
+    if (detailsTrigger) {
+      const detailsEl = document.getElementById(`project-details-${detailsTrigger.dataset.projectDetails}`);
+      if (!detailsEl) return;
+
+      const isOpening = detailsEl.hidden;
+      detailsEl.hidden = !isOpening;
+      detailsTrigger.setAttribute("aria-expanded", String(isOpening));
+      detailsTrigger.textContent = isOpening ? "Hide details" : "Project details";
     }
 
     if (event.target.closest("[data-visual-close]")) {
