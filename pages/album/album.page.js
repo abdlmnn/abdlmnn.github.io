@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
       src: "../../my-images/me_scrapbook.svg",
       alt: "Mohammad Abdulmanan holding a camera while taking photos",
     },
-    prologue: "I live in two languages.<br><br>The world is often framed as a binary: a sequence of logical operations or a collection of stories. As a developer, I build the systems; as a writer, I explore the souls within them.<br><br>But there is a wordless reality that exists between the code and the page—a space that doesn't care about brackets or grammar. These images are from that space. They are the moments where I stopped trying to solve the world or describe it, and simply stood still within it.<br><br>This is the light that spoke when I finally ran out of things&nbsp;to&nbsp;say.",
+    prologue:
+      '<span class="prologue-lead">I live in two languages.</span><span>The world is often framed as a binary: a sequence of logical operations or a collection of stories. As a developer, I build the systems; as a writer, I explore the souls within them.</span><span>But there is a wordless reality that exists between the code and the page, a space that does not care about brackets or grammar. These images are from that space. They are the moments where I stopped trying to solve the world or describe it, and simply stood still within it.</span><span class="prologue-closing">This is the light that spoke when I finally ran out of&nbsp;things&nbsp;to&nbsp;say.</span>',
     items: [
       {
         src: "../../images/KSA/1000027400 (2).jpg",
@@ -108,11 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   gallery.innerHTML = pageData.items
-    .map(
-      (item, index) => {
-        const size = getLayoutSize(item);
-        const isPriority = index < 6;
-        return `
+    .map((item, index) => {
+      const size = getLayoutSize(item);
+      const isPriority = index < 6;
+      return `
       <article class="gallery-item ${getLayoutClass(item)}">
         <img
           src="${item.src}"
@@ -128,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </article>
     `;
-      },
-    )
+    })
     .join("");
 });
