@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         name: "Sarig",
         // type: "Logistics Super App / Delivery and Transport Platform",
         type: "Personal Product / Multi-service marketplace platform",
-        status: "In Development",
+        status: "",
         summary:
           "A local logistics Super App for Marawi, built for trusted delivery and transport.",
         whatItSolved:
