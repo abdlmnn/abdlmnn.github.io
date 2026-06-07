@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       channels: [
         {
           label: "Email",
-          value: "hello@abdlmnn.com",
-          href: "mailto:hello@abdlmnn.com",
+          value: "mohammadabdulmanan24@gmail.com",
+          href: "mailto:mohammadabdulmanan24@gmail.com",
         },
         {
           label: "X",
