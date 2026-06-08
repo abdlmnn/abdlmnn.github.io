@@ -229,14 +229,67 @@
 
   if (!form || !statusEl) return;
 
+  const cooldownKey = "blogSubscribeLastSubmission";
+  const cooldownMs = 24 * 60 * 60 * 1000;
+
+  const readStoredSubmission = () => {
+    try {
+      const raw = window.localStorage.getItem(cooldownKey);
+      if (!raw) return null;
+
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return null;
+
+      return {
+        email: typeof parsed.email === "string" ? parsed.email : "",
+        timestamp: Number(parsed.timestamp) || 0,
+      };
+    } catch (_error) {
+      return null;
+    }
+  };
+
+  const writeStoredSubmission = (email) => {
+    try {
+      window.localStorage.setItem(
+        cooldownKey,
+        JSON.stringify({
+          email,
+          timestamp: Date.now(),
+        }),
+      );
+    } catch (_error) {
+      // Ignore storage failures and keep the form usable.
+    }
+  };
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const submitBtn = form.querySelector("button[type='submit']");
+    const emailField = form.querySelector("input[name='email']");
+    const emailValue = emailField && typeof emailField.value === "string"
+      ? emailField.value.trim().toLowerCase()
+      : "";
+    const storedSubmission = readStoredSubmission();
+
+    if (storedSubmission && storedSubmission.email === emailValue && Date.now() - storedSubmission.timestamp < cooldownMs) {
+      statusEl.textContent = "You are already subscribed.";
+      statusEl.classList.remove("is-loading", "is-success");
+      statusEl.classList.add("is-error");
+      return;
+    }
+
     const formData = new FormData(form);
+    if (formData.get("_gotcha")) {
+      statusEl.textContent = "Subscription failed. Try again.";
+      statusEl.classList.remove("is-loading");
+      statusEl.classList.add("is-error");
+      return;
+    }
 
     statusEl.textContent = "Subscribing...";
-    statusEl.classList.remove("is-error");
+    statusEl.classList.remove("is-error", "is-success");
     statusEl.classList.add("is-loading");
 
     if (submitBtn) submitBtn.disabled = true;
@@ -255,11 +308,13 @@
       }
 
       form.reset();
+      writeStoredSubmission(emailValue);
       statusEl.textContent = "Subscribed. You're in.";
       statusEl.classList.remove("is-loading", "is-error");
+      statusEl.classList.add("is-success");
     } catch (_error) {
       statusEl.textContent = "Subscription failed. Try again.";
-      statusEl.classList.remove("is-loading");
+      statusEl.classList.remove("is-loading", "is-success");
       statusEl.classList.add("is-error");
     } finally {
       if (submitBtn) submitBtn.disabled = false;

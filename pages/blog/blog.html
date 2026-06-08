@@ -112,6 +112,7 @@
     </div>
     <form id="blogSubscribeForm" class="blog-subscribe-form" action="https://formspree.io/f/mjgejjae" method="POST">
       <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="_gotcha" class="blog-subscribe-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button type="submit">Subscribe</button>
     </form>
     <p id="blogSubscribeStatus" class="blog-subscribe-status" aria-live="polite"></p>

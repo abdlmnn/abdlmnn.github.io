@@ -100,9 +100,70 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const contactForm = document.querySelector(".contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+  const contactNotice = document.getElementById("contactFormNotice");
+  if (contactForm && contactNotice) {
+    let noticeResetTimer = null;
+
+    const resetNotice = () => {
+      contactNotice.textContent = "Messages will be sent through the form.";
+      contactNotice.classList.remove("is-loading", "is-success", "is-error");
+    };
+
+    const scheduleNoticeReset = () => {
+      clearTimeout(noticeResetTimer);
+      noticeResetTimer = window.setTimeout(() => {
+        resetNotice();
+      }, 5000);
+    };
+
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
+      clearTimeout(noticeResetTimer);
+
+      const submitBtn = contactForm.querySelector("button[type='submit']");
+      const formData = new FormData(contactForm);
+      const trapValue = formData.get("_gotcha");
+
+      if (trapValue) {
+        contactNotice.textContent = "Message not sent. Please try again.";
+        contactNotice.classList.remove("is-loading", "is-success");
+        contactNotice.classList.add("is-error");
+        return;
+      }
+
+      contactNotice.textContent = "Sending your message...";
+      contactNotice.classList.remove("is-error", "is-success");
+      contactNotice.classList.add("is-loading");
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+
+        contactForm.reset();
+        contactNotice.textContent = "Message sent. I'll reply soon.";
+        contactNotice.classList.remove("is-loading", "is-error");
+        contactNotice.classList.add("is-success");
+        scheduleNoticeReset();
+      } catch (_error) {
+        contactNotice.textContent = "Message not sent. Please try again.";
+        contactNotice.classList.remove("is-loading", "is-success");
+        contactNotice.classList.add("is-error");
+        scheduleNoticeReset();
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
-});
+
+})();
