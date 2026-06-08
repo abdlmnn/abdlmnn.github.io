@@ -574,20 +574,9 @@ body.no-intro .scroll-indicator {
 }
 
 .visitor-note {
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  column-gap: 28px;
-  align-items: start;
+  display: block;
+  max-width: 680px;
   padding-top: 8px;
-}
-
-.visitor-note-number {
-  margin: 0;
-  font-family: var(--font-syne);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  color: var(--text-muted);
 }
 
 .visitor-note-message {
@@ -598,10 +587,38 @@ body.no-intro .scroll-indicator {
   font-weight: 400;
   line-height: 1.72;
   color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.visitor-note.is-expanded .visitor-note-message {
+  display: block;
+  overflow: visible;
+}
+
+.visitor-note-expand {
+  display: inline-flex;
+  margin: 16px 0 0;
+  padding: 0 0 6px;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  font-family: var(--font-syne);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.visitor-note-expand[hidden] {
+  display: none;
 }
 
 .visitor-note-meta {
-  grid-column: 2;
   margin: 18px 0 0;
   font-family: var(--font-syne);
   font-size: 0.7rem;
@@ -928,17 +945,16 @@ body.no-intro .scroll-indicator {
   }
 
   .visitor-note {
-    grid-template-columns: 42px minmax(0, 1fr);
-    column-gap: 18px;
+    max-width: none;
   }
 
   .visitor-note-message {
     font-size: 1rem;
     line-height: 1.68;
+    -webkit-line-clamp: 5;
   }
 
   .visitor-note-meta {
-    grid-column: 2;
     font-size: 0.66rem;
     letter-spacing: 0.12em;
   }

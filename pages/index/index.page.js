@@ -19,9 +19,9 @@
       notes: [
         {
           message:
-            "This is a huge and impressive update. The dialogue parts were good, and I hope there will be more updates soon. Galeng!",
+            "This is a huge and impressive update! What motivated you to get back and continue this website 'cause it has been so long since you worked on this???? Honestly I don't know how the updates look like in desktop especially the album part (if it has some kind of transitions and such..) since I'm only viewing it now on my phone. The dialogue parts were good (I hope hindi galing sa AI😅) Pwede ka nang maging philosopher haha. My question is, will there be more updates soon or this is it na??? I hope meron pa. Iyon lang!! Galeng!",
           name: "Liah",
-          context: "Website feedback",
+          date: "04 June 2026",
         },
       ],
     },
@@ -96,26 +96,42 @@
 
     visitorNotesList.innerHTML = notes.length
       ? notes
-          .map((note, index) => {
+          .map((note) => {
             const message = typeof note.message === "string" ? note.message : "";
             const name = typeof note.name === "string" ? note.name : "Visitor";
-            const context = typeof note.context === "string" ? note.context : "Website feedback";
-            const noteNumber = String(index + 1).padStart(2, "0");
+            const date = typeof note.date === "string" ? note.date : "";
 
             return `
-              <article class="visitor-note">
-                <p class="visitor-note-number">${noteNumber}</p>
-                <blockquote class="visitor-note-message">${escapeHtml(message)}</blockquote>
-                <p class="visitor-note-meta">${escapeHtml(name)} / ${escapeHtml(context)}</p>
+              <article class="visitor-note" data-visitor-note>
+                <blockquote class="visitor-note-message" data-visitor-note-message>${escapeHtml(message)}</blockquote>
+                <button class="visitor-note-expand" type="button" data-visitor-note-toggle aria-expanded="false">... more</button>
+                <p class="visitor-note-meta">${escapeHtml(name)}${date ? ` / ${escapeHtml(date)}` : ""}</p>
               </article>
             `;
           })
           .join("")
       : `
         <article class="visitor-note visitor-note-empty">
-          <p class="visitor-note-number">00</p>
           <p class="visitor-note-message">${escapeHtml(pageData.visitorNotes.empty)}</p>
         </article>
       `;
+
+    requestAnimationFrame(() => {
+      visitorNotesList
+        .querySelectorAll("[data-visitor-note]")
+        .forEach((note) => {
+          const message = note.querySelector("[data-visitor-note-message]");
+          const toggle = note.querySelector("[data-visitor-note-toggle]");
+          if (!message || !toggle) return;
+
+          toggle.hidden = message.scrollHeight <= message.clientHeight + 1;
+
+          toggle.addEventListener("click", () => {
+            const isExpanded = note.classList.toggle("is-expanded");
+            toggle.textContent = isExpanded ? "less" : "... more";
+            toggle.setAttribute("aria-expanded", String(isExpanded));
+          });
+        });
+    });
   }
 })();
