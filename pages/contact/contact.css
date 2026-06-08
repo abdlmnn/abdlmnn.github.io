@@ -12,6 +12,7 @@
 body[data-page="contact"] {
   background: var(--contact-page-bg);
   color: var(--contact-ink);
+  overflow-x: hidden;
 }
 
 body[data-page="contact"] .contact-fab {
@@ -20,10 +21,12 @@ body[data-page="contact"] .contact-fab {
 
 .contact-page {
   padding: calc(var(--nav-height) + 64px) 0 56px;
+  overflow-x: hidden;
 }
 
 .contact-shell {
   width: var(--contact-shell-width);
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -70,6 +73,17 @@ body[data-page="contact"] .contact-fab {
   grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
   gap: 68px;
   align-items: end;
+}
+
+.contact-stage > *,
+.contact-form-stage > *,
+.contact-panel,
+.contact-form,
+.contact-channels,
+.contact-channel-row,
+.contact-portrait-wrap,
+.contact-portrait-frame {
+  min-width: 0;
 }
 
 .contact-portrait-wrap {
@@ -142,6 +156,7 @@ body[data-page="contact"] .contact-fab {
   line-height: 1.08;
   color: var(--contact-ink);
   max-width: 460px;
+  overflow-wrap: break-word;
 }
 
 .contact-panel-intro {
@@ -185,6 +200,8 @@ body[data-page="contact"] .contact-fab {
   line-height: 1.65;
   color: var(--contact-ink);
   text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 a.contact-channel-value:hover {
@@ -334,10 +351,16 @@ a.contact-channel-value:hover {
 
 .contact-form-honeypot {
   position: absolute;
-  left: -9999px;
   width: 1px;
   height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
   opacity: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
   pointer-events: none;
 }
 
@@ -418,6 +441,16 @@ a.contact-channel-value:hover {
 
   .contact-stage {
     gap: 34px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-portrait-wrap,
+  .contact-panel,
+  .contact-form,
+  .contact-form-stage {
+    width: 100%;
+    max-width: 100%;
   }
 
   .contact-portrait-wrap::before {
@@ -430,12 +463,18 @@ a.contact-channel-value:hover {
   .contact-image-note {
     left: 14px;
     bottom: 14px;
-    max-width: 220px;
+    max-width: min(220px, calc(100% - 28px));
     font-size: 0.82rem;
   }
 
   .contact-panel {
     padding: 34px 24px 26px;
+  }
+
+  .contact-panel-title,
+  .contact-panel-intro,
+  .contact-channel-value {
+    max-width: 100%;
   }
 
   .contact-panel-intro {
@@ -478,6 +517,10 @@ a.contact-channel-value:hover {
   .contact-field input,
   .contact-field textarea {
     font-size: 0.95rem;
+  }
+
+  .contact-channel-value {
+    display: inline-block;
   }
 
   .contact-form-section {
