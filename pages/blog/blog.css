@@ -451,6 +451,15 @@
   opacity: 0.8;
 }
 
+.blog-subscribe-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .blog-subscribe-status {
   grid-column: 2;
   margin: 4px 0 0;
@@ -467,6 +476,10 @@
 
 .blog-subscribe-status.is-error {
   color: #b42318;
+}
+
+.blog-subscribe-status.is-success {
+  color: #1f6d3d;
 }
 
 @media (max-width: 768px) {
