@@ -9,8 +9,12 @@
     heroTagline: "CHASING LIGHT",
     // statement:
     //   "Every place holds a story waiting to unfold. I follow light as it moves across landscapes and cultures, preserving moments that might otherwise fade.",
-    statement:
-      "Every place carries a story. I follow light through passing moments, keeping what might otherwise fade.",
+    statement: [
+      "Every place carries a story. I",
+      "follow light through passing",
+      "moments, keeping what",
+      "might otherwise fade.",
+    ].join("\n"),
     visitorNotes: {
       kicker: "Words Received",
       title: "A small place for words that stayed.",
