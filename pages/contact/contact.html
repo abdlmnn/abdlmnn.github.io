@@ -91,6 +91,7 @@
           <form
             class="contact-form"
             action="https://formspree.io/f/xpqeddew"
+            data-feedback-endpoint="https://abdlmnn-feedback.abdlmnn.workers.dev/feedback-submission"
             method="POST">
             <input type="hidden" name="_subject" value="New contact inquiry from abdlmnn.github.io">
 
@@ -106,11 +107,6 @@
               </div>
 
               <div class="contact-field contact-field-full">
-                <label class="contact-label" for="contactSubject">Subject</label>
-                <input id="contactSubject" name="subject" type="text" placeholder="A short line about your message" required>
-              </div>
-
-              <div class="contact-field contact-field-full">
                 <label class="contact-label" for="contactMessage">Your Message</label>
                 <textarea
                   id="contactMessage"
@@ -119,6 +115,7 @@
                   placeholder="Share your question, idea, or what you need help with."
                   required></textarea>
               </div>
+
             </div>
 
             <input type="text" name="_gotcha" class="contact-form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">

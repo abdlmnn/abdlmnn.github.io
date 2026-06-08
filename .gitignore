@@ -4,3 +4,5 @@ features/
 Saudi Arabia/
 assets/
 .env
+node_modules/
+.wrangler/

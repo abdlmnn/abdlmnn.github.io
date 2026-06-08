@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
           href: "https://x.com/imitex24",
         },
         {
+          label: "TikTok",
+          value: "@slhbmnn",
+          href: "https://www.tiktok.com/@slhbmnn",
+        },
+        {
           label: "GitHub",
           value: "github.com/abdlmnn",
           href: "https://github.com/abdlmnn",
@@ -46,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       kicker: "Send A Note",
       title: "Use the form if you want to reach me directly.",
       lead:
-        "Leave your name, email, subject, and message below. I will read it carefully and get back to you as soon as I can.",
+        "Leave your name, email, and message below. I will read it carefully and get back to you as soon as I can.",
     },
   };
 
@@ -150,8 +155,29 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error("Request failed");
         }
 
+        const feedbackEndpoint = contactForm.dataset.feedbackEndpoint;
+        let feedbackSaved = true;
+
+        if (feedbackEndpoint) {
+          try {
+            const feedbackResponse = await fetch(feedbackEndpoint, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            feedbackSaved = feedbackResponse.ok;
+          } catch (_error) {
+            feedbackSaved = false;
+          }
+        }
+
         contactForm.reset();
-        contactNotice.textContent = "Message sent. I'll reply soon.";
+        contactNotice.textContent = feedbackSaved
+          ? "Message sent. I'll reply soon."
+          : "Message sent. I'll reply soon. Note review was not saved.";
         contactNotice.classList.remove("is-loading", "is-error");
         contactNotice.classList.add("is-success");
         scheduleNoticeReset();

@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "abdlmnn-feedback",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-08",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "ALLOWED_ORIGIN": "https://abdlmnn.github.io",
+    "FORMSPREE_ENDPOINT": "https://formspree.io/f/xpqeddew"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "abdlmnn_feedback",
+      "database_id": "1ee4ab1d-8bf2-4431-bd92-aa63176c1e02"
+    }
+  ]
+}
