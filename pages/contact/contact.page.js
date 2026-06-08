@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       kicker: "Send A Note",
       title: "Use the form if you want to reach me directly.",
       lead:
-        "Leave your name, email, subject, and message below. I will read it carefully and get back to you as soon as I can.",
+        "Leave your name, email, and message below. I will read it carefully and get back to you as soon as I can.",
     },
   };
 
@@ -150,8 +150,32 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error("Request failed");
         }
 
+        const allowPublic = formData.get("allow_public");
+        const feedbackEndpoint = contactForm.dataset.feedbackEndpoint;
+        let feedbackSaved = true;
+
+        if (allowPublic && feedbackEndpoint) {
+          try {
+            const feedbackResponse = await fetch(feedbackEndpoint, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            feedbackSaved = feedbackResponse.ok;
+          } catch (_error) {
+            feedbackSaved = false;
+          }
+        }
+
         contactForm.reset();
-        contactNotice.textContent = "Message sent. I'll reply soon.";
+        contactNotice.textContent = allowPublic && feedbackSaved
+          ? "Message sent. If approved, it may appear on the website."
+          : allowPublic
+            ? "Message sent. Public note was not saved, but I'll still receive it."
+            : "Message sent. I'll reply soon.";
         contactNotice.classList.remove("is-loading", "is-error");
         contactNotice.classList.add("is-success");
         scheduleNoticeReset();

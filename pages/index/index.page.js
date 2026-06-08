@@ -14,18 +14,11 @@
     visitorNotes: {
       kicker: "Words Received",
       title: "A small place for words that stayed.",
+      endpoint: "https://abdlmnn-feedback.abdlmnn.workers.dev/feedback",
       empty:
         "Approved feedback about this website will live here after I read it first.",
       maxVisible: 5,
-      notes: [
-        {
-          message:
-            "This is a huge and impressive update! What motivated you to get back and continue this website 'cause it has been so long since you worked on this???? Honestly I don't know how the updates look like in desktop especially the album part (if it has some kind of transitions and such..) since I'm only viewing it now on my phone. The dialogue parts were good (I hope hindi galing sa AI😅) Pwede ka nang maging philosopher haha. My question is, will there be more updates soon or this is it na??? I hope meron pa. Iyon lang!! Galeng!",
-          name: "Liah",
-          date: "04 June 2026",
-          featured: true,
-        },
-      ],
+      notes: [],
     },
     socialLabel: "Where Light Leads",
     images: {
@@ -95,18 +88,32 @@
     const maxVisibleNotes = Number.isInteger(pageData.visitorNotes.maxVisible)
       ? pageData.visitorNotes.maxVisible
       : 5;
-    const notes = Array.isArray(pageData.visitorNotes.notes)
+    const fallbackNotes = Array.isArray(pageData.visitorNotes.notes)
       ? pageData.visitorNotes.notes
           .filter((note) => note && note.featured !== false)
           .slice(0, maxVisibleNotes)
       : [];
 
-    visitorNotesList.innerHTML = notes.length
-      ? notes
+    const formatDate = (value) => {
+      if (typeof value !== "string" || !value.trim()) return "";
+
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+
+      return date.toLocaleDateString("en-US", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      }).replace(/^(\w+) (\d{2}), (\d{4})$/, "$2 $1 $3");
+    };
+
+    const renderNotes = (notes) => {
+      visitorNotesList.innerHTML = notes.length
+        ? notes
           .map((note) => {
             const message = typeof note.message === "string" ? note.message : "";
             const name = typeof note.name === "string" ? note.name : "Visitor";
-            const date = typeof note.date === "string" ? note.date : "";
+            const date = formatDate(note.date || note.created_at || "");
 
             return `
               <article class="visitor-note" data-visitor-note>
@@ -117,28 +124,57 @@
             `;
           })
           .join("")
-      : `
+        : `
         <article class="visitor-note visitor-note-empty">
           <p class="visitor-note-message">${escapeHtml(pageData.visitorNotes.empty)}</p>
         </article>
       `;
 
-    requestAnimationFrame(() => {
-      visitorNotesList
-        .querySelectorAll("[data-visitor-note]")
-        .forEach((note) => {
-          const message = note.querySelector("[data-visitor-note-message]");
-          const toggle = note.querySelector("[data-visitor-note-toggle]");
-          if (!message || !toggle) return;
+      requestAnimationFrame(() => {
+        visitorNotesList
+          .querySelectorAll("[data-visitor-note]")
+          .forEach((note) => {
+            const message = note.querySelector("[data-visitor-note-message]");
+            const toggle = note.querySelector("[data-visitor-note-toggle]");
+            if (!message || !toggle) return;
 
-          toggle.hidden = message.scrollHeight <= message.clientHeight + 1;
+            toggle.hidden = message.scrollHeight <= message.clientHeight + 1;
 
-          toggle.addEventListener("click", () => {
-            const isExpanded = note.classList.toggle("is-expanded");
-            toggle.textContent = isExpanded ? "less" : "... more";
-            toggle.setAttribute("aria-expanded", String(isExpanded));
+            toggle.addEventListener("click", () => {
+              const isExpanded = note.classList.toggle("is-expanded");
+              toggle.textContent = isExpanded ? "less" : "... more";
+              toggle.setAttribute("aria-expanded", String(isExpanded));
+            });
           });
+      });
+    };
+
+    const loadVisitorNotes = async () => {
+      if (!pageData.visitorNotes.endpoint) {
+        renderNotes(fallbackNotes);
+        return;
+      }
+
+      try {
+        const response = await fetch(pageData.visitorNotes.endpoint, {
+          headers: {
+            Accept: "application/json",
+          },
         });
-    });
+
+        if (!response.ok) throw new Error("Feedback request failed");
+
+        const data = await response.json();
+        const notes = Array.isArray(data.notes)
+          ? data.notes.slice(0, maxVisibleNotes)
+          : [];
+
+        renderNotes(notes.length ? notes : fallbackNotes);
+      } catch (_error) {
+        renderNotes(fallbackNotes);
+      }
+    };
+
+    loadVisitorNotes();
   }
 })();
