@@ -11,6 +11,20 @@
     //   "Every place holds a story waiting to unfold. I follow light as it moves across landscapes and cultures, preserving moments that might otherwise fade.",
     statement:
       "Every place has a story. I follow light across places and cultures, preserving moments before they fade.",
+    visitorNotes: {
+      kicker: "Visitor Notes",
+      title: "A small place for words that stayed.",
+      empty:
+        "Approved feedback about this website will live here after I read it first.",
+      notes: [
+        {
+          message:
+            "This is a huge and impressive update. The dialogue parts were good, and I hope there will be more updates soon. Galeng!",
+          name: "Liah",
+          context: "Website feedback",
+        },
+      ],
+    },
     socialLabel: "Where Light Leads",
     images: {
       feature1: {
@@ -44,6 +58,13 @@
     if (typeof imageData.alt === "string") el.setAttribute("alt", imageData.alt);
   };
 
+  const escapeHtml = (value) => String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
   setText("homePageTitle", pageData.meta.title);
 
   const metaDescription = document.getElementById("homeMetaDescription");
@@ -55,6 +76,8 @@
   setText("homeHeroName", pageData.heroName);
   setText("homeHeroTagline", pageData.heroTagline);
   setText("homeStatementText", pageData.statement);
+  setText("visitorNotesKicker", pageData.visitorNotes.kicker);
+  setText("visitorNotesTitle", pageData.visitorNotes.title);
   setText("homeSocialLabel", pageData.socialLabel);
 
   setImage("homeFeatureImg1", pageData.images.feature1);
@@ -64,4 +87,35 @@
   setText("homeFeatureLocation1", pageData.images.feature1.location);
   setText("homeFeatureLocation2", pageData.images.feature2.location);
   setText("homeFeatureLocation3", pageData.images.feature3.location);
+
+  const visitorNotesList = document.getElementById("visitorNotesList");
+  if (visitorNotesList) {
+    const notes = Array.isArray(pageData.visitorNotes.notes)
+      ? pageData.visitorNotes.notes
+      : [];
+
+    visitorNotesList.innerHTML = notes.length
+      ? notes
+          .map((note, index) => {
+            const message = typeof note.message === "string" ? note.message : "";
+            const name = typeof note.name === "string" ? note.name : "Visitor";
+            const context = typeof note.context === "string" ? note.context : "Website feedback";
+            const noteNumber = String(index + 1).padStart(2, "0");
+
+            return `
+              <article class="visitor-note">
+                <p class="visitor-note-number">${noteNumber}</p>
+                <blockquote class="visitor-note-message">${escapeHtml(message)}</blockquote>
+                <p class="visitor-note-meta">${escapeHtml(name)} / ${escapeHtml(context)}</p>
+              </article>
+            `;
+          })
+          .join("")
+      : `
+        <article class="visitor-note visitor-note-empty">
+          <p class="visitor-note-number">00</p>
+          <p class="visitor-note-message">${escapeHtml(pageData.visitorNotes.empty)}</p>
+        </article>
+      `;
+  }
 })();

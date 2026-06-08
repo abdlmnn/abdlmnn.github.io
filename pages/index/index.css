@@ -534,6 +534,87 @@ body.no-intro .scroll-indicator {
   letter-spacing: 0.01em;
 }
 
+.visitor-notes {
+  padding: 0 40px 112px;
+  background: var(--bg-white);
+}
+
+.visitor-notes-container {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.visitor-notes-kicker {
+  margin: 0 0 16px;
+  font-family: var(--font-syne);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.visitor-notes-title {
+  max-width: 260px;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.16;
+  color: var(--text-primary);
+}
+
+.visitor-notes-list {
+  display: grid;
+  gap: 30px;
+}
+
+.visitor-note {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: start;
+  padding-top: 8px;
+}
+
+.visitor-note-number {
+  margin: 0;
+  font-family: var(--font-syne);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+}
+
+.visitor-note-message {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.02rem, 1.8vw, 1.28rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.72;
+  color: var(--text-primary);
+}
+
+.visitor-note-meta {
+  grid-column: 2;
+  margin: 18px 0 0;
+  font-family: var(--font-syne);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.visitor-note-empty .visitor-note-message {
+  color: var(--text-secondary);
+}
+
 .social {
   position: relative;
   padding: 96px 40px 84px;
@@ -826,6 +907,40 @@ body.no-intro .scroll-indicator {
   .statement-text {
     font-size: 1.15rem;
     line-height: 1.7;
+  }
+
+  .visitor-notes {
+    padding: 0 25px 76px;
+  }
+
+  .visitor-notes-container {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .visitor-notes-title {
+    max-width: 320px;
+    font-size: 1.65rem;
+  }
+
+  .visitor-notes-list {
+    gap: 26px;
+  }
+
+  .visitor-note {
+    grid-template-columns: 42px minmax(0, 1fr);
+    column-gap: 18px;
+  }
+
+  .visitor-note-message {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .visitor-note-meta {
+    grid-column: 2;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
   }
 
   .social {
