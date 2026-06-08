@@ -10,7 +10,7 @@
     // statement:
     //   "Every place holds a story waiting to unfold. I follow light as it moves across landscapes and cultures, preserving moments that might otherwise fade.",
     statement:
-      "Every place has a story. I follow light across places and cultures, preserving moments before they fade.",
+      "Every place carries a story. I follow light through passing moments, keeping what might otherwise fade.",
     visitorNotes: {
       kicker: "Words Received",
       title: "A small place for words that stayed.",
@@ -25,17 +25,17 @@
       feature1: {
         src: "my-images/2.jpg",
         alt: "Sunlit desert road scene",
-        location: "Quiet Glow - personal moment",
+        location: "Quiet Glow",
       },
       feature2: {
         src: "my-images/frame.jpg",
         alt: "Framed urban moment in warm light",
-        location: "A Wall of Becoming - growth and passion",
+        location: "Becoming",
       },
       feature3: {
         src: "my-images/light.jpg",
         alt: "Mountain landscape in soft light",
-        location: "Silent Illumination - calm presence",
+        location: "Silent Illumination",
       },
     },
   };
