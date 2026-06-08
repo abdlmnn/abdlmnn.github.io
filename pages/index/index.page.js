@@ -12,7 +12,7 @@
     statement:
       "Every place has a story. I follow light across places and cultures, preserving moments before they fade.",
     visitorNotes: {
-      kicker: "Visitor Notes",
+      kicker: "Words Received",
       title: "A small place for words that stayed.",
       empty:
         "Approved feedback about this website will live here after I read it first.",
