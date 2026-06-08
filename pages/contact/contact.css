@@ -312,27 +312,6 @@ a.contact-channel-value:hover {
   border-bottom-color: var(--contact-ink);
 }
 
-.contact-feedback-consent {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 4px;
-  font-family: var(--font-sans);
-  font-size: 0.92rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--contact-muted);
-  cursor: pointer;
-}
-
-.contact-feedback-consent input {
-  width: 15px;
-  height: 15px;
-  margin: 0;
-  accent-color: var(--contact-ink);
-  cursor: pointer;
-}
-
 .contact-submit {
   margin-top: 40px;
   padding: 14px 26px;

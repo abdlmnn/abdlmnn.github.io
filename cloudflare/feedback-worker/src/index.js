@@ -105,7 +105,7 @@ const forwardToFormspree = async (env, payload) => {
   formData.set("name", payload.name);
   formData.set("email", payload.email);
   formData.set("message", payload.message);
-  formData.set("public_display_permission", payload.allowPublic ? "yes" : "no");
+  formData.set("saved_for_review", "yes");
 
   const response = await fetch(env.FORMSPREE_ENDPOINT, {
     method: "POST",
@@ -155,10 +155,6 @@ const handleContact = async (request, env) => {
   const name = cleanText(data.name, 80);
   const email = cleanText(data.email, 160);
   const message = cleanMessage(data.message);
-  const allowPublic = ["true", "on", "yes", "1"].includes(
-    String(data.allow_public || "").toLowerCase()
-  );
-
   if (!name || !email || !message) {
     return json({ error: "Please complete all required fields." }, 400, headers);
   }
@@ -176,17 +172,14 @@ const handleContact = async (request, env) => {
     name,
     email,
     message,
-    allowPublic,
   });
 
-  if (allowPublic) {
-    await env.DB.prepare(
-      `INSERT INTO public_feedback (name, message, created_at, is_public)
-       VALUES (?, ?, ?, 0)`
-    )
-      .bind(name, message, new Date().toISOString())
-      .run();
-  }
+  await env.DB.prepare(
+    `INSERT INTO public_feedback (name, message, created_at, is_public)
+     VALUES (?, ?, ?, 0)`
+  )
+    .bind(name, message, new Date().toISOString())
+    .run();
 
   return json({ ok: true }, 200, headers);
 };
@@ -202,14 +195,6 @@ const handleFeedbackSubmission = async (request, env) => {
   const name = cleanText(data.name, 80);
   const email = cleanText(data.email, 160);
   const message = cleanMessage(data.message);
-  const allowPublic = ["true", "on", "yes", "1"].includes(
-    String(data.allow_public || "").toLowerCase()
-  );
-
-  if (!allowPublic) {
-    return json({ ok: true, saved: false }, 200, headers);
-  }
-
   if (!name || !email || !message) {
     return json({ error: "Please complete all required fields." }, 400, headers);
   }

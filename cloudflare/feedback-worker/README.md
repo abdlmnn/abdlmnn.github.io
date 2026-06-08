@@ -4,7 +4,7 @@ Small Cloudflare Worker API for the contact form and public feedback notes.
 
 ## Routes
 
-- `POST /contact` legacy route that forwards to Formspree and saves public feedback when `allow_public` is enabled.
+- `POST /contact` legacy route that forwards to Formspree and saves the message as pending feedback.
 - `POST /feedback-submission` saves a pending public feedback note after the browser submits directly to Formspree.
 - `GET /feedback` returns the newest 5 public feedback notes.
 
@@ -46,7 +46,7 @@ After deployment, use the Worker URL in the website contact form and home feedba
 
 ## Approving Feedback
 
-Messages submitted with public permission are saved as pending first.
+Submitted contact messages are saved as pending first. Only approved notes are shown on the website.
 
 List pending feedback:
 

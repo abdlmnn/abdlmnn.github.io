@@ -155,11 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error("Request failed");
         }
 
-        const allowPublic = formData.get("allow_public");
         const feedbackEndpoint = contactForm.dataset.feedbackEndpoint;
         let feedbackSaved = true;
 
-        if (allowPublic && feedbackEndpoint) {
+        if (feedbackEndpoint) {
           try {
             const feedbackResponse = await fetch(feedbackEndpoint, {
               method: "POST",
@@ -176,11 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         contactForm.reset();
-        contactNotice.textContent = allowPublic && feedbackSaved
-          ? "Message sent. If approved, it may appear on the website."
-          : allowPublic
-            ? "Message sent. Public note was not saved, but I'll still receive it."
-            : "Message sent. I'll reply soon.";
+        contactNotice.textContent = feedbackSaved
+          ? "Message sent. I'll reply soon."
+          : "Message sent. I'll reply soon. Note review was not saved.";
         contactNotice.classList.remove("is-loading", "is-error");
         contactNotice.classList.add("is-success");
         scheduleNoticeReset();
