@@ -16,12 +16,14 @@
       title: "A small place for words that stayed.",
       empty:
         "Approved feedback about this website will live here after I read it first.",
+      maxVisible: 5,
       notes: [
         {
           message:
             "This is a huge and impressive update! What motivated you to get back and continue this website 'cause it has been so long since you worked on this???? Honestly I don't know how the updates look like in desktop especially the album part (if it has some kind of transitions and such..) since I'm only viewing it now on my phone. The dialogue parts were good (I hope hindi galing sa AI😅) Pwede ka nang maging philosopher haha. My question is, will there be more updates soon or this is it na??? I hope meron pa. Iyon lang!! Galeng!",
           name: "Liah",
           date: "04 June 2026",
+          featured: true,
         },
       ],
     },
@@ -90,8 +92,13 @@
 
   const visitorNotesList = document.getElementById("visitorNotesList");
   if (visitorNotesList) {
+    const maxVisibleNotes = Number.isInteger(pageData.visitorNotes.maxVisible)
+      ? pageData.visitorNotes.maxVisible
+      : 5;
     const notes = Array.isArray(pageData.visitorNotes.notes)
       ? pageData.visitorNotes.notes
+          .filter((note) => note && note.featured !== false)
+          .slice(0, maxVisibleNotes)
       : [];
 
     visitorNotesList.innerHTML = notes.length

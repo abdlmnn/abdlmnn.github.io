@@ -571,7 +571,7 @@ body.no-intro .scroll-indicator {
 
 .visitor-notes-list {
   display: grid;
-  gap: 30px;
+  gap: 54px;
 }
 
 .visitor-note {
@@ -595,6 +595,16 @@ body.no-intro .scroll-indicator {
   line-height: 1;
   color: rgba(25, 25, 25, 0.08);
   pointer-events: none;
+}
+
+.visitor-note:nth-child(even) {
+  margin-left: clamp(18px, 5vw, 74px);
+}
+
+.visitor-note:not(:first-child)::before {
+  top: -20px;
+  font-size: clamp(3.8rem, 6vw, 5.4rem);
+  color: rgba(25, 25, 25, 0.055);
 }
 
 .visitor-note-message {
@@ -963,13 +973,17 @@ body.no-intro .scroll-indicator {
   }
 
   .visitor-notes-list {
-    gap: 26px;
+    gap: 42px;
   }
 
   .visitor-note {
     max-width: none;
     padding: 8px 0 0 34px;
     column-gap: 20px;
+  }
+
+  .visitor-note:nth-child(even) {
+    margin-left: 0;
   }
 
   .visitor-note::before {
