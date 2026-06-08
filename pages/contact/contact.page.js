@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
           href: "https://x.com/imitex24",
         },
         {
+          label: "TikTok",
+          value: "@slhbmnn",
+          href: "https://www.tiktok.com/@slhbmnn",
+        },
+        {
           label: "GitHub",
           value: "github.com/abdlmnn",
           href: "https://github.com/abdlmnn",
