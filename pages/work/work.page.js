@@ -198,6 +198,73 @@ document.addEventListener("DOMContentLoaded", () => {
           ],
         },
       },
+      {
+        slug: "puregold-grocery",
+        name: "PureGold Grocery",
+        type: "Academic Build / Inventory & Ordering Platform",
+        status: "",
+        summary:
+          "A grocery management system built to organize products, stocks, orders, payments, reports, and administration in one web dashboard.",
+        whatItSolved:
+          "Limited inventory visibility, slow product updates, and the need for a clearer online grocery experience supported by better admin tracking.",
+        whatIDid:
+          "Studied how the existing grocery website could be improved, then built a Django-based web system with product browsing, customer access, admin controls, stock records, and transaction tracking.",
+        contribution:
+          "Created a more organized flow between the customer-facing pages and the admin side so products, stocks, orders, and payments could be easier to manage from one system.",
+        accomplished:
+          "Delivered a working web platform with a public landing experience, customer login, inventory dashboard, stock monitoring, order records, reports, and user administration.",
+        role:
+          "Full-stack Developer / System Developer",
+        stack:
+          "Django, Python, Django Templates, HTML, CSS, JavaScript, SQLite",
+        platforms: "Web",
+        visuals: {
+          label: "View images",
+          groups: [
+            {
+              label: "Website",
+              items: [
+                {
+                  label: "Inventory Dashboard",
+                  href: "../../my-images/projects/puregold/admin/dashboard inventory.svg",
+                  image: "../../my-images/projects/puregold/admin/dashboard inventory.svg",
+                },
+                {
+                  label: "Landing Page",
+                  href: "../../my-images/projects/puregold/landing.svg",
+                  image: "../../my-images/projects/puregold/landing.svg",
+                },
+                {
+                  label: "Login Page",
+                  href: "../../my-images/projects/puregold/login.svg",
+                  image: "../../my-images/projects/puregold/login.svg",
+                },
+              ],
+            },
+          ],
+        },
+      },
+      {
+        slug: "stuart-boutique",
+        name: "Stuart Boutique",
+        type: "Academic Build / E-Commerce & Inventory Platform",
+        status: "",
+        summary:
+          "A clothing ordering and inventory system built so customers could browse items and place orders through a dedicated website.",
+        whatItSolved:
+          "The business relied heavily on Facebook for product browsing and customer orders, which made order tracking, stock updates, and product organization harder to manage.",
+        whatIDid:
+          "Built the website structure, customer ordering flow, admin product management, inventory records, and order tracking features.",
+        contribution:
+          "Created a clearer bridge between the customer shopping experience and the admin workflow for managing clothes, orders, and available stock.",
+        accomplished:
+          "Delivered a working web platform for product browsing, customer orders, inventory management, and order records.",
+        role:
+          "Full-stack Developer / System Developer",
+        stack:
+          "PHP, MySQL, HTML, CSS, JavaScript, jQuery, AJAX",
+        platforms: "Web",
+      },
       /*
       {
         slug: "codbit",
@@ -325,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setText("workCtaPrimary", pageData.cta.primaryLabel);
   setText("workCtaSecondary", pageData.cta.secondaryLabel);
 
-  const projectLimit = 3;
+  const projectLimit = pageData.projects.length;
   const projectsListEl = document.getElementById("workProjectsList");
   const viewAllProjectsBtn = document.getElementById("workViewAllProjects");
   const renderProjects = (projects) => {
