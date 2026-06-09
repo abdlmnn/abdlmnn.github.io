@@ -120,6 +120,26 @@ document.addEventListener("DOMContentLoaded", () => {
         stack:
           "Django, Django REST Framework, GeoDjango, Next.js, React, React Native, Expo, TypeScript, Tailwind CSS, PostgreSQL, PostGIS, Docker, Google Maps API",
         platforms: "Web + Mobile",
+        visuals: {
+          label: "View images",
+          groups: [
+            {
+              label: "Website",
+              items: [
+                {
+                  label: "Landing Page",
+                  href: "../../my-images/projects/sarig/landing.svg",
+                  image: "../../my-images/projects/sarig/landing.svg",
+                },
+                {
+                  label: "Merchant Landing Page",
+                  href: "../../my-images/projects/sarig/landing merchant.svg",
+                  image: "../../my-images/projects/sarig/landing merchant.svg",
+                },
+              ],
+            },
+          ],
+        },
       },
       {
         slug: "ilpi-hr-management",
@@ -264,51 +284,27 @@ document.addEventListener("DOMContentLoaded", () => {
         stack:
           "PHP, MySQL, HTML, CSS, JavaScript, jQuery, AJAX",
         platforms: "Web",
+        visuals: {
+          label: "View images",
+          groups: [
+            {
+              label: "Website",
+              items: [
+                {
+                  label: "Landing Page",
+                  href: "../../my-images/projects/stuart/landing product cart.svg",
+                  image: "../../my-images/projects/stuart/landing product cart.svg",
+                },
+                {
+                  label: "Dashboard",
+                  href: "../../my-images/projects/stuart/admin/dashboard.svg",
+                  image: "../../my-images/projects/stuart/admin/dashboard.svg",
+                },
+              ],
+            },
+          ],
+        },
       },
-      /*
-      {
-        slug: "codbit",
-        name: "Codbit",
-        type: "Developer Tool / Productivity Platform",
-        status: "In Development",
-        summary:
-          "A coding-focused project built around making development work clearer, faster, and easier to organize.",
-        whatItSolved:
-          "Scattered development notes, project context, and workflow friction while building software.",
-        whatIDid:
-          "Worked on the product direction, interface flow, and core development experience.",
-        contribution:
-          "Created a more structured way to support coding work and keep project context close to the developer.",
-        accomplished:
-          "Built the foundation for a tool focused on practical development productivity.",
-        role:
-          "Product Builder / Full-stack Developer",
-        stack:
-          "JavaScript, TypeScript, React, Node.js",
-        platforms: "Web",
-      },
-      {
-        slug: "stuart-boutique",
-        name: "Stuart Boutique",
-        type: "Boutique Website / Online Storefront",
-        status: "Completed Project",
-        summary:
-          "A boutique-focused web project designed to present products, brand identity, and customer-facing information clearly.",
-        whatItSolved:
-          "Limited online visibility and the need for a clearer digital storefront for boutique customers.",
-        whatIDid:
-          "Built the website structure, page flow, visual presentation, and customer-facing interface.",
-        contribution:
-          "Helped turn the boutique presence into a cleaner and more accessible online experience.",
-        accomplished:
-          "Delivered a polished storefront foundation for showcasing boutique products and brand details.",
-        role:
-          "Web Developer / Designer",
-        stack:
-          "HTML, CSS, JavaScript",
-        platforms: "Web",
-      },
-      */
     ],
     cta: {
       kicker: "",
