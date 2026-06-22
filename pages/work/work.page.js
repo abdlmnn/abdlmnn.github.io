@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
       items: [
         {
           label: "Frontend",
-          value: "React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS",
+          value:
+            "React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS",
         },
         {
           label: "Backend",
@@ -115,8 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         accomplished:
           // "Built the core product foundation and MVP for food, grocery, pharmacy, motorcycle taxi, and private car services, with admin and merchant tools.",
           "Built the backend foundation for advanced delivery services, covering food, grocery, and pharmacy flows with geo-based store discovery, distance handling, and rider coordination logic, alongside the early admin and merchant dashboard structure.",
-        role:
-          "Founder / Product Builder / Full-stack Developer",
+        role: "Founder / Product Builder / Full-stack Developer",
         stack:
           "Django, Django REST Framework, GeoDjango, Next.js, React, React Native, Expo, TypeScript, Tailwind CSS, PostgreSQL, PostGIS, Docker, Google Maps API",
         platforms: "Web + Mobile",
@@ -124,17 +124,65 @@ document.addEventListener("DOMContentLoaded", () => {
           label: "View images",
           groups: [
             {
-              label: "Website",
+              label: "Main",
               items: [
                 {
                   label: "Landing Page",
                   href: "../../my-images/projects/sarig/landing.svg",
                   image: "../../my-images/projects/sarig/landing.svg",
                 },
+              ],
+            },
+            {
+              label: "Merchant",
+              carousel: true,
+              items: [
                 {
-                  label: "Merchant Landing Page",
+                  label: "Landing Page",
                   href: "../../my-images/projects/sarig/landing merchant.svg",
                   image: "../../my-images/projects/sarig/landing merchant.svg",
+                },
+                {
+                  label: "Business Sign Up Page",
+                  href: "../../my-images/projects/sarig/sign up business.svg",
+                  image: "../../my-images/projects/sarig/sign up business.svg",
+                },
+                {
+                  label: "Sign In Page",
+                  href: "../../my-images/projects/sarig/sign in merchant.svg",
+                  image: "../../my-images/projects/sarig/sign in merchant.svg",
+                },
+                {
+                  label: "Dashboard Page",
+                  href: "../../my-images/projects/sarig/dashboard merchant.svg",
+                  image:
+                    "../../my-images/projects/sarig/dashboard merchant.svg",
+                },
+              ],
+            },
+            {
+              label: "Rider",
+              carousel: true,
+              items: [
+                {
+                  label: "Landing Page",
+                  href: "../../my-images/projects/sarig/landing rider.svg",
+                  image: "../../my-images/projects/sarig/landing rider 2.svg",
+                },
+                {
+                  label: "Sign Up Page",
+                  href: "../../my-images/projects/sarig/sign up rider.svg",
+                  image: "../../my-images/projects/sarig/sign up rider.svg",
+                },
+              ],
+            },
+            {
+              label: "Admin",
+              items: [
+                {
+                  label: "Dashboard Page",
+                  href: "../../my-images/projects/sarig/dashboard admin.svg",
+                  image: "../../my-images/projects/sarig/dashboard admin.svg",
                 },
               ],
             },
@@ -156,8 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Helped create a clearer digital workflow for HR teams to manage job posts, applicants, and internship submissions.",
         accomplished:
           "Delivered core system foundations during my internship at Iligan Light & Power, Inc.",
-        role:
-          "Intern Web Developer",
+        role: "Intern Web Developer",
         stack:
           "Django, Django REST Framework, Next.js, Tailwind CSS, Redux, Docker, PostgreSQL",
         platforms: "Web",
@@ -177,8 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Turned a fragmented ordering process into one connected system with clearer operations.",
         accomplished:
           "Delivered a complete capstone platform across web and mobile with operational role coverage.",
-        role:
-          "Full-stack Developer / System Developer, Team Build",
+        role: "Full-stack Developer / System Developer, Team Build",
         stack:
           "Django, Django REST Framework, ReactJS, Tailwind CSS, React Native, Expo, PostgreSQL, Docker, Google Maps API",
         platforms: "Web + Mobile",
@@ -187,31 +233,60 @@ document.addEventListener("DOMContentLoaded", () => {
           groups: [
             {
               label: "Website",
-              items: [
+              sections: [
                 {
                   label: "Super Admin",
-                  href: "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
-                  image: "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
+                  items: [
+                    {
+                      label: "Dashboard Page",
+                      href:
+                        "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
+                      image:
+                        "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
+                    },
+                  ],
                 },
                 {
                   label: "Admin",
-                  href: "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
-                  image: "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
+                  items: [
+                    {
+                      label: "Dashboard Page",
+                      href:
+                        "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
+                      image:
+                        "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
+                    },
+                  ],
                 },
               ],
             },
             {
               label: "Mobile",
-              items: [
+              sections: [
                 {
                   label: "Customer",
-                  href: "../../my-images/projects/pharmago/customer mobile/landing.svg",
-                  image: "../../my-images/projects/pharmago/customer mobile/landing.svg",
+                  carousel: true,
+                  items: [
+                    {
+                      label: "Home Page",
+                      href:
+                        "../../my-images/projects/pharmago/customer mobile/landing.svg",
+                      image:
+                        "../../my-images/projects/pharmago/customer mobile/landing.svg",
+                    },
+                  ],
                 },
                 {
                   label: "Rider",
-                  href: "../../my-images/projects/pharmago/rider mobile/landing.svg",
-                  image: "../../my-images/projects/pharmago/rider mobile/landing.svg",
+                  items: [
+                    {
+                      label: "Home Page",
+                      href:
+                        "../../my-images/projects/pharmago/rider mobile/landing.svg",
+                      image:
+                        "../../my-images/projects/pharmago/rider mobile/landing.svg",
+                    },
+                  ],
                 },
               ],
             },
@@ -233,8 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Created a more organized flow between the customer-facing pages and the admin side so products, stocks, orders, and payments could be easier to manage from one system.",
         accomplished:
           "Delivered a working web platform with a public landing experience, customer login, inventory dashboard, stock monitoring, order records, reports, and user administration.",
-        role:
-          "Full-stack Developer / System Developer",
+        role: "Full-stack Developer / System Developer",
         stack:
           "Django, Python, Django Templates, HTML, CSS, JavaScript, SQLite",
         platforms: "Web",
@@ -243,21 +317,34 @@ document.addEventListener("DOMContentLoaded", () => {
           groups: [
             {
               label: "Website",
-              items: [
+              sections: [
                 {
-                  label: "Inventory Dashboard",
-                  href: "../../my-images/projects/puregold/admin/dashboard inventory.svg",
-                  image: "../../my-images/projects/puregold/admin/dashboard inventory.svg",
+                  label: "Customer",
+                  carousel: true,
+                  items: [
+                    {
+                      label: "Landing Page",
+                      href: "../../my-images/projects/puregold/landing.svg",
+                      image: "../../my-images/projects/puregold/landing.svg",
+                    },
+                    {
+                      label: "Login Page",
+                      href: "../../my-images/projects/puregold/login.svg",
+                      image: "../../my-images/projects/puregold/login.svg",
+                    },
+                  ],
                 },
                 {
-                  label: "Landing Page",
-                  href: "../../my-images/projects/puregold/landing.svg",
-                  image: "../../my-images/projects/puregold/landing.svg",
-                },
-                {
-                  label: "Login Page",
-                  href: "../../my-images/projects/puregold/login.svg",
-                  image: "../../my-images/projects/puregold/login.svg",
+                  label: "Admin",
+                  items: [
+                    {
+                      label: "Inventory Dashboard Page",
+                      href:
+                        "../../my-images/projects/puregold/admin/dashboard inventory.svg",
+                      image:
+                        "../../my-images/projects/puregold/admin/dashboard inventory.svg",
+                    },
+                  ],
                 },
               ],
             },
@@ -279,26 +366,37 @@ document.addEventListener("DOMContentLoaded", () => {
           "Created a clearer bridge between the customer shopping experience and the admin workflow for managing clothes, orders, and available stock.",
         accomplished:
           "Delivered a working web platform for product browsing, customer orders, inventory management, and order records.",
-        role:
-          "Full-stack Developer / System Developer",
-        stack:
-          "PHP, MySQL, HTML, CSS, JavaScript, jQuery, AJAX",
+        role: "Full-stack Developer / System Developer",
+        stack: "PHP, MySQL, HTML, CSS, JavaScript, jQuery, AJAX",
         platforms: "Web",
         visuals: {
           label: "View images",
           groups: [
             {
               label: "Website",
-              items: [
+              sections: [
                 {
-                  label: "Landing Page",
-                  href: "../../my-images/projects/stuart/landing product cart.svg",
-                  image: "../../my-images/projects/stuart/landing product cart.svg",
+                  label: "Customer",
+                  items: [
+                    {
+                      label: "Landing Page",
+                      href:
+                        "../../my-images/projects/stuart/landing product cart.svg",
+                      image:
+                        "../../my-images/projects/stuart/landing product cart.svg",
+                    },
+                  ],
                 },
                 {
-                  label: "Dashboard",
-                  href: "../../my-images/projects/stuart/admin/dashboard.svg",
-                  image: "../../my-images/projects/stuart/admin/dashboard.svg",
+                  label: "Admin",
+                  items: [
+                    {
+                      label: "Dashboard Page",
+                      href: "../../my-images/projects/stuart/admin/dashboard.svg",
+                      image:
+                        "../../my-images/projects/stuart/admin/dashboard.svg",
+                    },
+                  ],
                 },
               ],
             },
@@ -308,9 +406,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     cta: {
       kicker: "",
-      title: "Have an idea that needs structure, clarity, and a real path forward?",
-      copy:
-        "I care about building things that are useful, understandable, and made with intention. If you are hiring, planning a project, or exploring a collaboration, I would be glad to talk.",
+      title:
+        "Have an idea that needs structure, clarity, and a real path forward?",
+      copy: "I care about building things that are useful, understandable, and made with intention. If you are hiring, planning a project, or exploring a collaboration, I would be glad to talk.",
       primaryLabel: "Start A Conversation",
       secondaryLabel: "Learn More",
     },
@@ -395,7 +493,8 @@ document.addEventListener("DOMContentLoaded", () => {
     projectsListEl.innerHTML = projects
       .map((project, index) => {
         const projectNumber = String(index + 1).padStart(2, "0");
-        const hasVisualAction = project.visuals && project.status !== "In Development";
+        const hasVisualAction =
+          project.visuals && project.status !== "In Development";
         return `
           <article id="project-${project.slug}" class="work-chapter">
             <div class="work-chapter-marker">
@@ -496,26 +595,78 @@ document.addEventListener("DOMContentLoaded", () => {
   const visualHeaderLabel = document.getElementById("workVisualHeaderLabel");
   const visualGallery = document.getElementById("workVisualGallery");
   const visualModalStorageKey = "workVisualModalProject";
+  let activeVisualProject = null;
+  let visualCarouselIndexes = {};
 
   const renderVisualGallery = (project) => {
-    visualGallery.innerHTML = project.visuals.groups
-      .map((group) => {
-        const modifierClass = group.label.toLowerCase() === "mobile" ? " is-mobile-group" : "";
+    const visualGroups =
+      project.slug === "sarig"
+        ? [
+            {
+              label: "Website",
+              sections: project.visuals.groups.map((group) => ({
+                ...group,
+                label: group.label === "Website" ? "" : group.label,
+              })),
+            },
+          ]
+        : project.visuals.groups;
 
-        return `
-          <section class="work-visual-group${modifierClass}">
-            <p class="work-visual-group-label">${group.label}</p>
-            <div class="work-visual-group-grid">
-              ${group.items
-                .map(
-                  (item) => `
+    visualGallery.innerHTML = visualGroups
+      .map((group, groupIndex) => {
+        const modifierClass =
+          group.label.toLowerCase() === "mobile" ? " is-mobile-group" : "";
+        const sections = group.sections || [group];
+        const sectionMarkup = sections
+          .map((section, sectionIndex) => {
+            const carouselKey = `${groupIndex}-${sectionIndex}`;
+            const isCarousel = section.carousel && section.items.length > 1;
+            const activeItemIndex = Math.min(
+              visualCarouselIndexes[carouselKey] || 0,
+              section.items.length - 1,
+            );
+            const visibleItems = isCarousel
+              ? [section.items[activeItemIndex]]
+              : section.items;
+
+            return `
+              <div class="work-visual-section${isCarousel ? " is-carousel-section" : ""}" data-visual-section="${groupIndex}-${sectionIndex}">
+                ${group.sections && section.label ? `<p class="work-visual-section-label">${section.label}</p>` : ""}
+                ${visibleItems
+                  .map(
+                    (item) => `
                     <figure class="work-visual-shot">
-                      <span class="work-visual-shot-label">${item.label}</span>
-                      <img src="${item.image}" alt="${item.label} preview" loading="lazy" decoding="async">
+                      <span class="work-visual-shot-label" data-visual-shot-label>${item.label}</span>
+                      <img src="${item.image}" alt="${item.label} preview" loading="lazy" decoding="async" data-visual-shot-image>
                     </figure>
                   `,
-                )
-                .join("")}
+                  )
+                  .join("")}
+                ${
+                  isCarousel
+                    ? `
+                    <div class="work-visual-carousel-controls">
+                      <button class="work-visual-carousel-step" type="button" data-visual-carousel-step="-1" data-visual-carousel-group="${groupIndex}" data-visual-carousel-section="${sectionIndex}">
+                        Previous
+                      </button>
+                      <p class="work-visual-carousel-count" data-visual-carousel-count>${activeItemIndex + 1} / ${section.items.length}</p>
+                      <button class="work-visual-carousel-step" type="button" data-visual-carousel-step="1" data-visual-carousel-group="${groupIndex}" data-visual-carousel-section="${sectionIndex}">
+                        Next
+                      </button>
+                    </div>
+                  `
+                    : ""
+                }
+              </div>
+            `;
+          })
+          .join("");
+
+        return `
+          <section class="work-visual-group${modifierClass}" data-visual-group="${groupIndex}">
+            <p class="work-visual-group-label">${group.label}</p>
+            <div class="work-visual-group-grid">
+              ${sectionMarkup}
             </div>
           </section>
         `;
@@ -525,6 +676,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const openVisualModal = (project) => {
     if (!visualModal || !visualGallery) return;
+    activeVisualProject = project;
+    visualCarouselIndexes = {};
     if (visualHeaderLabel) visualHeaderLabel.textContent = project.name;
     renderVisualGallery(project);
     visualModal.hidden = false;
@@ -534,37 +687,102 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const closeVisualModal = () => {
     if (!visualModal) return;
+    activeVisualProject = null;
+    visualCarouselIndexes = {};
     visualModal.hidden = true;
     document.body.classList.remove("is-visual-modal-open");
     sessionStorage.removeItem(visualModalStorageKey);
   };
 
-  const persistedVisualProjectSlug = sessionStorage.getItem(visualModalStorageKey);
+  const getRenderedVisualGroups = (project) =>
+    project.slug === "sarig"
+      ? [
+          {
+            label: "Website",
+            sections: project.visuals.groups.map((group) => ({
+              ...group,
+              label: group.label === "Website" ? "" : group.label,
+            })),
+          },
+        ]
+      : project.visuals.groups;
+
+  const moveVisualCarousel = (groupIndex, sectionIndex, direction) => {
+    if (!activeVisualProject) return;
+    const group = getRenderedVisualGroups(activeVisualProject)[groupIndex];
+    const section = group?.sections?.[sectionIndex] || group;
+    if (!section?.items.length) return;
+
+    const carouselKey = `${groupIndex}-${sectionIndex}`;
+    const currentIndex = visualCarouselIndexes[carouselKey] || 0;
+    visualCarouselIndexes[carouselKey] =
+      (currentIndex + direction + section.items.length) % section.items.length;
+
+    const nextIndex = visualCarouselIndexes[carouselKey];
+    const nextItem = section.items[nextIndex];
+    const sectionEl = visualGallery.querySelector(
+      `[data-visual-section="${carouselKey}"]`,
+    );
+    const labelEl = sectionEl?.querySelector("[data-visual-shot-label]");
+    const imageEl = sectionEl?.querySelector("[data-visual-shot-image]");
+    const countEl = sectionEl?.querySelector("[data-visual-carousel-count]");
+
+    if (!labelEl || !imageEl || !countEl) {
+      renderVisualGallery(activeVisualProject);
+      return;
+    }
+
+    labelEl.textContent = nextItem.label;
+    imageEl.src = nextItem.image;
+    imageEl.alt = `${nextItem.label} preview`;
+    countEl.textContent = `${nextIndex + 1} / ${section.items.length}`;
+  };
+
+  const persistedVisualProjectSlug = sessionStorage.getItem(
+    visualModalStorageKey,
+  );
   if (persistedVisualProjectSlug) {
-    const persistedProject = pageData.projects.find((item) => item.slug === persistedVisualProjectSlug);
+    const persistedProject = pageData.projects.find(
+      (item) => item.slug === persistedVisualProjectSlug,
+    );
     if (persistedProject?.visuals) openVisualModal(persistedProject);
   }
 
   document.addEventListener("click", (event) => {
     const visualTrigger = event.target.closest("[data-project-visuals]");
     if (visualTrigger) {
-      const project = pageData.projects.find((item) => item.slug === visualTrigger.dataset.projectVisuals);
+      const project = pageData.projects.find(
+        (item) => item.slug === visualTrigger.dataset.projectVisuals,
+      );
       if (project?.visuals) openVisualModal(project);
     }
 
     const detailsTrigger = event.target.closest("[data-project-details]");
     if (detailsTrigger) {
-      const detailsEl = document.getElementById(`project-details-${detailsTrigger.dataset.projectDetails}`);
+      const detailsEl = document.getElementById(
+        `project-details-${detailsTrigger.dataset.projectDetails}`,
+      );
       if (!detailsEl) return;
 
       const isOpening = detailsEl.hidden;
       detailsEl.hidden = !isOpening;
       detailsTrigger.setAttribute("aria-expanded", String(isOpening));
-      detailsTrigger.textContent = isOpening ? "Hide details" : "Project details";
+      detailsTrigger.textContent = isOpening
+        ? "Hide details"
+        : "Project details";
     }
 
     if (event.target.closest("[data-visual-close]")) {
       closeVisualModal();
+    }
+
+    const carouselTrigger = event.target.closest("[data-visual-carousel-step]");
+    if (carouselTrigger) {
+      moveVisualCarousel(
+        Number(carouselTrigger.dataset.visualCarouselGroup),
+        Number(carouselTrigger.dataset.visualCarouselSection || 0),
+        Number(carouselTrigger.dataset.visualCarouselStep),
+      );
     }
   });
 
