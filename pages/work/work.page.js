@@ -186,6 +186,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
               ],
             },
+            {
+              label: "Mobile",
+              items: [
+                {
+                  label: "Customer Home Page",
+                  href: "../../my-images/projects/sarig/home page customer.svg",
+                  image: "../../my-images/projects/sarig/home page customer.svg",
+                },
+              ],
+            },
           ],
         },
       },
@@ -598,19 +608,40 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeVisualProject = null;
   let visualCarouselIndexes = {};
 
+  const getRenderedVisualGroups = (project) => {
+    if (project.slug !== "sarig") return project.visuals.groups;
+
+    const websiteGroups = project.visuals.groups.filter(
+      (group) => group.label !== "Mobile",
+    );
+    const mobileGroups = project.visuals.groups.filter(
+      (group) => group.label === "Mobile",
+    );
+
+    return [
+      {
+        label: "Website",
+        sections: websiteGroups.map((group) => ({
+          ...group,
+          label: group.label === "Main" ? "" : group.label,
+        })),
+      },
+      {
+        label: "Mobile",
+        sections: mobileGroups.map((group) => ({
+          ...group,
+          label: "Customer",
+          items: group.items.map((item) => ({
+            ...item,
+            label: item.label === "Customer Home Page" ? "Home Page" : item.label,
+          })),
+        })),
+      },
+    ];
+  };
+
   const renderVisualGallery = (project) => {
-    const visualGroups =
-      project.slug === "sarig"
-        ? [
-            {
-              label: "Website",
-              sections: project.visuals.groups.map((group) => ({
-                ...group,
-                label: group.label === "Website" ? "" : group.label,
-              })),
-            },
-          ]
-        : project.visuals.groups;
+    const visualGroups = getRenderedVisualGroups(project);
 
     visualGallery.innerHTML = visualGroups
       .map((group, groupIndex) => {
@@ -693,19 +724,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("is-visual-modal-open");
     sessionStorage.removeItem(visualModalStorageKey);
   };
-
-  const getRenderedVisualGroups = (project) =>
-    project.slug === "sarig"
-      ? [
-          {
-            label: "Website",
-            sections: project.visuals.groups.map((group) => ({
-              ...group,
-              label: group.label === "Website" ? "" : group.label,
-            })),
-          },
-        ]
-      : project.visuals.groups;
 
   const moveVisualCarousel = (groupIndex, sectionIndex, direction) => {
     if (!activeVisualProject) return;
