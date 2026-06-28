@@ -192,7 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                   label: "Customer Home Page",
                   href: "../../my-images/projects/sarig/home page customer.svg",
-                  image: "../../my-images/projects/sarig/home page customer.svg",
+                  image:
+                    "../../my-images/projects/sarig/home page customer.svg",
                 },
               ],
             },
@@ -249,8 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   items: [
                     {
                       label: "Dashboard Page",
-                      href:
-                        "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
+                      href: "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
                       image:
                         "../../my-images/projects/pharmago/superadmin web/pharmacy management.svg",
                     },
@@ -261,8 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   items: [
                     {
                       label: "Dashboard Page",
-                      href:
-                        "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
+                      href: "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
                       image:
                         "../../my-images/projects/pharmago/admin web/all orders dashboard.svg",
                     },
@@ -279,8 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   items: [
                     {
                       label: "Home Page",
-                      href:
-                        "../../my-images/projects/pharmago/customer mobile/landing.svg",
+                      href: "../../my-images/projects/pharmago/customer mobile/landing.svg",
                       image:
                         "../../my-images/projects/pharmago/customer mobile/landing.svg",
                     },
@@ -291,8 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   items: [
                     {
                       label: "Home Page",
-                      href:
-                        "../../my-images/projects/pharmago/rider mobile/landing.svg",
+                      href: "../../my-images/projects/pharmago/rider mobile/landing.svg",
                       image:
                         "../../my-images/projects/pharmago/rider mobile/landing.svg",
                     },
@@ -349,8 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   items: [
                     {
                       label: "Inventory Dashboard Page",
-                      href:
-                        "../../my-images/projects/puregold/admin/dashboard inventory.svg",
+                      href: "../../my-images/projects/puregold/admin/dashboard inventory.svg",
                       image:
                         "../../my-images/projects/puregold/admin/dashboard inventory.svg",
                     },
@@ -390,8 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   items: [
                     {
                       label: "Landing Page",
-                      href:
-                        "../../my-images/projects/stuart/landing product cart.svg",
+                      href: "../../my-images/projects/stuart/landing product cart.svg",
                       image:
                         "../../my-images/projects/stuart/landing product cart.svg",
                     },
@@ -623,7 +618,7 @@ document.addEventListener("DOMContentLoaded", () => {
         label: "Website",
         sections: websiteGroups.map((group) => ({
           ...group,
-          label: group.label === "Main" ? "" : group.label,
+          label: group.label === "Main Web" ? "" : group.label,
         })),
       },
       {
@@ -633,7 +628,8 @@ document.addEventListener("DOMContentLoaded", () => {
           label: "Customer",
           items: group.items.map((item) => ({
             ...item,
-            label: item.label === "Customer Home Page" ? "Home Page" : item.label,
+            label:
+              item.label === "Customer Home Page" ? "Home Page" : item.label,
           })),
         })),
       },
