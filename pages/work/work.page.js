@@ -64,22 +64,22 @@ document.addEventListener("DOMContentLoaded", () => {
             {
               label: "Built",
               value:
-                "An HR management system for job postings, applications, and internship intake so the company could move away from slower manual processing.",
+                "Developed an HR Management System for job posting, applicant records, application tracking, and internship intake, helping HR organize recruitment work and reduce manual delays.",
             },
             {
-              label: "Contributed",
+              label: "Backend",
               value:
-                "Worked on backend structure and API development with Django, while also helping design the web interface with Next.js.",
+                "Led backend development with Django and Django REST Framework by designing API structures, database models, business logic, and email SMTP notifications for recruitment communication.",
+            },
+            {
+              label: "Frontend",
+              value:
+                "Built dashboard interfaces with Next.js, React, Tailwind CSS, shadcn/ui, and Redux for job post management, applicant tracking, and HR visibility.",
             },
             {
               label: "Collaboration",
               value:
-                "GitLab workflow, code review, and backend leadership responsibilities.",
-            },
-            {
-              label: "Deployment",
-              value:
-                "Production exposure with proxy setup, Proxmox, and Ubuntu.",
+                "Worked with GitLab workflows, code review, backend leadership responsibilities, and production exposure using proxy setup, Proxmox, and Ubuntu.",
             },
           ],
         },
@@ -107,18 +107,16 @@ document.addEventListener("DOMContentLoaded", () => {
         summary:
           "A local logistics Super App for Marawi, built for trusted delivery and transport.",
         whatItSolved:
-          // "Marawi has limited organized delivery and ride-hailing options. Sarig creates a clearer flow for food, medicine, groceries, and transport.",
-          "Marawi lacks a unified digital system for everyday delivery and transport services. Sarig brings food, medicine, groceries, motorcycle taxi, and private car services into a clearer app-based flow.",
+          "Marawi needs a clearer digital flow for local delivery, transport, merchants, and riders. Sarig brings those services into one organized app-based platform.",
         whatIDid:
-          "Designed the product direction, system architecture, user roles, service categories, frontend foundation, and geo-based delivery flow.",
+          "Designed and built Sarig's web and backend foundation, including the main platform flow, merchant and rider paths, admin structure, and geo-based service logic.",
         contribution:
-          "Connected customers, merchants, riders, and admins through one model for delivery, transport, store discovery, and rider coordination.",
+          "Connected customers, merchants, riders, and admins through a location-aware system for delivery, transport, coordination, and service access.",
         accomplished:
-          // "Built the core product foundation and MVP for food, grocery, pharmacy, motorcycle taxi, and private car services, with admin and merchant tools.",
-          "Built the backend foundation for advanced delivery services, covering food, grocery, and pharmacy flows with geo-based store discovery, distance handling, and rider coordination logic, alongside the early admin and merchant dashboard structure.",
+          "Built Sarig's working frontend and backend foundation, with core flows for merchant and rider onboarding, admin operations, geo-based discovery, and delivery and transport workflows.",
         role: "Founder / Product Builder / Full-stack Developer",
         stack:
-          "Django, Django REST Framework, GeoDjango, Next.js, React, React Native, Expo, TypeScript, Tailwind CSS, PostgreSQL, PostGIS, Docker, Google Maps API",
+          "Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Radix UI, React Hook Form, Zod, Zustand, TanStack React Query, Axios, Django, Django REST Framework, Django Channels, Celery, GeoDjango, PostgreSQL, PostGIS, Redis, PayMongo, JWT Auth, WebSockets, Docker, Nginx, React Native, Expo",
         platforms: "Web + Mobile",
         visuals: {
           label: "View images",
@@ -188,12 +186,19 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             {
               label: "Mobile",
+              carousel: true,
               items: [
                 {
-                  label: "Customer Home Page",
+                  label: "Home Page",
                   href: "../../my-images/projects/sarig/home page customer.svg",
                   image:
                     "../../my-images/projects/sarig/home page customer.svg",
+                },
+                {
+                  label: "Ride Page",
+                  href: "../../my-images/projects/sarig/ride page customer.svg",
+                  image:
+                    "../../my-images/projects/sarig/ride page customer.svg",
                 },
               ],
             },
@@ -215,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Helped create a clearer digital workflow for HR teams to manage job posts, applicants, and internship submissions.",
         accomplished:
           "Delivered core system foundations during my internship at Iligan Light & Power, Inc.",
-        role: "Intern Web Developer",
+        role: "Intern Web Developer / Backend Developer",
         stack:
           "Django, Django REST Framework, Next.js, Tailwind CSS, Redux, Docker, PostgreSQL",
         platforms: "Web",
@@ -235,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Turned a fragmented ordering process into one connected system with clearer operations.",
         accomplished:
           "Delivered a complete capstone platform across web and mobile with operational role coverage.",
-        role: "Full-stack Developer / System Developer, Team Build",
+        role: "Backend Developer / System Developer, Team Build",
         stack:
           "Django, Django REST Framework, ReactJS, Tailwind CSS, React Native, Expo, PostgreSQL, Docker, Google Maps API",
         platforms: "Web + Mobile",
@@ -618,7 +623,6 @@ document.addEventListener("DOMContentLoaded", () => {
         label: "Website",
         sections: websiteGroups.map((group) => ({
           ...group,
-          label: group.label === "Main Web" ? "" : group.label,
         })),
       },
       {
@@ -627,7 +631,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ...group,
           label: "Customer",
           items: group.items.map((item) => ({
-            ...item,
+          ...item,
             label:
               item.label === "Customer Home Page" ? "Home Page" : item.label,
           })),

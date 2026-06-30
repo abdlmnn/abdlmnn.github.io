@@ -648,7 +648,11 @@ body[data-page="work"] {
   align-items: center;
   justify-self: center;
   width: min(520px, 100%);
-  margin-top: -18px;
+  margin-top: -28px;
+}
+
+.work-visual-group.is-mobile-group .work-visual-carousel-controls {
+  margin-top: 18px;
 }
 
 .work-visual-carousel-step,
@@ -1360,8 +1364,12 @@ body[data-page="work"] {
     grid-template-columns: 1fr 1fr;
     gap: 14px 18px;
     width: 100%;
-    margin-top: -10px;
+    margin-top: -24px;
     justify-items: center;
+  }
+
+  .work-visual-group.is-mobile-group .work-visual-carousel-controls {
+    margin-top: 18px;
   }
 
   .work-visual-carousel-count {
